@@ -1,16 +1,20 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja /Users/genius/code/XCamp201A
--- The C compiler identification is AppleClang 14.0.0.14000029
--- The CXX compiler identification is AppleClang 14.0.0.14000029
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
+    -- src/LC0200_Number_of_Islands.cpp will be compiled to bin/LC0200_Number_of_Islands
+    -- src/LC0419_Battleships_in_a_Board.cpp will be compiled to bin/LC0419_Battleships_in_a_Board
+    -- src/XCAMP01.cpp will be compiled to bin/XCAMP01
+    -- src/XCAMP02.cpp will be compiled to bin/XCAMP02
+    -- src/XCAMP03.cpp will be compiled to bin/XCAMP03
+    -- src/XCAMP04.cpp will be compiled to bin/XCAMP04
+    -- src/XCAMP05.cpp will be compiled to bin/XCAMP05
+    -- src/XCAMP06.cpp will be compiled to bin/XCAMP06
+    -- src/XCAMP07.cpp will be compiled to bin/XCAMP07
+    -- src/XCAMP08.cpp will be compiled to bin/XCAMP08
+    -- src/XCAMP09.cpp will be compiled to bin/XCAMP09
+    -- src/XCAMP10.cpp will be compiled to bin/XCAMP10
+    -- src/XCAMP12.cpp will be compiled to bin/XCAMP12
+    -- src/XCampW04Q01.cpp will be compiled to bin/XCampW04Q01
+    -- src/XCampW04Q02.cpp will be compiled to bin/XCampW04Q02
+    -- src/main.cpp will be compiled to bin/main
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/genius/code/XCamp201A/cmake-build-debug
