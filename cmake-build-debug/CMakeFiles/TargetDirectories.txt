@@ -1,0 +1,3 @@
+/Users/genius/code/XCamp201A/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/genius/code/XCamp201A/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/genius/code/XCamp201A/cmake-build-debug/CMakeFiles/XCamp201A.dir
