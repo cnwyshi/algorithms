@@ -1,6 +1,10 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja /Users/genius/code/XCamp201A
     -- src/LC0200_Number_of_Islands.cpp will be compiled to bin/LC0200_Number_of_Islands
     -- src/LC0419_Battleships_in_a_Board.cpp will be compiled to bin/LC0419_Battleships_in_a_Board
+    -- src/W04Q01.cpp will be compiled to bin/W04Q01
+    -- src/W04Q02.cpp will be compiled to bin/W04Q02
+    -- src/W05Q1.cpp will be compiled to bin/W05Q1
+    -- src/W05Q2.cpp will be compiled to bin/W05Q2
     -- src/XCAMP01.cpp will be compiled to bin/XCAMP01
     -- src/XCAMP02.cpp will be compiled to bin/XCAMP02
     -- src/XCAMP03.cpp will be compiled to bin/XCAMP03
@@ -12,8 +16,6 @@
     -- src/XCAMP09.cpp will be compiled to bin/XCAMP09
     -- src/XCAMP10.cpp will be compiled to bin/XCAMP10
     -- src/XCAMP12.cpp will be compiled to bin/XCAMP12
-    -- src/XCampW04Q01.cpp will be compiled to bin/XCampW04Q01
-    -- src/XCampW04Q02.cpp will be compiled to bin/XCampW04Q02
     -- src/main.cpp will be compiled to bin/main
 -- Configuring done
 -- Generating done

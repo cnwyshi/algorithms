@@ -83,37 +83,6 @@ build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.o
   TARGET_PDB = main.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target XCampW04Q02
-
-
-#############################################
-# Order-only phony target for XCampW04Q02
-
-build cmake_object_order_depends_target_XCampW04Q02: phony || CMakeFiles/XCampW04Q02.dir
-
-build CMakeFiles/XCampW04Q02.dir/XCampW04Q02.cpp.o: CXX_COMPILER__XCampW04Q02_Debug /Users/genius/code/XCamp201A/XCampW04Q02.cpp || cmake_object_order_depends_target_XCampW04Q02
-  DEP_FILE = CMakeFiles/XCampW04Q02.dir/XCampW04Q02.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/XCampW04Q02.dir
-  OBJECT_FILE_DIR = CMakeFiles/XCampW04Q02.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target XCampW04Q02
-
-
-#############################################
-# Link the executable XCampW04Q02
-
-build XCampW04Q02: CXX_EXECUTABLE_LINKER__XCampW04Q02_Debug CMakeFiles/XCampW04Q02.dir/XCampW04Q02.cpp.o
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
-  OBJECT_DIR = CMakeFiles/XCampW04Q02.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = XCampW04Q02
-  TARGET_PDB = XCampW04Q02.dbg
-
-# =============================================================================
 # Object build statements for EXECUTABLE target XCAMP12
 
 
@@ -176,6 +145,37 @@ build XCAMP10: CXX_EXECUTABLE_LINKER__XCAMP10_Debug CMakeFiles/XCAMP10.dir/XCAMP
   TARGET_PDB = XCAMP10.dbg
 
 # =============================================================================
+# Object build statements for EXECUTABLE target XCAMP09
+
+
+#############################################
+# Order-only phony target for XCAMP09
+
+build cmake_object_order_depends_target_XCAMP09: phony || CMakeFiles/XCAMP09.dir
+
+build CMakeFiles/XCAMP09.dir/XCAMP09.cpp.o: CXX_COMPILER__XCAMP09_Debug /Users/genius/code/XCamp201A/XCAMP09.cpp || cmake_object_order_depends_target_XCAMP09
+  DEP_FILE = CMakeFiles/XCAMP09.dir/XCAMP09.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/XCAMP09.dir
+  OBJECT_FILE_DIR = CMakeFiles/XCAMP09.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target XCAMP09
+
+
+#############################################
+# Link the executable XCAMP09
+
+build XCAMP09: CXX_EXECUTABLE_LINKER__XCAMP09_Debug CMakeFiles/XCAMP09.dir/XCAMP09.cpp.o
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/XCAMP09.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = XCAMP09
+  TARGET_PDB = XCAMP09.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target XCAMP07
 
 
@@ -207,35 +207,66 @@ build XCAMP07: CXX_EXECUTABLE_LINKER__XCAMP07_Debug CMakeFiles/XCAMP07.dir/XCAMP
   TARGET_PDB = XCAMP07.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target XCAMP09
+# Object build statements for EXECUTABLE target XCAMP08
 
 
 #############################################
-# Order-only phony target for XCAMP09
+# Order-only phony target for XCAMP08
 
-build cmake_object_order_depends_target_XCAMP09: phony || CMakeFiles/XCAMP09.dir
+build cmake_object_order_depends_target_XCAMP08: phony || CMakeFiles/XCAMP08.dir
 
-build CMakeFiles/XCAMP09.dir/XCAMP09.cpp.o: CXX_COMPILER__XCAMP09_Debug /Users/genius/code/XCamp201A/XCAMP09.cpp || cmake_object_order_depends_target_XCAMP09
-  DEP_FILE = CMakeFiles/XCAMP09.dir/XCAMP09.cpp.o.d
+build CMakeFiles/XCAMP08.dir/XCAMP08.cpp.o: CXX_COMPILER__XCAMP08_Debug /Users/genius/code/XCamp201A/XCAMP08.cpp || cmake_object_order_depends_target_XCAMP08
+  DEP_FILE = CMakeFiles/XCAMP08.dir/XCAMP08.cpp.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/XCAMP09.dir
-  OBJECT_FILE_DIR = CMakeFiles/XCAMP09.dir
+  OBJECT_DIR = CMakeFiles/XCAMP08.dir
+  OBJECT_FILE_DIR = CMakeFiles/XCAMP08.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target XCAMP09
+# Link build statements for EXECUTABLE target XCAMP08
 
 
 #############################################
-# Link the executable XCAMP09
+# Link the executable XCAMP08
 
-build XCAMP09: CXX_EXECUTABLE_LINKER__XCAMP09_Debug CMakeFiles/XCAMP09.dir/XCAMP09.cpp.o
+build XCAMP08: CXX_EXECUTABLE_LINKER__XCAMP08_Debug CMakeFiles/XCAMP08.dir/XCAMP08.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
-  OBJECT_DIR = CMakeFiles/XCAMP09.dir
+  OBJECT_DIR = CMakeFiles/XCAMP08.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = XCAMP09
-  TARGET_PDB = XCAMP09.dbg
+  TARGET_FILE = XCAMP08
+  TARGET_PDB = XCAMP08.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target XCAMP06
+
+
+#############################################
+# Order-only phony target for XCAMP06
+
+build cmake_object_order_depends_target_XCAMP06: phony || CMakeFiles/XCAMP06.dir
+
+build CMakeFiles/XCAMP06.dir/XCAMP06.cpp.o: CXX_COMPILER__XCAMP06_Debug /Users/genius/code/XCamp201A/XCAMP06.cpp || cmake_object_order_depends_target_XCAMP06
+  DEP_FILE = CMakeFiles/XCAMP06.dir/XCAMP06.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/XCAMP06.dir
+  OBJECT_FILE_DIR = CMakeFiles/XCAMP06.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target XCAMP06
+
+
+#############################################
+# Link the executable XCAMP06
+
+build XCAMP06: CXX_EXECUTABLE_LINKER__XCAMP06_Debug CMakeFiles/XCAMP06.dir/XCAMP06.cpp.o
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/XCAMP06.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = XCAMP06
+  TARGET_PDB = XCAMP06.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target XCAMP05
@@ -330,6 +361,37 @@ build XCAMP04: CXX_EXECUTABLE_LINKER__XCAMP04_Debug CMakeFiles/XCAMP04.dir/XCAMP
   TARGET_FILE = XCAMP04
   TARGET_PDB = XCAMP04.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target W05Q2
+
+
+#############################################
+# Order-only phony target for W05Q2
+
+build cmake_object_order_depends_target_W05Q2: phony || CMakeFiles/W05Q2.dir
+
+build CMakeFiles/W05Q2.dir/W05Q2.cpp.o: CXX_COMPILER__W05Q2_Debug /Users/genius/code/XCamp201A/W05Q2.cpp || cmake_object_order_depends_target_W05Q2
+  DEP_FILE = CMakeFiles/W05Q2.dir/W05Q2.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/W05Q2.dir
+  OBJECT_FILE_DIR = CMakeFiles/W05Q2.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target W05Q2
+
+
+#############################################
+# Link the executable W05Q2
+
+build W05Q2: CXX_EXECUTABLE_LINKER__W05Q2_Debug CMakeFiles/W05Q2.dir/W05Q2.cpp.o
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/W05Q2.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = W05Q2
+  TARGET_PDB = W05Q2.dbg
+
 
 #############################################
 # Utility command for rebuild_cache
@@ -405,35 +467,97 @@ build XCAMP03: CXX_EXECUTABLE_LINKER__XCAMP03_Debug CMakeFiles/XCAMP03.dir/XCAMP
   TARGET_PDB = XCAMP03.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target XCampW04Q01
+# Object build statements for EXECUTABLE target W05Q1
 
 
 #############################################
-# Order-only phony target for XCampW04Q01
+# Order-only phony target for W05Q1
 
-build cmake_object_order_depends_target_XCampW04Q01: phony || CMakeFiles/XCampW04Q01.dir
+build cmake_object_order_depends_target_W05Q1: phony || CMakeFiles/W05Q1.dir
 
-build CMakeFiles/XCampW04Q01.dir/XCampW04Q01.cpp.o: CXX_COMPILER__XCampW04Q01_Debug /Users/genius/code/XCamp201A/XCampW04Q01.cpp || cmake_object_order_depends_target_XCampW04Q01
-  DEP_FILE = CMakeFiles/XCampW04Q01.dir/XCampW04Q01.cpp.o.d
+build CMakeFiles/W05Q1.dir/W05Q1.cpp.o: CXX_COMPILER__W05Q1_Debug /Users/genius/code/XCamp201A/W05Q1.cpp || cmake_object_order_depends_target_W05Q1
+  DEP_FILE = CMakeFiles/W05Q1.dir/W05Q1.cpp.o.d
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/XCampW04Q01.dir
-  OBJECT_FILE_DIR = CMakeFiles/XCampW04Q01.dir
+  OBJECT_DIR = CMakeFiles/W05Q1.dir
+  OBJECT_FILE_DIR = CMakeFiles/W05Q1.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target XCampW04Q01
+# Link build statements for EXECUTABLE target W05Q1
 
 
 #############################################
-# Link the executable XCampW04Q01
+# Link the executable W05Q1
 
-build XCampW04Q01: CXX_EXECUTABLE_LINKER__XCampW04Q01_Debug CMakeFiles/XCampW04Q01.dir/XCampW04Q01.cpp.o
+build W05Q1: CXX_EXECUTABLE_LINKER__W05Q1_Debug CMakeFiles/W05Q1.dir/W05Q1.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
-  OBJECT_DIR = CMakeFiles/XCampW04Q01.dir
+  OBJECT_DIR = CMakeFiles/W05Q1.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = XCampW04Q01
-  TARGET_PDB = XCampW04Q01.dbg
+  TARGET_FILE = W05Q1
+  TARGET_PDB = W05Q1.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target W04Q01
+
+
+#############################################
+# Order-only phony target for W04Q01
+
+build cmake_object_order_depends_target_W04Q01: phony || CMakeFiles/W04Q01.dir
+
+build CMakeFiles/W04Q01.dir/W04Q01.cpp.o: CXX_COMPILER__W04Q01_Debug /Users/genius/code/XCamp201A/W04Q01.cpp || cmake_object_order_depends_target_W04Q01
+  DEP_FILE = CMakeFiles/W04Q01.dir/W04Q01.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/W04Q01.dir
+  OBJECT_FILE_DIR = CMakeFiles/W04Q01.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target W04Q01
+
+
+#############################################
+# Link the executable W04Q01
+
+build W04Q01: CXX_EXECUTABLE_LINKER__W04Q01_Debug CMakeFiles/W04Q01.dir/W04Q01.cpp.o
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/W04Q01.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = W04Q01
+  TARGET_PDB = W04Q01.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target W04Q02
+
+
+#############################################
+# Order-only phony target for W04Q02
+
+build cmake_object_order_depends_target_W04Q02: phony || CMakeFiles/W04Q02.dir
+
+build CMakeFiles/W04Q02.dir/W04Q02.cpp.o: CXX_COMPILER__W04Q02_Debug /Users/genius/code/XCamp201A/W04Q02.cpp || cmake_object_order_depends_target_W04Q02
+  DEP_FILE = CMakeFiles/W04Q02.dir/W04Q02.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/W04Q02.dir
+  OBJECT_FILE_DIR = CMakeFiles/W04Q02.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target W04Q02
+
+
+#############################################
+# Link the executable W04Q02
+
+build W04Q02: CXX_EXECUTABLE_LINKER__W04Q02_Debug CMakeFiles/W04Q02.dir/W04Q02.cpp.o
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/W04Q02.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = W04Q02
+  TARGET_PDB = W04Q02.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target XCAMP01
@@ -465,68 +589,6 @@ build XCAMP01: CXX_EXECUTABLE_LINKER__XCAMP01_Debug CMakeFiles/XCAMP01.dir/XCAMP
   PRE_LINK = :
   TARGET_FILE = XCAMP01
   TARGET_PDB = XCAMP01.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target XCAMP08
-
-
-#############################################
-# Order-only phony target for XCAMP08
-
-build cmake_object_order_depends_target_XCAMP08: phony || CMakeFiles/XCAMP08.dir
-
-build CMakeFiles/XCAMP08.dir/XCAMP08.cpp.o: CXX_COMPILER__XCAMP08_Debug /Users/genius/code/XCamp201A/XCAMP08.cpp || cmake_object_order_depends_target_XCAMP08
-  DEP_FILE = CMakeFiles/XCAMP08.dir/XCAMP08.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/XCAMP08.dir
-  OBJECT_FILE_DIR = CMakeFiles/XCAMP08.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target XCAMP08
-
-
-#############################################
-# Link the executable XCAMP08
-
-build XCAMP08: CXX_EXECUTABLE_LINKER__XCAMP08_Debug CMakeFiles/XCAMP08.dir/XCAMP08.cpp.o
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
-  OBJECT_DIR = CMakeFiles/XCAMP08.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = XCAMP08
-  TARGET_PDB = XCAMP08.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target XCAMP06
-
-
-#############################################
-# Order-only phony target for XCAMP06
-
-build cmake_object_order_depends_target_XCAMP06: phony || CMakeFiles/XCAMP06.dir
-
-build CMakeFiles/XCAMP06.dir/XCAMP06.cpp.o: CXX_COMPILER__XCAMP06_Debug /Users/genius/code/XCamp201A/XCAMP06.cpp || cmake_object_order_depends_target_XCAMP06
-  DEP_FILE = CMakeFiles/XCAMP06.dir/XCAMP06.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/XCAMP06.dir
-  OBJECT_FILE_DIR = CMakeFiles/XCAMP06.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target XCAMP06
-
-
-#############################################
-# Link the executable XCAMP06
-
-build XCAMP06: CXX_EXECUTABLE_LINKER__XCAMP06_Debug CMakeFiles/XCAMP06.dir/XCAMP06.cpp.o
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
-  OBJECT_DIR = CMakeFiles/XCAMP06.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = XCAMP06
-  TARGET_PDB = XCAMP06.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target LC0200_Number_of_Islands
@@ -570,7 +632,7 @@ build LC0200_Number_of_Islands: CXX_EXECUTABLE_LINKER__LC0200_Number_of_Islands_
 #############################################
 # Folder: /Users/genius/code/XCamp201A/cmake-build-debug
 
-build all: phony main XCampW04Q02 XCAMP12 XCAMP10 XCAMP07 XCAMP09 XCAMP05 XCAMP02 XCAMP04 LC0419_Battleships_in_a_Board XCAMP03 XCampW04Q01 XCAMP01 XCAMP08 XCAMP06 LC0200_Number_of_Islands
+build all: phony main XCAMP12 XCAMP10 XCAMP09 XCAMP07 XCAMP08 XCAMP06 XCAMP05 XCAMP02 XCAMP04 W05Q2 LC0419_Battleships_in_a_Board XCAMP03 W05Q1 W04Q01 W04Q02 XCAMP01 LC0200_Number_of_Islands
 
 # =============================================================================
 # Built-in targets
