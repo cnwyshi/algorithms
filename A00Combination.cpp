@@ -1,14 +1,10 @@
-//
-// Created by genius on 10/1/22.
-//
-
 #include <iostream>
 #include <vector>
 #include <cmath>
 
 using namespace std;
 
-void combinations(int m, int n, vector<int> &a, vector<int> &vis, int j) {
+void combinations(int m, int n, vector<int> &a, vector<int> &visited, int j) {
     if (j == n) {
         bool match = true;
         for (int i = 1; i < n; i++) {
@@ -25,14 +21,13 @@ void combinations(int m, int n, vector<int> &a, vector<int> &vis, int j) {
         }
         return;
     }
-    for (int i = 1; i <= m; i++) {
-        if (vis[i] == 0) {
-            vis[i] = 1;
-            a[j] = i;
-            combinations(m, n, a, vis, j + 1);
-            vis[i] = 0;
+    for (int i = 0; i < m; i++) {
+        if (visited[i] == 0) {
+            visited[i] = 1;
+            a[j] = i + 1;
+            combinations(m, n, a, visited, j + 1);
+            visited[i] = 0;
         }
-
     }
 }
 
@@ -40,7 +35,7 @@ void combinations(int m, int n, vector<int> &a, vector<int> &vis, int j) {
 int main() {
     int n, m;
     cin >> m >> n;
-    vector<int> a(n);
-    vector<int> vis(m);
-    combinations(m, n, a, vis, 0);
+    vector<int> nums(n);
+    vector<int> visited(m);
+    combinations(m, n, nums, visited, 0);
 }

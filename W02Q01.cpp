@@ -1,7 +1,3 @@
-//
-// Created by genius on 9/19/22.
-//
-// First Problem
 #include <iostream>
 #include <vector>
 
@@ -17,7 +13,7 @@ int flood_fill(vector<vector<int>> &maze, int r, int c) {
     count += flood_fill(maze, r + 1, c);
     count += flood_fill(maze, r - 1, c - 1);
     count += flood_fill(maze, r + 1, c + 1);
-//    cout << r << " " << c << " " << count <<endl;
+    // cout << r << " " << c << " " << count <<endl;
     return 1 + count;
 }
 

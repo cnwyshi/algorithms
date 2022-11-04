@@ -1,13 +1,9 @@
-//
-// Created by genius on 10/1/22.
-//
-
 #include <iostream>
 #include <array>
 
 using namespace std;
 int order = 0;
-bool vis[11];
+bool visited[11];
 
 void permutations(int n, int k, int m, array<int, 11> &a) {
 
@@ -21,20 +17,19 @@ void permutations(int n, int k, int m, array<int, 11> &a) {
         }
     } else {
         for (int i = 1; i <= n; i++) {
-            if (vis[i] != 0) continue;
-            vis[i] = 1;
+            if (visited[i] != 0) continue;
+            visited[i] = 1;
             a[m] = i;
             permutations(n, k, m + 1, a);
-            vis[i] = 0;
+            visited[i] = 0;
         }
     }
 }
 
-
 int main() {
     int n;
     int k;
-    array<int, 11> a;
     cin >> n >> k;
-    permutations(n, k, 0, a);
+    array<int, 11> nums;
+    permutations(n, k, 0, nums);
 }

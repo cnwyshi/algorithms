@@ -6,7 +6,7 @@ class Solution {
 public:
     bool isIslandStart(vector<vector<char>> &grid, vector<vector<int>> &visited, int r, int c) {
         int m = grid.size(), n = grid[0].size();
-        //cout <<r << " " << c << endl;
+        // cout <<r << " " << c << endl;
         if (r < 0 || r >= m || c < 0 || c >= n || grid[r][c] == '0' || visited[r][c] == 1) {
             return false;
         }

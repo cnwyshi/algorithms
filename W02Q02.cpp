@@ -13,7 +13,7 @@ int flood_fill(vector<vector<char>> &maze, int r, int c) {
     count += flood_fill(maze, r + 1, c);
     count += flood_fill(maze, r, c - 1);
     count += flood_fill(maze, r, c + 1);
-//    cout << r << " " << c << " " << count <<endl;
+    // cout << r << " " << c << " " << count <<endl;
     return 1 + count;
 }
 

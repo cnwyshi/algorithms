@@ -9,7 +9,7 @@ void dfs(vector<vector<char>> &maze, int r, int c, int &count, int steps, int r2
     if (r < 0 || r >= n || c < 0 || c >= m || maze[r][c] == '*') {
         return;
     }
-//   cout << r << " " << c << " " << steps << endl;
+    // cout << r << " " << c << " " << steps << endl;
     if (steps + abs(r2 - r) + abs(c2 - c) > t) {
         return;
     }
@@ -17,7 +17,7 @@ void dfs(vector<vector<char>> &maze, int r, int c, int &count, int steps, int r2
         count++;
         return;
     }
-    //minimum: abs(r2-r) + abs(c2-c)
+    // minimum: abs(r2-r) + abs(c2-c)
     dfs(maze, r + 1, c, count, steps + 1, r2, c2, t);
     dfs(maze, r - 1, c, count, steps + 1, r2, c2, t);
     dfs(maze, r, c + 1, count, steps + 1, r2, c2, t);

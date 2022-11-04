@@ -4,16 +4,16 @@
 using namespace std;
 
 void dfs(vector<vector<int>> &maze, int r, int c, int &ans, int steps, int n, int m, int past) {
-//    cout << r << " " << c << " " << ans << " " << steps << " " << past << endl;
+    // cout << r << " " << c << " " << ans << " " << steps << " " << past << endl;
     if (r < 0 || r >= n || c < 0 || c >= m || maze[r][c] >= past) {
         return;
     }
-//    if(maze[r-1][c] > maze[r][c] && maze[r+1][c] > maze[r][c] && maze[r][c-1] > maze[r][c] && maze[r][c+1] > maze[r][c]){
-//        if(steps > ans){
-//            ans = steps;
-//            steps = 0;
-//        }
-//    }
+    // if(maze[r-1][c] > maze[r][c] && maze[r+1][c] > maze[r][c] && maze[r][c-1] > maze[r][c] && maze[r][c+1] > maze[r][c]){
+    // if(steps > ans){
+    // ans = steps;
+    // steps = 0;
+    // }
+    // }
     ans = max(ans, steps);
     past = maze[r][c];
     dfs(maze, r + 1, c, ans, steps + 1, n, m, past);

@@ -2,7 +2,6 @@
 #include <vector>
 
 using namespace std;
-
 // a = 1, c = 3
 // 1 3
 //

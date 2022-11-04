@@ -1,10 +1,3 @@
-//
-// Created by genius on 11/3/22.
-//
-
-//
-// Created by genius on 10/29/22.
-//
 #include <iostream>
 #include <vector>
 
@@ -16,21 +9,18 @@ vector<vector<int>> board(100, vector<int>(100)); // you can pick any matrix siz
 
 bool isPossible(int n, int row, int col) {  // check whether
     // placing queen possible or not
-
-// Same Column
+    // Same Column
     for (int i = row - 1; i >= 0; i--) {
         if (board[i][col] == 1) {
             return false;
         }
     }
-
-//Upper Left Diagonal
+    // Upper Left Diagonal
     for (int i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
         if (board[i][j] == 1) {
             return false;
         }
     }
-
     // Upper Right Diagonal
     for (int i = row - 1, j = col + 1; i >= 0 && j < n; i--, j++) {
         if (board[i][j] == 1) {
@@ -48,7 +38,6 @@ void nQueenHelper(int n, int row) {
         // return
         ans++;
     }
-
     // Place at all possible positions and move to smaller problem
     for (int j = 0; j < n; j++) {
 
@@ -65,7 +54,6 @@ void nQueenHelper(int n, int row) {
 }
 
 void placeNQueens(int n) {
-
     // and initialize all
     // cells with zeroes
 

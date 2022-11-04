@@ -6,7 +6,7 @@ class Solution {
 public:
     bool isBattleshipsStart(vector<vector<char>> &board, vector<vector<int>> &visited, int r, int c) {
         int m = board.size(), n = board[0].size();
-        //cout <<r << " " << c << endl;
+        // cout <<r << " " << c << endl;
         if (r < 0 || r >= m || c < 0 || c >= n || board[r][c] == '.' || visited[r][c] == 1) {
             return false;
         }

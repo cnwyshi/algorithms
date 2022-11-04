@@ -9,10 +9,10 @@ using namespace std;
 void permutations(vector<vector<int>> &cows, vector<int> &nums, vector<int> &visited, int j, int &ans) {
     int n = nums.size();
     if (j == n) {
-//        for (int i = 0; i < n; i++) {
-//            cout << nums[i] << " ";
-//        }
-//        cout << endl;
+        // for (int i = 0; i < n; i++) {
+        // cout << nums[i] << " ";
+        // }
+        // cout << endl;
         // 0 3 2 1
         // cows[2][0] == cows[0][0]
         bool match = true;

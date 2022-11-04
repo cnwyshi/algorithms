@@ -19,9 +19,9 @@ void merge_sort(vector<int> &v, int start, int end) {
             }
         }
         std::copy(merged.begin(), merged.end(), v.begin() + start);
-//        for (int i = 0; i < n; i ++) {
-//            v[start + i] = merged[i];
-//        }
+        // for (int i = 0; i < n; i ++) {
+        // v[start + i] = merged[i];
+        // }
     }
 }
 

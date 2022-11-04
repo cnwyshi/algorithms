@@ -9,9 +9,9 @@ void permutations(vector<int> &nums, vector<int> &visited, int j, int &ans) {
     if (j == n) {
         bool match = true;
         // for(int i = 0; i < n; i++){
-        //     cout << nums[i] << " ";
+        // cout << nums[i] << " ";
         // }
-        //cout << endl;
+        // cout << endl;
         for (int i = 1; i < n; i++) {
             if (abs(nums[i] - nums[i - 1]) <= 1) {
                 match = false;

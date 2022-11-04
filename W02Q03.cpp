@@ -1,6 +1,3 @@
-//
-// Created by genius on 9/22/22.
-//
 #include <iostream>
 #include <vector>
 
@@ -17,7 +14,7 @@ void flood(vector<vector<int>> &maze, int r, int c, int &index, vector<vector<in
     flood(maze, r, c - 1, index, order);
     flood(maze, r, c + 1, index, order);
     flood(maze, r + 1, c, index, order);
-//    cout << r << " " << c << " " << count <<endl;
+    // cout << r << " " << c << " " << count <<endl;
 }
 
 int main() {
