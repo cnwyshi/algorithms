@@ -6,7 +6,7 @@ using namespace std;
 /*
 (0, 1), (2, 1), (2, 0), (2, -5)
 */
-void permutations(vector<vector<int>>& cows, vector<int>& nums, vector<int>& visited, int j, int& ans) {
+void permutations(vector<vector<int>> &cows, vector<int> &nums, vector<int> &visited, int j, int &ans) {
     int n = nums.size();
     if (j == n) {
 //        for (int i = 0; i < n; i++) {
@@ -16,9 +16,9 @@ void permutations(vector<vector<int>>& cows, vector<int>& nums, vector<int>& vis
         // 0 3 2 1
         // cows[2][0] == cows[0][0]
         bool match = true;
-        for(int i = 1; i<n; i++){
+        for (int i = 1; i < n; i++) {
             int p = nums[i - 1], c = nums[i];
-            if(cows[p][0] != cows[c][0] && cows[p][1] != cows[c][1]){
+            if (cows[p][0] != cows[c][0] && cows[p][1] != cows[c][1]) {
                 match = false;
                 break;
             }
@@ -30,8 +30,8 @@ void permutations(vector<vector<int>>& cows, vector<int>& nums, vector<int>& vis
         if (cows[c][0] != 0 && cows[c][1] != 0) {
             match = false;
         }
-        if( match){
-            ans ++;
+        if (match) {
+            ans++;
         }
         return;
     }

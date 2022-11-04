@@ -1,4 +1,3 @@
-//
-// Created by genius on 11/3/22.
-//
-
+int main() {
+    return 0;
+}

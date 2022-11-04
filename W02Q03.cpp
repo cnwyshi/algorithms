@@ -12,7 +12,7 @@ void flood(vector<vector<int>> &maze, int r, int c, int &index, vector<vector<in
         return;
     }
     maze[r][c] = 1;
-    order[r][c] = index ++;
+    order[r][c] = index++;
     flood(maze, r - 1, c, index, order);
     flood(maze, r, c - 1, index, order);
     flood(maze, r, c + 1, index, order);

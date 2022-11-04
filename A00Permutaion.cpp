@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void permutations(int m, vector<int>& a, int j, vector<int>& vis) {
+void permutations(int m, vector<int> &a, int j, vector<int> &vis) {
     int n = a.size();
     if (j == n) {
         for (int i = 0; i < n; i++) {

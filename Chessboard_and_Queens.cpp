@@ -1,6 +1,7 @@
-//
-// Created by genius on 10/29/22.
-//
+int main() {
+    return 0;
+}
+
 /*
 #include <iostream>
 #include <vector>
