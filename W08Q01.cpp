@@ -49,20 +49,18 @@ void nQueenHelper(int n, int row) {
 
         board[row][j] = 0;      // unmark to backtrack
     }
-    return;
 
+    return;
 }
 
 void placeNQueens(int n) {
     // and initialize all
     // cells with zeroes
-
     nQueenHelper(n, 0);     // call the backtracking function
     // and print solutions
 }
 
 int main() {
-
     int n;
     cin >> n; // could use a default 8 as well
     placeNQueens(n);

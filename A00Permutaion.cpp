@@ -13,16 +13,14 @@ void permutations(int m, vector<int> &nums, int j, vector<int> &visited) {
         return;
     }
     for (int i = 0; i < m; i++) {
-        if (visited[i] != 0) {
-            continue;
+        if (visited[i] == 0) {
+            visited[i] = 1;
+            nums[j] = i + 1;
+            permutations(m, nums, j + 1, visited);
+            visited[i] = 0;
         }
-        visited[i] = 1;
-        nums[j] = i;
-        permutations(m, nums, j + 1, visited);
-        visited[i] = 0;
     }
 }
-
 
 int main() {
     int m, n;
