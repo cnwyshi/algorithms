@@ -3,7 +3,7 @@ project(XCamp201A)
 
 set(CMAKE_CXX_STANDARD 14)
 
-file(GLOB files *.cpp)
+file(GLOB files *.cpp BRO100/*.cpp XC201PRE/*.cpp)
 foreach (file ${files})
     string(REGEX REPLACE ".+/(.+)\\..*" "\\1" exe ${file})
     add_executable(${exe} ${file})
