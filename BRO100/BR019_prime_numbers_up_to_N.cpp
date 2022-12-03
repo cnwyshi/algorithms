@@ -1,7 +1,7 @@
 // Source: https://usaco.guide/general/io
 
 
-#include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 

@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include<vector>
+
 using namespace std;
 
 // check if the cow ch won in any row or column or diagonal

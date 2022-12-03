@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
 
 using namespace std;
 int n, k, f[100000][21][3];
