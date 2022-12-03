@@ -7,7 +7,7 @@ int ans = 0;
 
 vector<vector<int>> board(100, vector<int>(100)); // you can pick any matrix size you want
 
-bool isPossible(int n, int row, int col) {  // check whether
+bool isPossible(int n, int row, int col) {  // win whether
     // placing queen possible or not
     // Same Column
     for (int i = row - 1; i >= 0; i--) {

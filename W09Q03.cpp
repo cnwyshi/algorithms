@@ -15,7 +15,7 @@ void dfs(vector<int> signs, int k, int i, int s, int sum, int& ans) {
     }
 
     if (visited[k][i][s]) {
-        // return;
+         return;
     }
     visited[k][i][s] = true;
 
