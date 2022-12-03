@@ -1,50 +1,41 @@
-#include <iostream>
-#include <vector>
-#include <cmath>
+#include<bits/stdc++.h>
 
 using namespace std;
+const int maxn = 100005;
+int n, k, a[maxn], f[maxn][25][5];
 
-// "PSH", 012
-void dfs(vector<int> signs, int k, int i, int s, int sum, int& ans) {
-    if (i == signs.size()) {
-        ans = max(ans, sum);
-        return;
+bool check(int a, int b) {
+    return (a + 3 - b) % 3 == 1;
+//    if (a == 0 && b == 2)
+//        return 1;
+//    if (a == 1 && b == 0)
+//        return 1;
+//    if (a == 2 && b == 1)
+//        return 1;
+//    return 0;
+}
+
+int dfs(int x, int l, int z) {
+    if (l == -1)return 0;
+    if (x == 1)return check(z, a[x]);
+    if (f[x][l][z])return f[x][l][z];
+    int ret = 0;
+    for (int i = 0; i < 3; ++i) {
+        ret = max(ret, dfs(x - 1, l - (i != z), i) + (l - (i != z) >= 0 ? check(i, a[x]) : 0));
     }
-    if ((s - signs[i] + 3) % 3 == 1) {
-        dfs(signs, k, i + 1, s, sum + 1, ans);
-    } else if (k > 0) {
-        for (int j = 1; j < 3; j ++) {
-            int t = (s + j) % 3;
-            if ((t - signs[i] + 3) % 3 == 1) {
-                dfs(signs, k - 1, i + 1, t, sum + 1, ans);
-            } else {
-                dfs(signs, k - 1, i + 1, t, sum, ans);
-            }
-        }
-    }
+    return f[x][l][z] = ret;
 }
 
 int main() {
-    int n = 0, k = 0, ans = 0;
     cin >> n >> k;
-    vector<int> signs(n);
-    for (int i = 0; i < n; i ++) {
-        char c;
-        cin >> c;
-        signs[i] = c == 'P' ? 0 : (c == 'S' ? 1 : 2);
+    for (int i = 1; i < n + 1; ++i) {
+        char x = getchar();
+        while (!isalpha(x)) x = getchar();
+        if (x == 'H')a[i] = 0;
+        if (x == 'P')a[i] = 1;
+        if (x == 'S')a[i] = 2;
     }
-    for (int s = 0; s < 3; s ++) {
-        dfs(signs, k, 0, s, 0, ans);
-    }
-    cout << ans << endl;
+    memset(f, 0, sizeof(f));
+    cout << max(dfs(n, k, 0), max(dfs(n, k, 1), dfs(n, k, 2))) << endl;
     return 0;
 }
-
-/*
-5 1
-P
-P
-H
-P
-S
-*/

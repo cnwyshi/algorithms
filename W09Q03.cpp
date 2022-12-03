@@ -4,23 +4,26 @@
 
 using namespace std;
 
+// 1<=n<=100000,0<=k<=20
+bool visited[21][100000][3];
+
 // "PSH", 012
 void dfs(vector<int> signs, int k, int i, int s, int sum, int& ans) {
     if (i == signs.size()) {
         ans = max(ans, sum);
         return;
     }
+
+    if (visited[k][i][s]) {
+        // return;
+    }
+    visited[k][i][s] = true;
+
     if ((s - signs[i] + 3) % 3 == 1) {
         dfs(signs, k, i + 1, s, sum + 1, ans);
     } else if (k > 0) {
-        for (int j = 1; j < 3; j ++) {
-            int t = (s + j) % 3;
-            if ((t - signs[i] + 3) % 3 == 1) {
-                dfs(signs, k - 1, i + 1, t, sum + 1, ans);
-            } else {
-                dfs(signs, k - 1, i + 1, t, sum, ans);
-            }
-        }
+        dfs(signs, k, i + 1, s, sum, ans);
+        dfs(signs, k - 1, i + 1, (signs[i] + 1) % 3, sum + 1, ans);
     }
 }
 
