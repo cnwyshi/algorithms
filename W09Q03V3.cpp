@@ -1,25 +1,21 @@
 #include<bits/stdc++.h>
 
 using namespace std;
-const int maxn = 100005;
-int n, k, a[maxn], f[maxn][25][5];
+int n, k, f[100000][21][3];
 
-bool win(int a, int b) {
-    return (a + 3 - b) % 3 == 1;
-}
-
-int dfs(int i, int k, int c, int s) {
-    if (i == n - 1)
-        return win(c, a[i]);
-    if (f[i][k][c])
+// PSH
+int dfs(vector<int>& a, int i, int k, int c) {
+    if (i == n) {
+        return 0;
+    } else if (f[i][k][c])
         return f[i][k][c];
     int ans = 0;
     if ((c + 3 - a[i]) % 3 == 1) {
-        ans = max(ans, dfs(i + 1, k, c, s) + 1);
+        ans = max(ans, dfs(a, i + 1, k, c) + 1);
     } else {
-        ans = max(ans, dfs(i + 1, k, c, s));
+        ans = max(ans, dfs(a, i + 1, k, c));
         if (k > 0) {
-            ans = max(ans, dfs(i + 1, k - 1, (a[i] + 1) % 3, s) + 1);
+            ans = max(ans, dfs(a, i + 1, k - 1, (a[i] + 1) % 3) + 1);
         }
     }
     return f[i][k][c] = ans;
@@ -27,11 +23,12 @@ int dfs(int i, int k, int c, int s) {
 
 int main() {
     cin >> n >> k;
+    vector<int> a(n);
     for (int i = 0; i < n; i ++) {
         char c;
         cin >> c;
         a[i] = c == 'P' ? 0 : (c == 'S' ? 1 : 2);
     }
-    cout << max(dfs(0, k, 0, 0), max(dfs(0, k, 1, 0), dfs(0, k, 2, 0))) << endl;
+    cout << max(dfs(a, 0, k, 0), max(dfs(a, 0, k, 1), dfs(a, 0, k, 2))) << endl;
     return 0;
 }
