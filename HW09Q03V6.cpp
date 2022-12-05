@@ -2,28 +2,30 @@
 #include<vector>
 
 using namespace std;
-int n, k, f[100000][21][3];
+int ret, visited[100000][21][3];
 
-// PSH
 // http://www.usaco.org/index.php?page=viewproblem2&cpid=694
-int dfs(vector<int>& a, int i, int k, int c) {
-    if (i == n) {
-        return 0;
-    } else if (f[i][k][c])
-        return f[i][k][c];
-    int ans = 0;
+void dfs(vector<int>& a, int i, int k, int c, int s) {
+    if (i == a.size()) {
+        ret = max(ret, s);
+        return;
+//    } else if (visited[i][k][c]) {
+//        return;
+    }
+    visited[i][k][c] = true;
+    // PSH, current color (c) wins if it follows a[i] in circle
     if ((c + 3 - a[i]) % 3 == 1) {
-        ans = max(ans, dfs(a, i + 1, k, c) + 1);
+        dfs(a, i + 1, k, c, s + 1);
     } else {
-        ans = max(ans, dfs(a, i + 1, k, c));
+        dfs(a, i + 1, k, c, s);
         if (k > 0) {
-            ans = max(ans, dfs(a, i + 1, k - 1, (a[i] + 1) % 3) + 1);
+            dfs(a, i + 1, k - 1, (a[i] + 1) % 3, s + 1);
         }
     }
-    return f[i][k][c] = ans;
 }
 
 int main() {
+    int n, k;
     cin >> n >> k;
     vector<int> a(n);
     for (int i = 0; i < n; i ++) {
@@ -31,7 +33,10 @@ int main() {
         cin >> c;
         a[i] = c == 'P' ? 0 : (c == 'S' ? 1 : 2);
     }
-    cout << max(dfs(a, 0, k, 0), max(dfs(a, 0, k, 1), dfs(a, 0, k, 2))) << endl;
+    for (int j = 0; j < 3; j ++) {
+        dfs(a, 0, k, j, 0);
+    }
+    cout << ret << endl;
     return 0;
 }
 

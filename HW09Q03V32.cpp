@@ -1,29 +1,33 @@
 #include<iostream>
 #include<vector>
+#include<cstring>
 
 using namespace std;
-int n, k, f[100000][21][3];
+
 
 // PSH
 // http://www.usaco.org/index.php?page=viewproblem2&cpid=694
-int dfs(vector<int>& a, int i, int k, int c) {
-    if (i == n) {
+int dfs(vector<int>& a, int i, int k, int c, int dp[][21][3]) {
+    if (i == a.size()) {
         return 0;
-    } else if (f[i][k][c])
-        return f[i][k][c];
+    } else if (dp[i][k][c])
+        return dp[i][k][c];
     int ans = 0;
     if ((c + 3 - a[i]) % 3 == 1) {
-        ans = max(ans, dfs(a, i + 1, k, c) + 1);
+        ans = max(ans, dfs(a, i + 1, k, c, dp) + 1);
     } else {
-        ans = max(ans, dfs(a, i + 1, k, c));
+        ans = max(ans, dfs(a, i + 1, k, c, dp));
         if (k > 0) {
-            ans = max(ans, dfs(a, i + 1, k - 1, (a[i] + 1) % 3) + 1);
+            ans = max(ans, dfs(a, i + 1, k - 1, (a[i] + 1) % 3, dp) + 1);
         }
     }
-    return f[i][k][c] = ans;
+    return dp[i][k][c] = ans;
 }
 
 int main() {
+    int n, k, ans = 0;
+    int dp[100000][21][3];
+    memset(dp, 0, sizeof(int)*100000*21*3);
     cin >> n >> k;
     vector<int> a(n);
     for (int i = 0; i < n; i ++) {
@@ -31,7 +35,10 @@ int main() {
         cin >> c;
         a[i] = c == 'P' ? 0 : (c == 'S' ? 1 : 2);
     }
-    cout << max(dfs(a, 0, k, 0), max(dfs(a, 0, k, 1), dfs(a, 0, k, 2))) << endl;
+    for (int j = 0; j < 3; j ++) {
+        ans = max(ans, dfs(a, 0, k, j, dp));
+    }
+    cout << ans << endl;
     return 0;
 }
 
