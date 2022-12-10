@@ -37,13 +37,13 @@ a b c
 
 int tower_of_hanoi(int n, vector<string>& steps, string a, string b, string c){
     if(n==1){
-        steps.push_back(a+ " "+c);
+        steps.push_back(a+ "->"+c);
         return 1;
     }
     else{
         int count = 0;
         count += tower_of_hanoi(n-1, steps, a, c, b);
-        steps.push_back(a+" "+c);
+        steps.push_back(a+"->"+c);
         count ++;
         count += tower_of_hanoi(n-1, steps, b, a, c);
         return count;
@@ -55,7 +55,11 @@ int main() {
     cin >> n;
     vector<string> steps;
     int count = tower_of_hanoi( n, steps, "1", "2", "3");
-    cout << count << endl;
+    for(int i = 0; i < steps.size(); i++){
+        cout << steps[i] << endl;
+    }
+    cout << "tot=" << count << endl;
     return 0;
+
 }
 
