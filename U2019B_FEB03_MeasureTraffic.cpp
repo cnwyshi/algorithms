@@ -4,8 +4,7 @@
 
 using namespace std;
 
-int main_measuer_traffic() {
-//int main() {
+int main() {
     ifstream ifs("traffic.in");
     ofstream ofs("traffic.out");
     int n, low, high, lowest = -100000, highest = 100000;

@@ -63,3 +63,10 @@ The second case is similar to the first.
 In the third case, the suspects are the third and fourth friends (we count from one). It can be shown that no one else could be the thief.
 In the fourth case, we know absolutely nothing, so we suspect everyone.
 */
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    return 0;
+}

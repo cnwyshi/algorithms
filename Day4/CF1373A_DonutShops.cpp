@@ -3,7 +3,7 @@
 using namespace std;
 
 // https://codeforces.com/problemset/problem/1373/A
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #define ll              long long
 #define ull             unsigned long long
 #define fastread()      (ios_base:: sync_with_stdio(false),cin.tie(NULL));

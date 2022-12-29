@@ -1,4 +1,7 @@
-//
-// Created by genius on 12/27/2022.
-//
+#include <bits/stdc++.h>
 
+using namespace std;
+
+int main() {
+    return 0;
+}
