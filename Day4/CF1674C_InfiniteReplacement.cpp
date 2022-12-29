@@ -3,6 +3,35 @@
 using namespace std;
 
 // https://codeforces.com/problemset/problem/1674/C
+#include <iostream>
+#include <string>
+
 int main() {
-    return 0;
+
+    long q;
+    std::cin >> q;
+    while (q--) {
+        std::string s, t;
+        std::cin >> s >> t;
+        long long res(1);
+        if (t.size() == 1 && t[0] == 'a') {
+            res = 1;
+        } else if (t.find("a") != std::string::npos) {
+            res = -1;
+        } else {
+            res = (1LL << s.size());
+        }
+        std::cout << res << std::endl;
+    }
 }
+
+/*
+3
+aaaa
+a
+aa
+abc
+a
+bc
+
+*/
