@@ -1,41 +1,47 @@
-#include <algorithm>
 #include <iostream>
-#include <vector>
-
 using namespace std;
 
+const int N = 5000005;
+int mint[N] = {0, 1};
+bool comp[N] = {false};
+int maxp[4] = {2, 1, 2, 3};
+
 int main() {
-    int n;
-    cin >> n;
-    long sum = 0;
-    vector<long> h(n);
-    for (int i = 0; i < n; i ++) {
-        cin >> h[i];
-        sum += h[i];
+    for(int i = 2; i < N; i++) {
+        if(!comp[i]) {
+            for(int j = i; j < N; j += i) {
+                comp[j] = true;
+            }
+            maxp[i % 4] = i;
+        }
+        mint[i] = (i - maxp[i % 4]) / 2 + 1;
     }
 
-    long avg = sum / n;
-    vector<vector<int>> graph(n);
-    for (int i = 0; i < n - 1; i ++) {
-        int a, b;
-        cin >> a >> b;
-        a --, b --;
-        graph[a].push_back(b);
+    int t, n;
+    cin >> t;
+    while(t--) {
+        cin >> n;
+        int ans = N, a;
+        for(int i = 0; i < n; i++) {
+            cin >> a;
+            if(mint[a] / 2 < ans / 2) {
+                ans = mint[a];
+            }
+        }
+        cout << (ans & 1 ? "Farmer John" : "Farmer Nhoj") << endl;
     }
-
-    return 0;
 }
 
 /*
+5
+1
 4
-2 1 4 5
-1 2
+1
+9
+2
 2 3
-2 4
-
-1(2)-2(1)-3(4)
-      \
-      4(5)
-1+2+4+5=12 / 4 = 3
-
+2
+7 10
+3
+4 9 4
 */
