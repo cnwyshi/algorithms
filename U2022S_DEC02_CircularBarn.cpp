@@ -2,7 +2,7 @@
 using namespace std;
 
 const int N = 5000005;
-int mint[N] = {0, 1};
+int turn[N] = {0, 1};
 bool comp[N] = {false};
 int maxp[4] = {2, 1, 2, 3};
 
@@ -14,7 +14,7 @@ int main() {
             }
             maxp[i % 4] = i;
         }
-        mint[i] = (i - maxp[i % 4]) / 2 + 1;
+        turn[i] = (i - maxp[i % 4]) / 2 + 1;
     }
 
     int t, n;
@@ -24,8 +24,8 @@ int main() {
         int ans = N, a;
         for(int i = 0; i < n; i++) {
             cin >> a;
-            if(mint[a] / 2 < ans / 2) {
-                ans = mint[a];
+            if(turn[a] / 2 < ans / 2) {
+                ans = turn[a];
             }
         }
         cout << (ans & 1 ? "Farmer John" : "Farmer Nhoj") << endl;
@@ -33,6 +33,10 @@ int main() {
 }
 
 /*
+1
+1
+9
+
 5
 1
 4
