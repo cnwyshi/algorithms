@@ -14,11 +14,12 @@ void dfs(int n, int curr, int i, int s, vector<string>& ops) {
         return;
     }
     ops[i] = "+";
-    dfs(n, i + 1, s, ops);
+    // TODO-Fix
+    dfs(n, curr, i + 1, s, ops);
     ops[i] = "-";
-    dfs(n, i + 1, s, ops);
+    dfs(n, curr, i + 1, s, ops);
     ops[i] = "";
-    dfs(n, i + 1, s, ops);
+    dfs(n, curr, i + 1, s, ops);
 }
 
 int main() {
