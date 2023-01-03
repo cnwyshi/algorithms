@@ -10,12 +10,12 @@ void dfs(vector<string>& matrix, int i, int j, int k, int d, int& ans) {
         ans ++;
         return;
     }
-    if (d == 1) {
-        dfs(matrix, i, j + 1, k, 1, ans);
-        dfs(matrix, i + 1, j, k - 1, 2, ans);
+    if (d == 0) {
+        dfs(matrix, i, j + 1, k, 0, ans);
+        dfs(matrix, i + 1, j, k - 1, 1, ans);
     } else {
-        dfs(matrix, i, j, k - 1, 1, ans);
-        dfs(matrix, i + 1, j, k, 2, ans);
+        dfs(matrix, i, j + 1, k - 1, 0, ans);
+        dfs(matrix, i + 1, j, k, 1, ans);
     }
 }
 
@@ -30,8 +30,8 @@ int main() {
             cin >> matrix[i];
         }
         int ans = 0;
-        dfs(matrix, 0, 1, k, 1, ans);   // right
-        dfs(matrix, 1, 0, k, 2, ans);   // down
+        dfs(matrix, 0, 1, k, 0, ans);   // right
+        dfs(matrix, 1, 0, k, 1, ans);   // down
         cout << ans << endl;
     }
 }
