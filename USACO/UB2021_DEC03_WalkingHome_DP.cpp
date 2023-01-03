@@ -21,7 +21,7 @@ int main() {
             dp[0][j][K][0] = 1;
         }
         for (int i = 0; i < n && matrix[i][0] == '.'; i++) {
-            dp[i][0][K][0] = 1;
+            dp[i][0][K][1] = 1;
         }
         for (int i = 1; i < n; i++) {
             for (int j = 1; j < n; j++) {
