@@ -4,7 +4,7 @@ using namespace std;
 
 void dfs(vector<string>& matrix, int i, int j, int k, int d, int& ans) {
     int n = matrix.size();
-    if (i >= n || j >= n || k < 0) {
+    if (i >= n || j >= n || k < 0 || matrix[i][j] == 'H') {
         return;
     } else if (i == n - 1 && j == n - 1) {
         ans ++;
@@ -30,8 +30,8 @@ int main() {
             cin >> matrix[i];
         }
         int ans = 0;
-        dfs(matrix, 0, 0, k, 1, ans);   // right
-        dfs(matrix, 0, 0, k, 2, ans);   // down
+        dfs(matrix, 0, 1, k, 1, ans);   // right
+        dfs(matrix, 1, 0, k, 2, ans);   // down
         cout << ans << endl;
     }
 }
