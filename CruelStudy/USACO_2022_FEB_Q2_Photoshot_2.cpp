@@ -3,51 +3,47 @@
 //
 
 #include <bits/stdc++.h>
+
 using namespace std;
-int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        int n = 0, ans = INT_MAX;
-        cin >> n;
-        vector<int> sleep(n);
-        int mx = 0, sum = 0;
-        for(int i = 0; i < n; i++){
-            cin >> sleep[i];
-            mx = max(mx, sleep[i]);
-            sum += sleep[i];
-        }
-        if(mx*n == sum){
-            cout << 0 << endl;
-            continue;
-        }
-        for(int a = mx; a <= sum; a++){
-            if(sum % a != 0){
-                continue;
-            }
-            int j = 0, tempsum = 0;
-            for(; j<n; j++){
-                tempsum += sleep[j];
-                if(tempsum == a){
-                    tempsum = 0;
-                }
-                if(tempsum > a){
-                    break;
-                }
-            }
-            if(j == n && tempsum == 0){
-                cout << n-sum/a << endl;
-                break;
-            }
+
+int main() {
+    int n, ans = 0;
+    cin >> n;
+    vector<int> start(n), end(n);
+    vector<bool> visited(n + 1);
+    for (int i = 0; i < n; i++) {
+        cin >> start[i];
+    }
+    for (int i = 0; i < n; i++) {
+        cin >> end[i];
+    }
+    for (int i = n - 1, j = n - 1; i >= 0;) {
+//        printf("%d %d %d\n", i, j, ans);
+        if (visited[end[j]]) {
+            j--;
+        } else if (start[i] != end[j]) {
+            visited[start[i]] = true;
+            ans++;
+            i--;
+        } else if (start[i] == end[j]) {
+            i--;
+            j--;
         }
     }
+    cout << ans << endl;
+    return 0;
 }
 /*
-3
-6
-1 2 3 1 1 1
-3
-2 2 3
 5
-0 0 0 0 0
+5 1 3 2 4
+4 5 2 1 3
+
+5
+i
+5 1 3 2 4
+    j
+4 5 2 1 3
+T F T F F
+ans = 1
+v = {}
  */

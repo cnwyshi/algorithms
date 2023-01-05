@@ -70,12 +70,9 @@ For the fifth test case, you can use the stamp as follows: WWW→WRB–––→
 For the sixth test case, you can use the stamp as follows: WWW→WRB–––→RB–––B.
 For the seventh test case, you don't need to use the stamp at all.
 */
-<<<<<<< HEAD:CF/CF_Q_07.cpp
 #include <bits/stdc++.h>
 
 using namespace std;
-=======
->>>>>>> 3e0eca4 (need main function for each cpp file):CF_Q_07.cpp
 
 int main() {
     return 0;

@@ -10,7 +10,7 @@ int main() {
     int n, ans = 0;
     cin >> n;
     vector<int> start(n), end(n);
-    vector<bool> visited(n + 1);
+    set<int> visited;
     for (int i = 0; i < n; i++) {
         cin >> start[i];
     }
@@ -19,10 +19,10 @@ int main() {
     }
     for (int i = n - 1, j = n - 1; i >= 0;) {
 //        printf("%d %d %d\n", i, j, ans);
-        if (visited[end[j]]) {
+        if (visited.find(end[j]) != visited.end()) {
             j--;
         } else if (start[i] != end[j]) {
-            visited[start[i]] = true;
+            visited.insert(start[i]);
             ans++;
             i--;
         } else if (start[i] == end[j]) {

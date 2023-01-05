@@ -1,32 +1,43 @@
+// Source: https://usaco.guide/general/io
+
 #include <bits/stdc++.h>
 using namespace std;
-void sort_books(){
-    int n, k;
-    cin >> n >> k;
-    vector<int> books (n);
-    vector<int> ans (k);
-    for(int i = 0; i < n; i ++){
-        char x;
-        cin >> x;
-        books[x-'a']++;
-    }
-    for(int i = 0; i < k; i++){
-        for(int j = 0; j < n; j ++){
-            books[j]--;
-            if(books[j] == 0){
-                char current = char(j+97);
-                ans.push_back(current);
-            }
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> digits;
+    bool endinzero = true;
+    while(n>0) {
+        int y = n % 10;
+        n = n / 10;
+        if (y > 0) {
+            endinzero = false;
+        }
+        if (!endinzero) {
+            digits.push_back(y);
         }
     }
-    for(int i = 0; i < k; i++){
-        cout << ans[i];
+    vector<int> version2(digits.size());
+    for(int i = 0; i < digits.size();i++){
+        version2[i] = digits[i];
+    }
+    bool palindrome = true;
+    reverse(digits.begin(), digits.end());
+    for(int i = 0; i < digits.size(); i++){
+        if(version2[i] != digits[i]){
+            palindrome = false;
+        }
+    }
+    if(palindrome == true){
+        cout << "YES" << endl;
+    }
+    else{
+        cout << "NO" << endl;
     }
 }
-int main(){
-    int t;
-    cin >> t;
-    for(int i = 0; i < t; i ++){
-        sort_books();
-    }
-}
+/*
+20102000
+20102
+00020102
+ */
