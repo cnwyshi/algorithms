@@ -7,16 +7,17 @@ using namespace std;
 int main() {
     int n, ans = INT_MAX;
     cin >> n;
-    vector<char> c(n);
-    vector<int> v(n);
+    vector<char> op(n);
+    vector<int> val(n);
     for (int i = 0; i < n; i ++) {
-        cin >> c[i] >> v[i];
+        cin >> op[i] >> val[i];
     }
 
     for (int i = 0; i < n; i ++) {
         int liars = 0;
+        // assume p = val[i], let's check op[j] and val[j]
         for (int j = 0; j < n; j ++) {
-            liars += c[j] == 'G' ? v[i] < v[j] : v[i] > v[j];
+            liars += op[j] == 'G' ? val[i] < val[j] : val[i] > val[j];
         }
         ans = min(ans, liars);
     }
