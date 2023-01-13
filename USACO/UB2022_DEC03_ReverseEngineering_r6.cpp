@@ -10,7 +10,7 @@ int main() {
     cin >> t;
     while (t -- > 0) {
         string s;
-        int n, m, r;
+        int n, m;
         cin >> n >> m;
         vector<string> b(m);
         vector<int> v(m);
@@ -20,9 +20,8 @@ int main() {
 
         set<int> rows;
         while (true) {
-            int last = rows.size();
+            bool change = false;
             for (int j = 0; j < n; j ++) {
-                int x = 0, y = 0;
                 vector<set<int>> count(2);
                 for (int i = 0; i < m; i ++) {
                     if (rows.find(i) == rows.end()) {
@@ -32,10 +31,11 @@ int main() {
                 for (int i = 0; i < m; i ++) {
                     if (count[b[i][j]-'0'].size() == 1) {
                         rows.insert(i);
+                        change = true;
                     }
                 }
             }
-            if (rows.size() == last || rows.size() == m) {
+            if (!change || rows.size() == m) {
                 break;
             }
         }
