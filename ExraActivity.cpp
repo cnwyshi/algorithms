@@ -31,10 +31,6 @@ int main() {
             }
         }
     }
-    if (all == true) {
-        cout << 0 << endl;
-        return 0;
-    }
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
             if (isLakeStart(farm, visited, i, j)) {
