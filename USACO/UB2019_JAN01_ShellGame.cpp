@@ -11,15 +11,16 @@ int main() {
     for (int i = 0; i < n; i ++) {
         cin >> change[i][0] >> change[i][1] >> change[i][2];
     }
-    for (int i = 0; i < 3; i ++) {
+    for (int i = 1; i < 4; i ++) {
         int correct = 0;
-        vector<int> shell(3);
-        shell[i] = 1;
-        for (int j = 0; j < n; j ++) {
-            int a = change[j][0], b = change[j][1], g = change[j][2], t = shell[a];
-            shell[a] = shell[b];
-            shell[b] = t;
-            if (shell[g] == 1) {
+        for (int j = 0, c = i; j < n; j ++) {
+            int a = change[j][0], b = change[j][1];
+            if (c == a) {
+                c = b;
+            } else if (c == b) {
+                c = a;
+            }
+            if (c == change[j][2]) {
                 correct ++;
             }
         }
