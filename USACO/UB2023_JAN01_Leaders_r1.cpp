@@ -1,63 +1,42 @@
 #include<bits/stdc++.h>
-#define int long long
 using namespace std;
-const int N=1e5+10;
-int a[N];
+
 signed main() {
-    int n;
-    cin >> n;
-    string st;
-    cin >> st;
-    st = ' ' + st;
-    int g = 0, h = 0, G = 0, H = 0;
-    for (int i = 1; i < st.size(); i++) {
-        if (st[i] == 'G' && !g)g = i;
-        else if (st[i] == 'H' && !h)h = i;
+    int n, ans = 0;
+    string s;
+    cin >> n >> s;
+    vector<int> e(n);
+    for (int i = 0; i < n; e[i++]--) {
+        cin >> e[i];
     }
-    for (int i = st.size() - 1; i >= 1; i--) {
-        if (st[i] == 'G' && !G)G = i;
-        else if (st[i] == 'H' && !H)H = i;
-    }
-    for (int i = 1; i <= n; i++) {
-        cin >> a[i];
-    }
-    char ch;
-    int ans = 0;
-    bool gg = 0, hh = 0;
-    for (int i = 1; i <= n; i++) {
-        if (st[i] == 'G') {
-            if (a[i] >= h && i <= h && a[h] >= H) {
-                ans++;
-                if (i == g)gg = 1;
-            }
-        }
-        if (st[i] == 'H') {
-            if (a[i] >= g && i <= g && a[g] >= G) {
-                ans++;
-                if (i == h)hh = 1;
+    int fg = s.find("G"), fh = s.find("H"), lg = s.rfind("G"), lh = s.rfind("H");
+    if (e[fg] >= lg) {                              // HHGGGH
+        for (int i = fh; i < fg; i ++) {
+            if (s[i] == 'H' && e[i] >= fg) {
+                ans ++;
             }
         }
     }
-    if(a[g]>=G&&a[h]>=H&&!gg&&!hh)ans++;
-    cout<<ans;
+    if (e[fh] >= lh) {                              // GGHHHG
+        for (int i = fg; i < fh; i ++) {
+            if (s[i] == 'G' && e[i] >= fh) {
+                ans ++;
+            }
+        }
+    }
+    if (e[fg] >= lg && e[fh] >= lh && (e[fg] < fh || e[fh] < fg)) {     // GGGHHH, HHHGGG
+        ans++;
+    }
+    cout << ans;
 }
 
-//int main() {
-//    int n;
-//    string s;
-//    cin >> n >> s;
-//    vector<int> e(n);
-//    for (int i = 0; i < n; i ++) {
-//        cin >> e[i];
-//    }
-//
-//
-//}
 
+// https://www.acwing.com/file_system/file/content/whole/index/content/7970987/
 /*
 4
 GHHG
 2 4 3 4
+
 
 SAMPLE OUTPUT:
 1
@@ -67,6 +46,20 @@ SAMPLE INPUT:
 GGH
 2 3 3
 
+GG
+GH
+H
 SAMPLE OUTPUT:
 2
+
+4
+GHGH
+4 4 4 4
+1
+
+GHGH
+HGH
+GH
+H
+
 */
