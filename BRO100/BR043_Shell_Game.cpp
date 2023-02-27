@@ -7,8 +7,6 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-
-    // shell_at_position[i] stores the label of the shell located at position i
     vector<int> shell_at_position(3);
     // Place the shells down arbitrarily
     for (int i = 0; i < 3;i++) {

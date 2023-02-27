@@ -1,5 +1,5 @@
-#include <bits/stdc++.h>
-
+#include <iostream>
+#include <vector>
 using namespace std;
 
 void dfs(vector<vector<int>> &f, int p, int i, vector<bool> &visited) {

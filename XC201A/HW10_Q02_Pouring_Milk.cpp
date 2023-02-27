@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+
 using namespace std;
 int a;
 int b;
@@ -41,10 +42,9 @@ int main() {
     dfs(0, 0);
     for (int v = 20; v >= 0; v--)
         if (matrix[0][v]) {
-            if (v==0) {
+            if (v == 0) {
                 cout << c << endl;
-            }
-            else
-                cout << c - v << ' ' ;
+            } else
+                cout << c - v << ' ';
         }
 }
