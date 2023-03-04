@@ -6,4 +6,4 @@ for i in os.listdir('.'):
     j = j.replace('Dec', 'DEC')
     j = j.replace('_0', '0')
     print(i + ' -> ' + j)
-    os.rename(i, j)
+    # os.rename(i, j)

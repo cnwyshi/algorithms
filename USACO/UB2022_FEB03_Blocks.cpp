@@ -1,71 +1,65 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+bool perm(array<string, 4> blocks){
+    string s;
+    cin >> s;
+    int n = s.size();
+    while(next_permutation(blocks.begin(), blocks.end())){
+        bool good = true;
+        for(int i = 0; i < n; i++){
+            if(find(blocks[i].begin(), blocks[i].end(), s[i]) == blocks[i].end()){
+                good = false;
+            }
+        }
+        if(good){
+            return true;
+        }
+    }
+    return false;
+}
 int main() {
-
+    int t;
+    cin >> t;
+    array<string, 4> blocks;
+    for (int i = 0; i < 4; i++){
+        cin >> blocks[i];
+    }
+    sort(blocks.begin(), blocks.end());
+    for (int i = 0; i < t; i++) {
+        bool b = perm(blocks);
+        if(b) {
+            cout << "YES" << endl;
+        } else {
+            cout << "NO" << endl;
+        }
+    }
 }
 /*
-void permutation(vector<string>& lines, int j, vector<bool> &visited, vector<int>& seq, vector<string>& words) {
-    int n = lines.size();
+10
+DDLGFL
+LAUDJE
+QOGROU
+SXBCND
+EGQC
+DDYQ
+FGLC
+SAQ
+JDGS
+PZHV
+EDQL
+LDQN
+WROF
+DJOS
 
-    if (j == n) {
-        string s;
-        for (int i = 0; i < n; i ++) {
-            
-        }
-        for (int i = 0; i < n; i++) {
-            s +=
-            cout << nums[i] << " ";
-        }
-        return;
-    }
-    for (int i = 0; i < n; i++) {
-        if (visited[i] == 0) {
-            visited[i] = 1;
-            seq[j] = i;
-            permutation(lines, j + 1, visited, seq, words);
-            visited[i] = 0;
-        }
-    }
-}
-
-int main() {
-    int n;
-    cin >> n;
-    vector<string> line(4);
-    for (int i = 0; i < n; i ++) {
-        cin >> line[i];
-    }
-    vector<string> words;
-    permute(line, )
-    int m, n;
-    cin >> m >> n;
-    vector<int> visited(m);
-    vector<int> nums(n);
-    permutations(m, nums, 0, visited);
-}
-
-
-输入样例：
-6
-MOOOOO
-OOOOOO
-ABCDEF
-UVWXYZ
-COW
-MOO
-ZOO
-MOVE
-CODE
-FARM
-
-输出样例：
+YES
+NO
+YES
+YES
 YES
 NO
 YES
 YES
 NO
-NO
-
+YES
 
 */
