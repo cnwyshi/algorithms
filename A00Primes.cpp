@@ -12,7 +12,7 @@ using namespace std;
 // Solution 0: Brute Force
 // Time: O(N^2)
 // Space: O(1)
-vector<int> PrimeBruteForce(int n) {
+vector<int> sieveBruteForce(int n) {
     vector<int> ans;
     for (int v = 2; v <= n; v++) {
         bool prime = true;
@@ -32,7 +32,7 @@ vector<int> PrimeBruteForce(int n) {
 // Solution 1: Smart
 // Time: O(N*Sqrt(N))
 // Space: O(1)
-vector<int> PrimeSmart(int n) {
+vector<int> sieveSmart(int n) {
     vector<int> ans;
     for (int v = 2; v <= n; v++) {
         bool prime = true;
@@ -52,7 +52,7 @@ vector<int> PrimeSmart(int n) {
 // Solution 2: Eratosthenes
 // Time: O(N*LogLogN)
 // Space: O(N)
-vector<int> SieveOfEratos(int n) {
+vector<int> sieveEratos(int n) {
     vector<int> prime(n + 1, 1), ans;
     for (int f = 2; f <= n; f++) {
         if (prime[f]) {
