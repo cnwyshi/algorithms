@@ -1,4 +1,11 @@
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+#include <map>
+#include <cmath>
+#include <set>
+#include <algorithm>
+#include <iostream>
+
 using namespace std;
 //You can move up, down, top-left, bottom-right for each one step.
 int dx[4] = {1, -1, 1, -1};

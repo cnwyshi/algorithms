@@ -1,4 +1,11 @@
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+#include <map>
+#include <cmath>
+#include <set>
+#include <algorithm>
+#include <iostream>
+
 using namespace std;
 bool perm(array<string, 4> blocks){
     string s;

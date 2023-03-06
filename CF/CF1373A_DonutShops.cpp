@@ -1,9 +1,23 @@
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+#include <map>
+#include <cmath>
+#include <set>
+#include <algorithm>
+#include <iostream>
+
 
 using namespace std;
 
 // https://codeforces.com/problemset/problem/1373/A
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+#include <map>
+#include <cmath>
+#include <set>
+#include <algorithm>
+#include <iostream>
+
 
 #define ll              long long
 #define ull             unsigned long long

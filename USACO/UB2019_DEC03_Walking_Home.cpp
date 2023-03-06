@@ -2,7 +2,14 @@
 // Created by genius on 1/2/2023.
 //
 
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+#include <map>
+#include <cmath>
+#include <set>
+#include <algorithm>
+#include <iostream>
+
 using namespace std;
 void dfs(vector<vector<char>>& maze, int turns, int k, int n, int& ans, int i, int j, char cur){
     if(turns > k || i >= n || j >= n || maze[i][j] == 'H'){

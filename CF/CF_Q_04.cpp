@@ -1,7 +1,14 @@
 //
 // Created by genius on 12/26/2022.
 //
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+#include <map>
+#include <cmath>
+#include <set>
+#include <algorithm>
+#include <iostream>
+
 using namespace std;
 int t,n;
 void check(){

@@ -2,7 +2,14 @@
 // Created by genius on 1/3/2023.
 //
 
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+#include <map>
+#include <cmath>
+#include <set>
+#include <algorithm>
+#include <iostream>
+
 using namespace std;
 int main(){
     int t;

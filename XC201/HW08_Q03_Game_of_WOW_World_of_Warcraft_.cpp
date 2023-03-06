@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <cmath>
+#include <set>
 using namespace std;
 int R, C;
 vector<vector<char> > maze;

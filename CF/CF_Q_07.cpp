@@ -70,7 +70,14 @@ For the fifth test case, you can use the stamp as follows: WWW→WRB–––→
 For the sixth test case, you can use the stamp as follows: WWW→WRB–––→RB–––B.
 For the seventh test case, you don't need to use the stamp at all.
 */
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+#include <map>
+#include <cmath>
+#include <set>
+#include <algorithm>
+#include <iostream>
+
 
 using namespace std;
 
