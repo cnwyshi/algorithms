@@ -1,6 +1,7 @@
 // Source: https://usaco.guide/general/io
 
 #include <iostream>
+#include <fstream>
 #include <vector>
 using namespace std;
 

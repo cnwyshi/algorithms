@@ -2,6 +2,7 @@
 //O>E+1 O = O - 2, E++
 //E > O+1,E = 0+1
 #include <iostream>
+#include <fstream>
 using namespace std;
 int main(){
     int O = 0, E = 0, N, x;

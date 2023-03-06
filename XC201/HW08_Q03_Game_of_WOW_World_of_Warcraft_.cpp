@@ -1,8 +1,11 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <map>
 #include <cmath>
 #include <set>
+#include <queue>
+#include <array>
 using namespace std;
 int R, C;
 vector<vector<char> > maze;

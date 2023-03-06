@@ -5,8 +5,11 @@
 #include <map>
 #include <cmath>
 #include <set>
+#include <queue>
+#include <array>
 #include <algorithm>
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 //You can move up, down, top-left, bottom-right for each one step.

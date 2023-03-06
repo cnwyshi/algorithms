@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <fstream>
 using namespace std;
 #define MAX_N 12
 

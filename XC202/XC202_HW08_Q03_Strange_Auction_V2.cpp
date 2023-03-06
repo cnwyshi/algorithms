@@ -1,7 +1,10 @@
 #include <iostream>
+#include <fstream>
 #include <map>
 #include <cmath>
 #include <set>
+#include <queue>
+#include <array>
 using namespace std;
 int dfs(int current, int& l, int& a, int& b, map<int, int>& mem){
     if(current < l){

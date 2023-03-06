@@ -7,8 +7,11 @@
 #include <map>
 #include <cmath>
 #include <set>
+#include <queue>
+#include <array>
 #include <algorithm>
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 void dfs(vector<vector<char>>& maze, int turns, int k, int n, int& ans, int i, int j, char cur){

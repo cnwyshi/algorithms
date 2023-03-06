@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 using namespace std;
 void dfs(int n, int p, int i, int s, vector<char>& ops) {

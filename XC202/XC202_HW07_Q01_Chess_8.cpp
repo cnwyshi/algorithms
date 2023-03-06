@@ -1,10 +1,15 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <queue>
 #include <map>
 #include <cmath>
 #include <set>
+#include <queue>
+#include <array>
 #include <set>
+#include <queue>
+#include <array>
 using namespace std;
 int main() {
     string board;

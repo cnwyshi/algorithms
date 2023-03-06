@@ -2,6 +2,7 @@
 // Created by genius on 2/14/22.
 //
 #include <iostream>
+#include <fstream>
 using namespace std;
 int main(){
     int bronzeBefore;

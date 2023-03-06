@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 // check if the cow ch won in any row or column or diagonal

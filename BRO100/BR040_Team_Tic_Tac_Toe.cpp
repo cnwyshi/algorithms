@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 using namespace std;
 bool check_single_cow_winner(char ch, const vector<string> &board) {
