@@ -30,6 +30,8 @@ int countFactors(int x) {
 }
 
 int countFactors2(int x) {
+
+    // Time: O(N)?
     vector<int> spf(x + 1);
     for (int i = 2; i <= x; i++) {
         if (spf[i] == 0) {
