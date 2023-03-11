@@ -29,6 +29,8 @@ int countFactors(int x) {
     return ans;
 }
 
+
+// Time: O(LogN)
 int countFactors2(int x) {
 
     // Time: O(N)?
@@ -43,7 +45,6 @@ int countFactors2(int x) {
         }
     }
 
-    // Time: O(LogN)
     int ans = 1;
     while (x != 1) {
         int prime = spf[x];

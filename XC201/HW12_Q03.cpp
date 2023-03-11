@@ -10,7 +10,7 @@ void dfs(int x, int y, int dir, int turns, int &ans, vector<vector<int>> &maze, 
     if(turns > ans){
         return;
     }
-    cout << turns << " " << x << " " << y << " " << dir << endl;
+//    cout << turns << " " << x << " " << y << " " << dir << endl;
     if (x == end_x - 1 && y == end_y - 1) {
         if (turns < ans) {
             ans = turns;
