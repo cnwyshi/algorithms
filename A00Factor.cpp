@@ -42,16 +42,8 @@ int countFactors2(int x) {
             }
         }
     }
-    for (int i = 2; i <= x; i++) {
-        cout << i << " ";
-    }
-    cout << endl;
-    for (int i = 2; i <= x; i++) {
-        cout << spf[i] << " ";
-    }
-    cout << endl;
 
-        // Time: O(LogN)
+    // Time: O(LogN)
     int ans = 1;
     while (x != 1) {
         int prime = spf[x];
@@ -66,7 +58,7 @@ int countFactors2(int x) {
 }
 
 int main() {
-    for (int f : primeFactor(120)) {
+    for (int f: primeFactor(120)) {
         cout << f << " ";
     }
     cout << endl;
