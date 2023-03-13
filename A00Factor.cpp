@@ -32,6 +32,8 @@ int countFactors(int x) {
 int countFactors2(int x) {
 
     // Time: O(N)?
+    // v:   2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+    // spf: 2 3 2 5 3 7 2 3  5 11  3 13  7  5  2 17  3 19  5
     vector<int> spf(x + 1);
     for (int i = 2; i <= x; i++) {
         if (spf[i] == 0) {
@@ -40,8 +42,16 @@ int countFactors2(int x) {
             }
         }
     }
+    for (int i = 2; i <= x; i++) {
+        cout << i << " ";
+    }
+    cout << endl;
+    for (int i = 2; i <= x; i++) {
+        cout << spf[i] << " ";
+    }
+    cout << endl;
 
-    // Time: O(LogN)
+        // Time: O(LogN)
     int ans = 1;
     while (x != 1) {
         int prime = spf[x];
@@ -60,6 +70,6 @@ int main() {
         cout << f << " ";
     }
     cout << endl;
-    cout << countFactors(120) << endl;
-    cout << countFactors2(120) << endl;
+    cout << countFactors(20) << endl;
+    cout << countFactors2(20) << endl;
 }
