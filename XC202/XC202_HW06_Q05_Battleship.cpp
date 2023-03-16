@@ -3,10 +3,10 @@ using namespace std;
 // You can move up, down, top-left, bottom-right for each one step.
 int dx[4] = {1, -1, 0, 0};
 int dy[4] = {0, 0, 1, -1};
+char grid[1000][1000];
 int main() {
     int n, m, lakes = 0;
     cin >> n >> m;
-    vector<vector<char>> grid(n, vector<char>(n));
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             cin >> grid[i][j];
