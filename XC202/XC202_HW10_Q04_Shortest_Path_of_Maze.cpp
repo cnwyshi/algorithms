@@ -1,49 +1,62 @@
-// Source: https://usaco.guide/general/io
-
-#include <iostream>
-#include <fstream>
-#include <queue>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
-//You can move up, down, top-left, bottom-right for each one step.
-int dx[8] = {2, 2, -2, -2, 1, 1, -1, -1};
-int dy[8] = {1, -1, -1, 1, 2, -2, 2, -2};
+int dx[4] = {1, -1, 0, 0};
+int dy[4] = {0, 0, 1, -1};
 int main() {
-    int n, sx, sy, ex, ey;
-    cin >> n >> sx >> sy >> ex >> ey;
+    int n, m, sx, sy, ex, ey;
+    cin >> n >> m;
     queue<pair<int, int>> q;
-    vector<vector<bool>> visited(n, vector<bool>(n));
+    vector<vector<char>> grid(n, vector<char>(m));
+    vector<vector<bool>> visited(n, vector<bool>(m));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> grid[i][j];
+            if(grid[i][j] == 'S'){
+                sx = i;
+                sy = j;
+            }
+            if(grid[i][j] == 'G'){
+                ex = i;
+                ey = j;
+            }
+        }
+    }
+//    for(int i = 0; i < n; i++){
+//        for(int j = 0; j < m; j++){
+//            cout << grid[i][j] << " ";
+//        }
+//        cout << endl;
+//    }
     q.push(make_pair(sx, sy));
     visited[sx][sy] = true;
     int steps = 0;
     for(; !q.empty(); steps++){
-        // cout << steps << " " << q.size() << endl;
-        for(int s = q.size(); s > 0; s--){
+        for(int z = q.size(); z > 0; z--){
             int cx = q.front().first, cy = q.front().second;
-            // cout << cx << " " << cy << endl;
+            if(cx == ex && cy == ey){
+                cout << steps << "\n";
+                return 0;
+            }
             q.pop();
-            for(int i = 0; i < 8; i++){
+            for(int i = 0; i < 4; i++){
                 int nx = cx + dx[i], ny = cy + dy[i];
-                // cout << nx << " " << ny << endl;
-                // cout << n << " " << m << endl;
-                // cout << sx << " " << sy << endl;
-                // cout << (nx >= 0 && ny >= 0 && nx < n && ny < m) << " " << (!visited[nx][ny]) << endl;
-                if(nx >= 0 && ny >= 0 && nx < n && ny < n && !visited[nx][ny]){
+//                if(nx >= 0 && ny >= 0 && nx < n && ny < m){
+//                    cout << cx << " " << cy << " " << nx << " " << ny << grid[nx][ny] << " " << visited[nx][ny] << endl;
+//                }
+                if(nx >= 0 && ny >= 0 && nx < n && ny < m && grid[nx][ny] != '#' && visited[nx][ny] != true){
                     q.push(make_pair(nx, ny));
-                    if(nx == ex && ny == ey){
-                        cout << steps+1 << endl;
-                    }
-                    // cout << nx << " " << ny << endl;
                     visited[nx][ny] = true;
                 }
             }
         }
     }
+    cout << -1 << "\n";
 }
 /*
-3 3 1 1
-
-0    3    2
-3    -1   1
-2    1    4
-*/
+6 7
+#S#####
+#...#.#
+#.#.#.#
+#.#...G
+#...#.#
+#######*/
