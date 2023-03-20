@@ -11,30 +11,36 @@ int main(){
         graph[a].push_back(b);
         graph[b].push_back(a);
     }
-    queue<vector<int>> q;
-    q.push({1});
+    vector<int> parent(n+1);
+    parent[1] = -1;
+    queue<int> q;
+    q.push(1);
     vis[1] = 1;
     while(!q.empty()){
-        vector<int> crt = q.front();
+        int i = q.front();
         q.pop();
-        int i = crt.back();
 //        for(int k: crt){
 //            cout << k << " ";
 //        }
 //        cout << endl;
         if(i == n){
-            cout << crt.size() << endl;
-            for(int v: crt){
-                cout << v << " ";
+            stack<int> st;
+            for(int p = n; p != -1; p = parent[p]){
+                st.push(p);
             }
+            cout << st.size() << endl;
+            while(!st.empty()){
+                cout << st.top() << " ";
+                st.pop();
+            }
+            cout << endl;
             return 0;
         }
         for(int j: graph[i]){
-            vector<int> copy = crt;
             if(vis[j] != 1){
-                copy.push_back(j);
-                q.push(copy);
+                q.push(j);
                 vis[j] = 1;
+                parent[j] = i;
             }
         }
     }
