@@ -18,6 +18,7 @@ vector<int> primeFactor(int n) {
 }
 
 // Time: O(sqrt(N))
+// N*Sqrt(N) = 1B = 10^9 for 1M numbers
 int countFactors(int x) {
     int ans = 0;
     for (int i = 1; i * i <= x; i++) {
@@ -28,12 +29,12 @@ int countFactors(int x) {
     return ans;
 }
 
-
+// O(N*LogLogN + N*LogN) = 20M = 2*10^7 for 1M numbers
 int countFactors2(int x) {
 
-    // Time: O(NLogLogN)?
+    // Time: O(N*LogLogN)
     // v:   2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
-    // spf: 2 3 2 5 3 7 2 3  5 11  3 13  7  5  2 17  3 19  5
+    // spf: 2 3 2 5 3 7 2 3  5 11  2 13  2  3  2 17  3 19  5
     vector<int> spf(x + 1);
     for (int i = 2; i <= x; i++) {
         if (spf[i] == 0) {
