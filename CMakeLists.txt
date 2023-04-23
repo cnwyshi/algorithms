@@ -3,7 +3,7 @@ project(algorithms)
 
 set(CMAKE_CXX_STANDARD 14)
 
-file(GLOB files *.cpp BRO100/*.cpp XC201PRE/*.cpp XC201/*.cpp XC202/*.cpp CF/*.cpp USACO/*.cpp Sliver/*.cpp HPI/*.cpp TeamCode_2023/*.cpp)
+file(GLOB files *.cpp BRO100/*.cpp XC201PRE/*.cpp XC201/*.cpp XC202/*.cpp CF/*.cpp USACO/*.cpp Sliver/*.cpp HPI/*.cpp 300C/*.cpp)
 foreach (file ${files})
     string(REGEX REPLACE ".+/(.+)\\..*" "\\1" exe ${file})
     add_executable(${exe} ${file})
