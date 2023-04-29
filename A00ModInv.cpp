@@ -27,13 +27,14 @@ vector<int> ExtGCD(int a, int b) {
 // https://oi-wiki.org/math/number-theory/linear-equation/
 // https://cp-algorithms.com/algebra/module-inverse.html#finding-the-modular-inverse-using-extended-euclidean-algorithm
 /* xy = 1 (mod m)
+ * 3y = 1 (mod 5), y = inv(3, 5) = 2
  *
- * xa = 1 (mod b)
- * xa + by = 1
+ * ax = 1 (mod b), x = inv(a, b)
+ * ax + by = 1
  *
 */
-int inv(int x, int m) {
-    return (ExtGCD(x, m)[0] % m + m) % m;
+int inv(int a, int m) {
+    return (ExtGCD(a, m)[0] % m + m) % m;
 }
 
 int main() {
@@ -46,7 +47,9 @@ int main() {
     {
         cout << inv(3, 10) << endl;
     }
-
+    {
+        cout << inv(3, 5) << endl;
+    }
 
 }
 
