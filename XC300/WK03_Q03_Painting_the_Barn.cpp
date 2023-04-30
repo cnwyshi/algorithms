@@ -1,15 +1,18 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 int ps[1000][1001];
-int main(){
+
+int main() {
     int n, k;
     cin >> n >> k;
     while(n--){
-        int a, b, c, d;
-        cin >> a >> b >> c >> d;
-        for(int i = a; i < c; i++){
-            ps[i][b]++;
-            ps[i][d]--;
+        int x1, x2, y1, y2;
+        cin >> x1 >> y1 >> x2 >> y2;
+        for(int i = x1; i < x2; i++){
+            ps[i][y1]++;
+            ps[i][y2]--;
         }
     }
     int ans = 0;
@@ -18,14 +21,14 @@ int main(){
             if(ps[i][j] == k){
                 ans++;
             }
-            ps[i][j+1]+=ps[i][j];
+            ps[i][j+1] += ps[i][j];
         }
     }
-    cout << ans << endl;
+    cout << ans;
 }
+
 /*
 3 2
 1 1 5 5
 4 4 7 6
-3 3 8 7
-*/
+3 3 8 7*/
