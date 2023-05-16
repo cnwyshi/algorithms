@@ -1,14 +1,4 @@
-#include <vector>
-#include <string>
-#include <map>
-#include <cmath>
-#include <set>
-#include <queue>
-#include <array>
-#include <algorithm>
-#include <iostream>
-#include <fstream>
-
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
