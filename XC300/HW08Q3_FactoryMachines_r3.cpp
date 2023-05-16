@@ -15,13 +15,13 @@ int main() {
     }
 
     // find first available =
-    ll lo = 0, hi = 1e13;
+    ll lo = 0, hi = 1e18;
     while (lo < hi) {
         ll mid = (lo + hi) / 2, sum = 0;
-        for (int v : m) {
-            sum += mid / v;
+        for (int i = 0; i < n && sum < t; i ++) {
+            sum += mid / m[i];
         }
-        printf("lo = %lld, hi = %lld, mid = %lld, sum = %lld, t = %lld\n", lo, hi, mid, sum, t);
+        // printf("lo = %lld, hi = %lld, mid = %lld, sum = %lld, t = %lld\n", lo, hi, mid, sum, t);
         if (sum < t) {
             lo = mid + 1;
         } else {
@@ -32,6 +32,9 @@ int main() {
 }
 
 /*
+1 1000000000
+1000000000
+
 hi * 2^10^5
 5 * 10^13
 10 10
