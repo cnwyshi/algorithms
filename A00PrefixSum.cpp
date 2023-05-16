@@ -18,7 +18,7 @@ int main() {
     vector<vector<int>> prefix(m, vector<int>(n));
     for(int i = 0; i < m; i++){
         for(int j = 0; j < n; j++){
-            prefix[i+1][j+1] =
+            prefix[i+1][j+1] = 0;
         }
     }
     print(prefix);
