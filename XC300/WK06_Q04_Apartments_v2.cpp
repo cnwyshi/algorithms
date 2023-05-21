@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
     int n, m, k;
     cin >> n >> m >> k;
     // (-∞, x-1] + [x, ∞)
@@ -24,24 +26,15 @@ int main() {
     sort(desired.begin(), desired.end());
     int ans = 0;
     for(int i : desired){
-        multiset<int>::iterator it1 = size.lower_bound(i);
-        multiset<int>::iterator it2 = size.lower_bound(i);
-//        cout << i << " " << *it1 << " " << *it2 << endl;
-        bool found = false;
-        if(*it2 - i <= k){
-            ans++;
-            size.erase(it1);
-            found = true;
-        }
-        if(it2 != size.begin() && !found){
-            it2--;
-            if(abs(*it2 - i) <= k){
+        multiset<int>::iterator it = size.lower_bound(i-k);
+        if(it != size.end()){
+            if(abs(*it - i) <= k){
                 ans++;
-                size.erase(it2);
+                size.erase(*it);
             }
         }
     }
-    cout << ans << endl;
+    cout << ans << '\n';
 }
 /*
 4 3 5

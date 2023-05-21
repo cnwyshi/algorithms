@@ -16,6 +16,7 @@ int main(){
 //    freopen("/Users/genius/Downloads/sample\\ (47).in", "r", stdin);
     int n, a, b;
     cin >> n >> a >> b;
+//    cout << n << endl;
     vector<int> nums(n);
     for(int i = 0; i < n; i++){
         cin >> nums[i];
@@ -25,22 +26,34 @@ int main(){
         prefix[i+1] = prefix[i]+nums[i];
     }
 //    print(prefix);
-    long long ans = 0;
+    long long ans = LONG_LONG_MIN;
     multiset<long long> m;
     for(int i = a; i <= n; i++){
-        m.insert(prefix[i-a]);
+//        cout << i << endl;
+        if(i > b){
+            m.erase(m.find(prefix[i-b-1]));
+        }
 //        cout << __LINE__ << endl;
+        m.insert(prefix[i-a]);
 //        cout << __LINE__ << endl;
 //        print(m);
         ans = max(ans, prefix[i] - *m.begin());
-        if(i >= b){
-            m.erase(m.find(prefix[i-b]));
-        }
 //        cout << i << ": " << prefix[i] << " " << *m.begin() << " " << prefix[i] - *m.begin() << endl;
     }
     cout << ans << endl;
 }
 /*
+
+10 7 7
+-22 0 78 -48 94 68 -7 -73 8 62
+
+
+0 -22 -22 56 8 102 170 163 90 98 160
+7
+0
+
+ i = 7, m = {0}, w = prefix[7] - prefix[0] = 163
+ i = 8, m = {0, -22},m.erase(prefix[i-b-1] w = prefix[8] - prefix[1] = 112;
 Input:
 8 1 2
 -1 3 -2 5 3 -5 2 2
@@ -81,4 +94,6 @@ i = 1 multiset.insert(prefix[i-a]) = {0} ans = max(ans, prefix[i] - multiset.beg
 i = 2 multiset.insert(prefix[i-a]) = {0, 1} ans = max(ans, prefix[i] - multiset.begin()) = 3
 i = 3 multiset.insert(prefix[i-a]) = {0, 1, 3}
 ans = max(ans, prefix[i] - multiset.begin()) = 6
+
+7868190130M
 */

@@ -1,52 +1,71 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-void print(vector<int>& nums) {
-    for (int v : nums) {
-        cout << v << " ";
+void print(vector<long long>& v) {
+    for (long long x : v) {
+        cout << x << " ";
     }
     cout << endl;
 }
-
-// 53ms
-int main() {
-    int n, k, ans = 0;
-    cin >> n >> k;
-    vector<int> nums(n), left(n), right(n + 1);
-    for (int i = 0; i < n; i ++) {
+void print(multiset<long long>& m) {
+    for (long long x : m) {
+        cout << x << " ";
+    }
+    cout << endl;
+}
+int main(){
+    freopen("/Users/genius/Downloads/sample\\ (47).in", "r", stdin);
+    int n, a, b;
+    cin >> n >> a >> b;
+    vector<int> nums(n);
+    for(int i = 0; i < n; i++){
         cin >> nums[i];
     }
-    sort(nums.begin(), nums.end());
-
-    for (int i = 0, j = 0; i < n; i ++) {
-        for ( ; j < n && nums[j] - nums[i] <= k; j ++) {
+    vector<long long> prefix(n+1);
+    for(int i = 0; i < n; i++){
+        prefix[i+1] = prefix[i]+nums[i];
+    }
+//    print(prefix);
+    long long ans = 0;
+    multiset<long long> m;
+    for(int i = a; i <= n; i++){
+        m.insert(prefix[i-a]);
+        cout << __LINE__ << endl;
+        if(i > b){
+            m.erase(m.find(prefix[i-b-1]));
         }
-        left[i] = j - i;
-    }
-
-    for (int i = n - 1; i >= 0; i--) {
-        right[i] = max(right[i + 1], left[i]);
-    }
-
-    for (int i = 0; i < n; i ++) {
-        ans = max(ans, left[i] + right[i + left[i]]);
+        cout << __LINE__ << endl;
+        cout << i << ": ";
+//        print(m);
+        ans = max(ans, prefix[i] - *m.begin());
+//        cout << i << ": " << prefix[i] << " " << *m.begin() << " " << prefix[i] - *m.begin() << endl;
     }
     cout << ans << endl;
-    return 0;
 }
-
 /*
-SAMPLE INPUT:
-7 3
-10
-5
-1
-12
-9
-5
-14
+200000 145842 147414
 
+10 7 7
+-22 0 78 -48 94 68 -7 -73 8 62
 
-SAMPLE OUTPUT:
-5
+-22 0 78 -48 94 68 -7 -73 8 62
+
+ 0 -22 -22 56 8 102 170 163 90 98 160
+ 160 - 8 = 152
+8 1 2
+-1 3 -2 5 3 -5 2 2
+
+0 -1 2 0 5 8 3 5 7
+
+i = a = 1 multiset.insert(prefix[i - a]) = {0} ans = max(ans, prefix[i] - multiset.begin()) = -1
+i = 2 multiset.insert(prefix[i-a]) = {0, -1} ans = max(ans, prefix[i] - multiset.begin()) = 2 - (-1) = 3
+i = 3 multiset.insert(prefix[i-a]) = {0, -1, 2} ans = max(ans, prefix[i] - multiset.begin() = 0 - (-1) = 1
+
+4 1 2
+1 2 3 4
+
+0 1 3 6 10
+i = 1 multiset.insert(prefix[i-a]) = {0} ans = max(ans, prefix[i] - multiset.begin()) = 1
+i = 2 multiset.insert(prefix[i-a]) = {0, 1} ans = max(ans, prefix[i] - multiset.begin()) = 3
+i = 3 multiset.insert(prefix[i-a]) = {0, 1, 3}
+ans = max(ans, prefix[i] - multiset.begin()) = 6
 */

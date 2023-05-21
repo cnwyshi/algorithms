@@ -1,63 +1,45 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main(){
-    int n, k;
-    cin >> n >> k;
-    vector<int> nums(n);
-    for(int i = 0; i < n; i++){
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n, t;
+    cin >> n >> t;
+    int nums[n];
+    for (int i = 0; i < n; ++i) {
         cin >> nums[i];
     }
-    map<int, int> count;
-    long long ans = 0;
-    for(int i = 0, j = 0; j < n; j++){
-        count[nums[j]]++;
-        while(count.size() > k){
-            count[nums[i]]--;
-            if(count[nums[i]] == 0){
-                count.erase(nums[i]);
-            }
-            i++;
+    int lo = 0, hi = n - 1;
+    while (lo < hi) {
+        int mid = (hi + lo) / 2;
+        if (nums[mid] >= t) {
+            hi = mid;
+        } else {
+            lo = mid + 1;
         }
-        ans+=j-i+1;
-//        cout << i << ","  << j << endl;
-//        for (std::map<int,int>::iterator it=count.begin(); it!=count.end(); ++it){
-//            cout << it->first << ":" << it->second << ", ";
-//        }
-//        cout << endl;
-//        cout << ans << endl << endl;
     }
-    cout << ans << '\n';
+    cout << (nums[lo] == t ? lo+1 : 0)  << '\n';
 }
+
 /*
-5 1
-1 1 1 2 2
+Sample Input:
+7 4
+1 2 4 4 5 7 9
+Sample Output:
+3
 
-100 3
-3 2 3 4 3 3 4 2 3 1 4 4 1 3 4 4 3 1 3 1 4 2 2 3 4 3 2 1 1 1 4 1 1 2 2 1 3 2 4 3 1 3 4 2 1 3 2 2 2 1 4 4 1 4 3 3 3 1 2 1 2 3 1 2 4 3 1 2 4 3 1 4 3 2 1 4 3 4 1 2 3 3 2 2 2 4 4 4 3 2 2 3 4 2 4 2 4 3 1 1
-0 1 2 3 4 5 6 7 8 9
+lo = 0; hi = 6; mid = 3; nums[mid] = 4 >= 4; hi = mid;
+lo = 0; hi = 3; mid = 1; nums[mid] = 2 < 4; low = mid+1;
+lo = 2; hi = 3; mid = 2; nums[mid] = 4 >= 4; hi = mid;
+lo = 2; hi = 2;
 
-Input:
-5 2
-1 2 3 1 1
-A B C D E
+Sample Input:
+3 2
+1 3 5
+Sample Output:
+0
 
-A
-B
-C
-D
-E
-AB
-CD
-DE
-CDE
-i = 0
-j = 0 count = {1:1}, ans += 1
-j = 1 count = {1:1, 2:1} ans += 2(j-i+1)
-j = 2 count = {1:1, 2:1, 3:1}, count.size() = 3, i = 1, count = {2:1,3:1} ans += 2
-j = 3 count = {1:1, 2:1, 3:1} count.size() = 3, i = 2, count = {1:1, 3:1} ans += 2
-j = 4 count = {1:2, 3:1} ans += 3
-
- ans = 10
-Output:
-10
+lo = 0; hi = 2; mid = 1; nums[mid] = 3; 3 >= 2; hi = mid;
+lo = 0; hi = 1; mid = 0; nums[mid] = 1; 1 < 2; low = mid+1;
+lo = 1; hi = 1;
 */

@@ -31,7 +31,7 @@ vector<int> ExtGCD(int a, int b) {
 // https://cp-algorithms.com/algebra/module-inverse.html#finding-the-modular-inverse-using-extended-euclidean-algorithm
 /* xy = 1 (mod m)
  *
- * xa = 1 (mod b)
+ * ax = 1 (mod b)
  * xa + by = 1
  *
 */
