@@ -14,11 +14,11 @@ using namespace std;
 int main() {
     int t, n;
     cin >> t;
-    while (t --) {
+    while (t--) {
         cin >> n;
         vector<int> v(n);
         int sum = 0, mx = 0;
-        for (int i = 0; i < n; i ++) {
+        for (int i = 0; i < n; i++) {
             cin >> v[i];
             sum += v[i];
             mx = max(mx, v[i]);
@@ -27,10 +27,10 @@ int main() {
             cout << 0 << endl;
             continue;
         }
-        for (int t = mx; t <= sum; t ++) {
+        for (int t = mx; t <= sum; t++) {
             if (sum % t == 0) {
                 int i = 0; // , c = 0;
-                for (int s = 0; i < n; i ++) {
+                for (int s = 0; i < n; i++) {
                     if (s + v[i] < t) {
                         s += v[i];
                         // c ++;

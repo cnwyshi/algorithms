@@ -1,11 +1,12 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 int main() {
     int n, t;
     cin >> n >> t;
     vector<int> nums(n);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> nums[i];
     }
     vector<int>::iterator it = std::lower_bound(nums.begin(), nums.end(), t);

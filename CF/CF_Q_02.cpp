@@ -14,32 +14,32 @@
 
 
 using namespace std;
+
 int main() {
     int n;
     cin >> n;
     int redcount;
     int count;
-    while(n--){
+    while (n--) {
         char s[10][10];
         redcount = 0;
-        for(int i = 0; i < 8; i++){
-            for(int j = 0; j < 8; j++){
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
                 cin >> s[i][j];
             }
         }
-        for(int i = 0; i < 8; i ++){
+        for (int i = 0; i < 8; i++) {
             count = 0;
-            for(int j = 0; j < 8; j ++){
-                if(s[i][j] == 'R')
-                    count ++;
+            for (int j = 0; j < 8; j++) {
+                if (s[i][j] == 'R')
+                    count++;
             }
-            if(count == 8)
+            if (count == 8)
                 redcount = 1;
         }
-        if(redcount ==1){
+        if (redcount == 1) {
             cout << "R" << endl;
-        }
-        else{
+        } else {
             cout << "B" << endl;
         }
     }

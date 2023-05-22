@@ -3,20 +3,20 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+
 using namespace std;
 
 int main() {
     int n;
     cin >> n;
-    if(n%10 >= 5){
-        int j = n/10;
-        int k = j*10;
-        int ans = k+10;
+    if (n % 10 >= 5) {
+        int j = n / 10;
+        int k = j * 10;
+        int ans = k + 10;
         cout << ans << endl;
-    }
-    else{
-        int j = n/10;
-        int k = j*10;
+    } else {
+        int j = n / 10;
+        int k = j * 10;
         cout << k << endl;
     }
 }

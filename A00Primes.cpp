@@ -79,7 +79,7 @@ vector<int> sieveEuler(int n) {
         if (prime[v]) {
             ans.push_back(v);
         }
-        for (int i = 0; i < ans.size() && v * ans[i] <= n; i ++) {
+        for (int i = 0; i < ans.size() && v * ans[i] <= n; i++) {
             prime[v * ans[i]] = 0;
             if (v % ans[i] == 0) {
                 break;

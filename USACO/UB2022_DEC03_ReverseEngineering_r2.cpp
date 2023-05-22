@@ -11,13 +11,13 @@ using namespace std;
 int main() {
     int t;
     cin >> t;
-    while (t -- > 0) {
+    while (t-- > 0) {
         string s;
         int n, m, r;
         cin >> n >> m;
         vector<string> b(m);
         vector<int> v(m);
-        for (int i = 0; i < m; i ++) {
+        for (int i = 0; i < m; i++) {
             cin >> b[i] >> v[i];
         }
 
@@ -25,9 +25,9 @@ int main() {
         while (true) {
             vector<vector<int>> count(n, vector<int>(2));
             int last = rows.size();
-            for (int i = 0; i < m; i ++) {
+            for (int i = 0; i < m; i++) {
                 if (rows.find(i) == rows.end()) {
-                    for (int j = 0; j < n; j ++) {
+                    for (int j = 0; j < n; j++) {
                         if (cols.find(j) == cols.end()) {
                             count[j][b[i][j] - '0'] |= 1 << v[i];
                         }
@@ -36,7 +36,7 @@ int main() {
             }
 
             vector<vector<bool>> match(n, vector<bool>(2));
-            for (int j = 0; j < n; j ++) {
+            for (int j = 0; j < n; j++) {
                 if (count[j][0] == 1 || count[j][0] == 2) {
                     match[j][0] = true;
                 }
@@ -45,9 +45,9 @@ int main() {
                 }
             }
 
-            for (int i = 0; i < m; i ++) {
+            for (int i = 0; i < m; i++) {
                 if (rows.find(i) == rows.end()) {
-                    for (int j = 0; j < n; j ++) {
+                    for (int j = 0; j < n; j++) {
                         if (match[j][b[i][j] - '0']) {
                             rows.insert(i);
                             cols.insert(j);

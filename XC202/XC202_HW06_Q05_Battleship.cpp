@@ -1,9 +1,11 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 // You can move up, down, top-left, bottom-right for each one step.
 int dx[4] = {1, -1, 0, 0};
 int dy[4] = {0, 0, 1, -1};
 char grid[1000][1000];
+
 int main() {
     int n, m, lakes = 0;
     cin >> n >> m;
@@ -37,7 +39,7 @@ int main() {
                         }
                     }
                 }
-                if((r-l+1) * (d-u+1) != size){
+                if ((r - l + 1) * (d - u + 1) != size) {
 //                    cout << l << " " << r << " " << u << " " << d << " " << size << endl;
                     cout << "Bad placement." << endl;
                     return 0;

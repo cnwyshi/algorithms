@@ -7,17 +7,17 @@ using namespace std;
 int main() {
     int t;
     cin >> t;
-    while (t -- > 0) {
+    while (t-- > 0) {
         int n, prev = 0, ans = 0;
         cin >> n;
         vector<int> a(n), b(n), tm(n);
-        for (int i = 0; i <n; i ++) {
+        for (int i = 0; i < n; i++) {
             cin >> a[i] >> b[i];
         }
-        for (int i = 0; i <n; i ++) {
+        for (int i = 0; i < n; i++) {
             cin >> tm[i];
         }
-        for (int i = 0; i < n; i ++) {
+        for (int i = 0; i < n; i++) {
             ans += a[i] - prev + tm[i];
             if (i < n - 1) {
                 ans = max(ans + (b[i] - a[i] + 1) / 2, b[i]);

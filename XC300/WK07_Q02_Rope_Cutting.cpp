@@ -1,35 +1,36 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     int n, k;
     cin >> n >> k;
     vector<int> l(n);
-    for(int i = 0; i < n; ++i){
+    for (int i = 0; i < n; ++i) {
         double f;
         cin >> f;
-        int length = f*100;
+        int length = f * 100;
         l[i] = length;
     }
     sort(l.begin(), l.end());
     //find biggest enough = find smallest unenough - 1
     int lo = 0, hi = 1000000000;
-    while(lo < hi){
-        int mid = (lo+hi)/2;
+    while (lo < hi) {
+        int mid = (lo + hi) / 2;
         int num = 0;
-        for(int v: l){
-            num+=v/mid;
+        for (int v: l) {
+            num += v / mid;
         }
 //        cout << lo << " " << hi << " " << mid << " " << num << endl;
-        if(num >= k){
-            lo = mid+1;
-        }
-        else{
+        if (num >= k) {
+            lo = mid + 1;
+        } else {
             hi = mid;
         }
     }
-    cout << fixed << setprecision(2) << (lo-1)/100.0 << '\n';
+    cout << fixed << setprecision(2) << (lo - 1) / 100.0 << '\n';
 }
 /*
 4 11

@@ -1,12 +1,19 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 using ll = long long;
-static const auto fastio = []() { std::ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0); return 0;}();
+static const auto fastio = []() {
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    return 0;
+}();
+
 int main() {
     int n, m;
     cin >> n >> m;
     vector<int> nums(n);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> nums[i];
     }
 
@@ -14,7 +21,7 @@ int main() {
     int lo = 0, hi = INT_MAX;
     while (lo < hi) {
         ll mid = (lo + hi) / 2, sum = 0;
-        for (int v : nums) {
+        for (int v: nums) {
             sum += max(v - mid, 0LL);
         }
         if (sum >= m) {

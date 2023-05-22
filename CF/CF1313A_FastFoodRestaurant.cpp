@@ -5,18 +5,25 @@
 
 using namespace std;
 
-int x[7][3] = {{0, 0, 1}, {0, 1, 0}, {1, 0, 0}, {0, 1, 1}, {1, 0, 1}, {1, 1, 0}, {1, 1, 1}};
+int x[7][3] = {{0, 0, 1},
+               {0, 1, 0},
+               {1, 0, 0},
+               {0, 1, 1},
+               {1, 0, 1},
+               {1, 1, 0},
+               {1, 1, 1}};
+
 int main() {
     int t, i, ans;
     cin >> t;
-    while (t --) {
+    while (t--) {
         vector<int> v(3);
         cin >> v[0] >> v[1] >> v[2];
         sort(v.begin(), v.end());
-        for (i = 0, ans = 0; i < 7; i ++) {
+        for (i = 0, ans = 0; i < 7; i++) {
             if (v[0] >= x[i][0] && v[1] >= x[i][1] && v[2] >= x[i][2]) {
                 v[0] -= x[i][0], v[1] -= x[i][1], v[2] -= x[i][2];
-                ans ++;
+                ans++;
             }
         }
         cout << ans << endl;

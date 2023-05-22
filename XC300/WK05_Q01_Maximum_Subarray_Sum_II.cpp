@@ -1,37 +1,41 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-void print(vector<long long>& v) {
-    for (long long x : v) {
+
+void print(vector<long long> &v) {
+    for (long long x: v) {
         cout << x << " ";
     }
     cout << endl;
 }
-void print(multiset<long long>& m) {
-    for (long long x : m) {
+
+void print(multiset<long long> &m) {
+    for (long long x: m) {
         cout << x << " ";
     }
     cout << endl;
 }
-int main(){
+
+int main() {
     freopen("/Users/genius/Downloads/sample\\ (47).in", "r", stdin);
     int n, a, b;
     cin >> n >> a >> b;
     vector<int> nums(n);
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         cin >> nums[i];
     }
-    vector<long long> prefix(n+1);
-    for(int i = 0; i < n; i++){
-        prefix[i+1] = prefix[i]+nums[i];
+    vector<long long> prefix(n + 1);
+    for (int i = 0; i < n; i++) {
+        prefix[i + 1] = prefix[i] + nums[i];
     }
 //    print(prefix);
     long long ans = 0;
     multiset<long long> m;
-    for(int i = a; i <= n; i++){
-        m.insert(prefix[i-a]);
+    for (int i = a; i <= n; i++) {
+        m.insert(prefix[i - a]);
         cout << __LINE__ << endl;
-        if(i > b){
-            m.erase(m.find(prefix[i-b-1]));
+        if (i > b) {
+            m.erase(m.find(prefix[i - b - 1]));
         }
         cout << __LINE__ << endl;
         cout << i << ": ";

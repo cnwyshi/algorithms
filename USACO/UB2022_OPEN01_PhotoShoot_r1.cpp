@@ -19,13 +19,13 @@ int main() {
     for (int i = 0; i < n; i += 2) {
         if (s[i] != s[i + 1]) {
             if (s[i] != last) {
-                ans ++;
+                ans++;
             }
             last = s[i];
         }
     }
     if (last == 'H') {
-        ans --;
+        ans--;
     }
     cout << ans << endl;
     return 0;

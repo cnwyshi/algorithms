@@ -20,15 +20,15 @@ using namespace std;
 int main() {
     int t, n;
     cin >> t;
-    while (t -- > 0) {
+    while (t-- > 0) {
         string s, t;
         cin >> s >> t;
         int m = s.size(), n = t.size(), ans = 0;
-        for (int i = 0; i < m; i ++) {
-            for (int j = 0; j < n; j ++) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 int c = 0, k = 0;
-                for ( ; s[i + k] == t[j + k] && i + k < m && j + k < n; k ++) {
-                    ans = max(ans, ++ c);
+                for (; s[i + k] == t[j + k] && i + k < m && j + k < n; k++) {
+                    ans = max(ans, ++c);
                 }
             }
         }

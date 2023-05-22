@@ -1,9 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+
 using namespace std;
 
-void dfs(vector<string>& maze, int i, int j) {
+void dfs(vector<string> &maze, int i, int j) {
     int m = maze.size(), n = maze[0].size();
     if (i >= 0 && i < m && j >= 0 && j < n && maze[i][j] == '.') {
         maze[i][j] = '#';
@@ -18,14 +19,14 @@ int main() {
     int m, n, ans = 0;
     cin >> m >> n;
     vector<string> maze(m);
-    for (int i = 0; i < m; i ++) {
+    for (int i = 0; i < m; i++) {
         cin >> maze[i];
     }
-    for (int i = 0; i < m; i ++) {
-        for (int j = 0; j < n; j ++) {
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
             if (maze[i][j] == '.') {
                 dfs(maze, i, j);
-                ans ++;
+                ans++;
             }
         }
     }

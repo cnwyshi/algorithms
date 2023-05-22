@@ -10,33 +10,33 @@
 #include <fstream>
 
 using namespace std;
-int main(){
+
+int main() {
     int n, k;
     cin >> n >> k;
     queue<int> l;
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         int x;
         cin >> x;
         l.push(x);
     }
     int s = 0;
-    while(!l.empty()){
+    while (!l.empty()) {
         s++;
-        if(l.front() == 1){
-            if(k == 0){
+        if (l.front() == 1) {
+            if (k == 0) {
                 cout << s << "\n";
                 break;
             }
             l.pop();
-        }
-        else{
+        } else {
             int p = l.front() - 1;
             l.pop();
             l.push(p);
         }
         k--;
         if (k < 0) {
-            k = (int)l.size() -1;
+            k = (int) l.size() - 1;
         }
     }
     return 0;

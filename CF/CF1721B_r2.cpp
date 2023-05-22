@@ -7,13 +7,13 @@ using namespace std;
 
 int main() {
     int t, m, n, sx, sy, d, ans = 0;
-    int D[] = { 0, 1, 0, -1, 0 };
+    int D[] = {0, 1, 0, -1, 0};
     cin >> t;
-    while (t -- > 0) {
+    while (t-- > 0) {
         int ans = m * n;
         cin >> m >> n >> sx >> sy >> d;
-        for (int i = 0; i < m; i ++) {
-            for (int j = 0; j < n; j ++) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 if (abs(i - sx) + abs(j - sy) > d) {
                     ans = min(ans, i + j + m - 1 - i + n - 1 - j);
                 }

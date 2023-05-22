@@ -7,7 +7,7 @@ using namespace std;
 
 const char TIPPED = '0';
 
-int flip(vector<vector<int>>& cows, int r, int c) {
+int flip(vector<vector<int>> &cows, int r, int c) {
     if (cows[r][c]) {
         for (int ri = 0; ri <= r; ri++) {
             for (int ci = 0; ci <= c; ci++) {

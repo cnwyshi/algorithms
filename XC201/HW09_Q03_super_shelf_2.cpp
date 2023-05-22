@@ -7,7 +7,7 @@ int n, k, f[100000][21][3];
 
 // PSH
 // http://www.usaco.org/index.php?page=viewproblem2&cpid=694
-int dfs(vector<int>& a, int i, int k, int c) {
+int dfs(vector<int> &a, int i, int k, int c) {
     if (i == n) {
         return 0;
     } else if (f[i][k][c])
@@ -27,7 +27,7 @@ int dfs(vector<int>& a, int i, int k, int c) {
 int main() {
     cin >> n >> k;
     vector<int> a(n);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         char c;
         cin >> c;
         a[i] = c == 'P' ? 0 : (c == 'S' ? 1 : 2);

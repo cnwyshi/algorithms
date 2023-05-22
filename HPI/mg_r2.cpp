@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
+
 using namespace std;
 
-int main(){
+int main() {
     int n;
     double dt, c, du, p0, ans = 0;
     cin >> dt >> c >> du >> p0 >> n;
@@ -10,12 +11,12 @@ int main(){
     p[0] = p0;
     // vector<vector<double>> s(n, vector<double>(2));
     //  di, pi,
-    for (int i = 1; i <= n; i ++) {
+    for (int i = 1; i <= n; i++) {
         // cin >> s[i][0] >> s[i][1];
         cin >> d[i] >> p[i];
     }
     d[n + 1] = dt;
-    for (int i = 1; i <= n + 1; i ++) {
+    for (int i = 1; i <= n + 1; i++) {
         // cin >> s[i][0] >> s[i][1];
         if (c * du < d[i] - d[i - 1]) {
             cout << "No solution";

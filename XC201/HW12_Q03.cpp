@@ -1,13 +1,19 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+
 using namespace std;
 
-int dirs[4][2] = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-void dfs(int x, int y, int dir, int turns, int &ans, vector<vector<int>> &maze, vector<vector<int>> &vis, int end_x, int end_y) {
+int dirs[4][2] = {{-1, 0},
+                  {1,  0},
+                  {0,  -1},
+                  {0,  1}};
+
+void dfs(int x, int y, int dir, int turns, int &ans, vector<vector<int>> &maze, vector<vector<int>> &vis, int end_x,
+         int end_y) {
     int n = maze.size();
     int m = maze[0].size();
-    if(turns > ans){
+    if (turns > ans) {
         return;
     }
 //    cout << turns << " " << x << " " << y << " " << dir << endl;
@@ -31,6 +37,7 @@ void dfs(int x, int y, int dir, int turns, int &ans, vector<vector<int>> &maze, 
         }
     }
 }
+
 int main() {
     int start_x, start_y, end_x, end_y;
     int n, m;

@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 using ll = long long;
 
@@ -6,12 +7,12 @@ int main() {
     ll n, t, r = 0, ans = 0;
     cin >> n >> t;
     vector<ll> d(n + 2), b(n + 2);
-    for (int i = 1; i <= n; i ++) {
+    for (int i = 1; i <= n; i++) {
         cin >> d[i] >> b[i];
     }
     d[n + 1] = t + 1;
 
-    for (int i = 1; i < n + 2; i ++) {
+    for (int i = 1; i < n + 2; i++) {
         ll used = min(r, d[i] - d[i - 1]);
         r = r - used + b[i];
         ans += used;

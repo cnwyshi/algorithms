@@ -7,11 +7,13 @@
 using namespace std;
 
 int main() {
-    int n; cin >> n;
+    int n;
+    cin >> n;
     vector<int> order(n);
 
     for (int i = 1; i < n; i++) {
-        int a; cin >> a;
+        int a;
+        cin >> a;
         order[i] = a;
     }
     // count represents the first element.
@@ -20,7 +22,7 @@ int main() {
     ans[0] = count;
 
     while (true) {
-        for (int i = 1	; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             // append the next element that follows the order.
             ans[i] = order[i] - ans[i - 1];
         }

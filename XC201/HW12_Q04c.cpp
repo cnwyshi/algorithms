@@ -1,18 +1,20 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+
 using namespace std;
-void dfs(int n, int p, int i, int s, vector<char>& ops) {
+
+void dfs(int n, int p, int i, int s, vector<char> &ops) {
     if (i == n) {
         if (s == 0) {
-            for (int j = 0; j < n; j ++) {
+            for (int j = 0; j < n; j++) {
                 cout << ops[j] << (j + 1);
             }
             cout << endl;
         }
         return;
     }
-    ops[i] =  ' ';
+    ops[i] = ' ';
     int v = p >= 0 ? p * 10 + i + 1 : p * 10 - i - 1;
     dfs(n, v, i + 1, s - p + v, ops);   // 12
     if (i > 0) {
@@ -22,6 +24,7 @@ void dfs(int n, int p, int i, int s, vector<char>& ops) {
         dfs(n, -i - 1, i + 1, s - i - 1, ops);
     }
 }
+
 int main() {
     int n;
     cin >> n;

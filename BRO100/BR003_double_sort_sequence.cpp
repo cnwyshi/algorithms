@@ -4,20 +4,21 @@
 #include <algorithm>
 
 using namespace std;
+
 int main() {
-    int  n;
+    int n;
     cin >> n;
     vector<int> nums(n);
-    for(int i = 0; i < n; i ++){
+    for (int i = 0; i < n; i++) {
         cin >> nums[i];
     }
     sort(nums.begin(), nums.end());
-    int i = 0, j = n-1;
-    while(i <= j){
+    int i = 0, j = n - 1;
+    while (i <= j) {
         cout << nums[j] << endl;
         j--;
 //        cout << i << " " << j << endl;
-        if(i < j){
+        if (i < j) {
             cout << nums[i] << endl;
             i++;
 //            cout << i << " " << j << endl;

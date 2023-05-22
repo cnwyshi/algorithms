@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <iostream>
 #include <fstream>
+
 using namespace std;
 
 signed main() {
@@ -20,16 +21,16 @@ signed main() {
     }
     int fg = s.find("G"), fh = s.find("H"), lg = s.rfind("G"), lh = s.rfind("H");
     if (e[fg] >= lg) {                              // HHGGGH
-        for (int i = fh; i < fg; i ++) {
+        for (int i = fh; i < fg; i++) {
             if (s[i] == 'H' && e[i] >= fg) {
-                ans ++;
+                ans++;
             }
         }
     }
     if (e[fh] >= lh) {                              // GGHHHG
-        for (int i = fg; i < fh; i ++) {
+        for (int i = fg; i < fh; i++) {
             if (s[i] == 'G' && e[i] >= fh) {
-                ans ++;
+                ans++;
             }
         }
     }

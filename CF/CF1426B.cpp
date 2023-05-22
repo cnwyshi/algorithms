@@ -7,11 +7,11 @@ using namespace std;
 int main() {
     int t;
     cin >> t;
-    while (t -- > 0) {
+    while (t-- > 0) {
         int n, m, found = 0;
         cin >> n >> m;
         int tile[n][2][2];
-        for (int i = 0; i < n; i ++) {
+        for (int i = 0; i < n; i++) {
             cin >> tile[i][0][0] >> tile[i][0][1] >> tile[i][1][0] >> tile[i][1][1];
             found |= m % 2 == 0 && tile[i][0][1] == tile[i][1][0];
         }

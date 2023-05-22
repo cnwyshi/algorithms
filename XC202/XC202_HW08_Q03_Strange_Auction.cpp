@@ -1,8 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <queue>
+
 using namespace std;
-int main(){
+
+int main() {
     int h, l, ans = 0;
     cin >> h >> l;
     int a, b;
@@ -10,21 +12,19 @@ int main(){
     queue<int> front, back;
     front.push(h);
     back.push(l);
-    while(!front.empty()){
+    while (!front.empty()) {
         int cnt = front.front();
         front.pop();
         int next = cnt - a;
-        if(next == l){
+        if (next == l) {
             ans++;
-        }
-        else if(next > l) {
+        } else if (next > l) {
             front.push(next);
         }
         next = cnt - b;
-        if(next == l){
+        if (next == l) {
             ans++;
-        }
-        else if(next > l){
+        } else if (next > l) {
             front.push(next);
         }
     }

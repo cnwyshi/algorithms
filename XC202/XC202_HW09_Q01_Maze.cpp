@@ -34,13 +34,13 @@ int main() {
         q.pop();
         for (int i = 0; i < 4; i++) {
             int nx = cx + dx[i], ny = cy + dy[i];
-             cout << nx << " " << ny << " " << i << " " << n << " " << m << endl;
+            cout << nx << " " << ny << " " << i << " " << n << " " << m << endl;
             if (nx >= 0 && ny >= 0 && nx < n && ny < m) {
-                 cout << grid[nx][ny] << " " << visited[nx][ny]<< endl;
+                cout << grid[nx][ny] << " " << visited[nx][ny] << endl;
             }
             if (nx >= 0 && ny >= 0 && nx < n && ny < m && grid[nx][ny] != 1 && visited[nx][ny] != true) {
                 q.push(make_pair(nx, ny));
-                 cout << nx << " " << ny << " " << cx << " " << cy << endl;
+                cout << nx << " " << ny << " " << cx << " " << cy << endl;
                 visited[nx][ny] = true;
             }
         }

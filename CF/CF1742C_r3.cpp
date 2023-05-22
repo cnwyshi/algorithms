@@ -10,12 +10,12 @@ using namespace std;
 int main() {
     int t, n = 8;
     cin >> t;
-    while (t -- > 0) {
+    while (t-- > 0) {
         string s, ans = "B";
-        for (int i = 0; i < n && ans == "B"; i ++) {
+        for (int i = 0; i < n && ans == "B"; i++) {
             cin >> s;
             bool red = true;
-            for (int j = 0; j < n && red; j ++) {
+            for (int j = 0; j < n && red; j++) {
                 if (s[j] == 'B' || s[j] == '.') {
                     red = false;
                 }

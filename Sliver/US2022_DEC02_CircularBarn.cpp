@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+
 using namespace std;
 
 const int N = 5000005;
@@ -8,9 +9,9 @@ bool comp[N] = {false};
 int maxp[4] = {2, 1, 2, 3};
 
 int main() {
-    for(int i = 2; i < N; i++) {
-        if(!comp[i]) {
-            for(int j = i; j < N; j += i) {
+    for (int i = 2; i < N; i++) {
+        if (!comp[i]) {
+            for (int j = i; j < N; j += i) {
                 comp[j] = true;
             }
             maxp[i % 4] = i;
@@ -20,12 +21,12 @@ int main() {
 
     int t, n;
     cin >> t;
-    while(t--) {
+    while (t--) {
         cin >> n;
         int ans = N, a;
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             cin >> a;
-            if(turn[a] / 2 < ans / 2) {
+            if (turn[a] / 2 < ans / 2) {
                 ans = turn[a];
             }
         }

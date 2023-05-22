@@ -10,22 +10,23 @@
 #include <fstream>
 
 using namespace std;
-int main(){
-	int n, ans = INT_MAX;
-	cin >> n;
-	vector<char> ops(n);
-	vector<int> val(n);
-	for(int i = 0; i < n; i++){
-		cin >> ops[i] >> val[i];
-	}
-	for(int i = 0; i < n; i++){
-		int lie = 0;
-		for(int j = 0; j < n; j++){
-			lie+=ops[j] == 'G' ? val[i] < val[j] : val[i] >val[j];  // vi LE vj
-		}
-		ans = min(lie, ans);
-	}
-	cout << ans << endl;
+
+int main() {
+    int n, ans = INT_MAX;
+    cin >> n;
+    vector<char> ops(n);
+    vector<int> val(n);
+    for (int i = 0; i < n; i++) {
+        cin >> ops[i] >> val[i];
+    }
+    for (int i = 0; i < n; i++) {
+        int lie = 0;
+        for (int j = 0; j < n; j++) {
+            lie += ops[j] == 'G' ? val[i] < val[j] : val[i] > val[j];  // vi LE vj
+        }
+        ans = min(lie, ans);
+    }
+    cout << ans << endl;
 }
 
 

@@ -15,31 +15,31 @@ int main() {
     int n, m, ans = INT_MAX;
     cin >> n >> m;
     vector<int> s(n), t(n), c(n), a(m), b(m), p(m), mo(m);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> s[i] >> t[i] >> c[i];
     }
-    for (int i = 0; i < m; i ++) {
+    for (int i = 0; i < m; i++) {
         cin >> a[i] >> b[i] >> p[i] >> mo[i];
     }
-    for (int used = 0; used < 1 << m; used ++) {
+    for (int used = 0; used < 1 << m; used++) {
         int cost = 0, valid = 1;
         vector<int> cool(101);
-        for (int i = 0; i < m; i ++) {
+        for (int i = 0; i < m; i++) {
             if ((used & (1 << i)) != 0) {
                 cost += mo[i];
-                for (int j = a[i]; j <= b[i]; j ++) {
+                for (int j = a[i]; j <= b[i]; j++) {
                     cool[j] += p[i];
                 }
             }
         }
-        for (int i = 0; i < n; i ++) {
-            for (int j = s[i]; j <= t[i]; j ++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = s[i]; j <= t[i]; j++) {
                 valid &= c[i] <= cool[j];
             }
         }
         ans = valid ? min(ans, cost) : ans;
     }
-    cout << ans <<endl;
+    cout << ans << endl;
 }
 
 /*

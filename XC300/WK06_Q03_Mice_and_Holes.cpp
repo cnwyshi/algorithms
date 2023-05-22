@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -7,19 +9,19 @@ int main() {
     cin >> n >> m;
     vector<int> mice(n);
     set<int> hole;
-    for(int i = 0; i < n; ++i){
+    for (int i = 0; i < n; ++i) {
         cin >> mice[i];
     }
-    for(int i = 0; i < m; ++i){
+    for (int i = 0; i < m; ++i) {
         int pos;
         cin >> pos;
         hole.insert(pos);
     }
     long long ans = 0;
-    for(int i : mice){
-        set<int>::iterator it= hole.lower_bound(i);
+    for (int i: mice) {
+        set<int>::iterator it = hole.lower_bound(i);
         it--;
-        ans+= abs(i-*it);
+        ans += abs(i - *it);
         hole.erase(it);
     }
     cout << ans << '\n';

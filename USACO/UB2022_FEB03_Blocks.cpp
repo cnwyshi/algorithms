@@ -10,34 +10,36 @@
 #include <fstream>
 
 using namespace std;
-bool perm(array<string, 4> blocks){
+
+bool perm(array<string, 4> blocks) {
     string s;
     cin >> s;
     int n = s.size();
-    while(next_permutation(blocks.begin(), blocks.end())){
+    while (next_permutation(blocks.begin(), blocks.end())) {
         bool good = true;
-        for(int i = 0; i < n; i++){
-            if(find(blocks[i].begin(), blocks[i].end(), s[i]) == blocks[i].end()){
+        for (int i = 0; i < n; i++) {
+            if (find(blocks[i].begin(), blocks[i].end(), s[i]) == blocks[i].end()) {
                 good = false;
             }
         }
-        if(good){
+        if (good) {
             return true;
         }
     }
     return false;
 }
+
 int main() {
     int t;
     cin >> t;
     array<string, 4> blocks;
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 4; i++) {
         cin >> blocks[i];
     }
     sort(blocks.begin(), blocks.end());
     for (int i = 0; i < t; i++) {
         bool b = perm(blocks);
-        if(b) {
+        if (b) {
             cout << "YES" << endl;
         } else {
             cout << "NO" << endl;

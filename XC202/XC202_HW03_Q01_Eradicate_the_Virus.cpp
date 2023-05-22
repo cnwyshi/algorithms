@@ -10,6 +10,7 @@
 #include <fstream>
 
 using namespace std;
+
 int main() {
     int v, k;
     cin >> v >> k;
@@ -19,7 +20,7 @@ int main() {
     }
     int maxNum = 0;
     for (int i = 0; i < v; i++) {
-        if (i >= v - maxNum){
+        if (i >= v - maxNum) {
             break;
         }
         int sum = 0;

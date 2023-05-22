@@ -23,19 +23,18 @@ int countFactors(int x) {
     int ans = 0;
     for (int i = 1; i * i <= x; i++) {
         if (x % i == 0) {
-            if(i*i == x){
+            if (i * i == x) {
                 ans++;
-            }
-            else{
-                ans+=2;
+            } else {
+                ans += 2;
             }
         }
     }
     return ans;
 }
 
-void print(vector<int>& v) {
-    for (int x : v) {
+void print(vector<int> &v) {
+    for (int x: v) {
         cout << x << " ";
     }
     cout << endl;

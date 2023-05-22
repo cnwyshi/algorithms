@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 using ll = long long;
 
@@ -6,13 +7,13 @@ int main() {
     ll n, t;
     cin >> n >> t;
     vector<vector<ll>> d(n + 1, vector<ll>(2));
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> d[i][0] >> d[i][1];
     }
     d[n][0] = t + 1;
 
     ll remaining = 0, total = 0, prev = 0;
-    for(auto v : d){
+    for (auto v: d) {
         total += v[1];
         remaining -= v[0] - prev;
         remaining = max(remaining, 0LL) + v[1];

@@ -10,17 +10,17 @@ int main() {
     cin >> n;
     long sum = 0;
     vector<long> h(n);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> h[i];
         sum += h[i];
     }
 
     long avg = sum / n;
     vector<vector<int>> graph(n);
-    for (int i = 0; i < n - 1; i ++) {
+    for (int i = 0; i < n - 1; i++) {
         int a, b;
         cin >> a >> b;
-        a --, b --;
+        a--, b--;
         graph[a].push_back(b);
     }
 

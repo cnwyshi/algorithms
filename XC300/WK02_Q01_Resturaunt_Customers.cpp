@@ -1,10 +1,12 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 int main() {
     int n;
     cin >> n;
     map<int, int> time;
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         int a, b;
         cin >> a >> b;
         time[a]++;
@@ -12,8 +14,8 @@ int main() {
     }
     int ans = 0;
     int temp = 0;
-    for(auto i : time){
-        temp+=i.second;
+    for (auto i: time) {
+        temp += i.second;
         ans = max(ans, temp);
     }
     cout << ans << endl;

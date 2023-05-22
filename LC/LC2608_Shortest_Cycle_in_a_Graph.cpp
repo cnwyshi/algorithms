@@ -5,7 +5,7 @@ using namespace std;
 int findShortestCycle(int n, vector<vector<int>> edges) {
     vector<vector<int>> adj(n);
     cout << __LINE__ << endl;
-    for (int i = 0; i <edges.size(); i++) {
+    for (int i = 0; i < edges.size(); i++) {
         int a = edges[i][0], b = edges[i][1];
 
         adj[a].push_back(b);
@@ -43,5 +43,6 @@ int findShortestCycle(int n, vector<vector<int>> edges) {
 }
 
 int main() {
-    cout << findShortestCycle(4, {{0, 1}, {0,2}});
+    cout << findShortestCycle(4, {{0, 1},
+                                  {0, 2}});
 }

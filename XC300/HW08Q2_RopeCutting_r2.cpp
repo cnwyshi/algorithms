@@ -1,12 +1,19 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 using ll = long long;
-static const auto fastio = []() { std::ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0); return 0;}();
+static const auto fastio = []() {
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    return 0;
+}();
+
 int main() {
     int n, k;
     cin >> n >> k;
     vector<int> nums(n);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         float f;
         cin >> f;
         nums[i] = f * 100;
@@ -16,7 +23,7 @@ int main() {
     int lo = 0, hi = 10000000;
     while (lo < hi) {
         int mid = (lo + hi) / 2, count = 0;
-        for (int v : nums) {
+        for (int v: nums) {
             count += v / mid;
         }
         // cout << lo << " " << hi << " " << count << endl;

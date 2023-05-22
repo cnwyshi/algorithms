@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <iostream>
 #include <fstream>
+
 using namespace std;
 
 signed main() {
@@ -23,7 +24,7 @@ signed main() {
     for (int i = 0; i < n; i++) {
         if (s[i] == 'G') {
             if (e[i] >= lh && i < lh && e[lh] >= rh) {
-                ans ++;
+                ans++;
                 if (i == lg) {
                     gg = 1;
                 }

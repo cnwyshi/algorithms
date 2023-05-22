@@ -1,17 +1,19 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 using ll = long long;
+
 int main() {
     int t;
     cin >> t;
     cout << t << endl;
-    while(t--){
+    while (t--) {
         int n, m;
         cin >> n >> m;
         cout << n << " " << m << endl;
-        while(m--){
+        while (m--) {
             vector<int> nums(n);
-            for(int i = 0; i < n; i++){
+            for (int i = 0; i < n; i++) {
                 cin >> nums[i];
                 cout << nums[i];
             }

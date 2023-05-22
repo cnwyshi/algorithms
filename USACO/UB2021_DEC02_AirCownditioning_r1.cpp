@@ -16,14 +16,14 @@ int main() {
     ll n, ans = 0;
     cin >> n;
     vector<ll> p(n), t(n), diff(n + 2);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> p[i];
     }
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> t[i];
         diff[i + 1] = p[i] - t[i];
     }
-    for (int i = 0; i <= n; i ++) {
+    for (int i = 0; i <= n; i++) {
         // ans += max(0LL, diff[i + 1] - diff[i]);
         ans += abs(diff[i + 1] - diff[i]);
     }

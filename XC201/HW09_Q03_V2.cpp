@@ -38,7 +38,7 @@ int dfs(int i, int k, int c) {
 
 int main() {
     cin >> n >> k;
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         char c;
         cin >> c;
         a[i] = c == 'P' ? 0 : (c == 'S' ? 1 : 2);

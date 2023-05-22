@@ -1,43 +1,45 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-int main(){
+
+int main() {
     int n, m;
     cin >> n >> m;
-    vector<vector<int>> graph(n+1);
-    vector<int> vis(n+1);
-    for(int i = 0; i < m; i++){
+    vector<vector<int>> graph(n + 1);
+    vector<int> vis(n + 1);
+    for (int i = 0; i < m; i++) {
         int a, b;
         cin >> a >> b;
         graph[a].push_back(b);
         graph[b].push_back(a);
     }
-    vector<int> parent(n+1);
+    vector<int> parent(n + 1);
     parent[1] = -1;
     queue<int> q;
     q.push(1);
     vis[1] = 1;
-    while(!q.empty()){
+    while (!q.empty()) {
         int i = q.front();
         q.pop();
 //        for(int k: crt){
 //            cout << k << " ";
 //        }
 //        cout << endl;
-        if(i == n){
+        if (i == n) {
             stack<int> st;
-            for(int p = n; p != -1; p = parent[p]){
+            for (int p = n; p != -1; p = parent[p]) {
                 st.push(p);
             }
             cout << st.size() << endl;
-            while(!st.empty()){
+            while (!st.empty()) {
                 cout << st.top() << " ";
                 st.pop();
             }
             cout << endl;
             return 0;
         }
-        for(int j: graph[i]){
-            if(vis[j] != 1){
+        for (int j: graph[i]) {
+            if (vis[j] != 1) {
                 q.push(j);
                 vis[j] = 1;
                 parent[j] = i;

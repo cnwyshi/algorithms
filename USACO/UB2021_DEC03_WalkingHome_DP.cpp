@@ -49,7 +49,7 @@ int main() {
                 }
             }
         }
-        for (int k = 0; k <= K; k ++) {
+        for (int k = 0; k <= K; k++) {
             ans += dp[n - 1][n - 1][k][0] + dp[n - 1][n - 1][k][1];
         }
         cout << ans << endl;

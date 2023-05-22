@@ -10,16 +10,17 @@
 #include <fstream>
 
 using namespace std;
-int main(){
+
+int main() {
     int n, k;
     cin >> n >> k;
     int ans = 0;
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         int x;
         cin >> x;
-        if(k%x == 0 && x > ans){
+        if (k % x == 0 && x > ans) {
             ans = x;
         }
     }
-    cout << k/ans;
+    cout << k / ans;
 }

@@ -5,15 +5,17 @@
 #include <fstream>
 
 using namespace std;
-void dfs(int n, int v, int& ans){
-    if(v > n){
+
+void dfs(int n, int v, int &ans) {
+    if (v > n) {
         return;
     }
     ans++;
-    dfs(n, v*10,  ans);
-    dfs(n, v*10+1, ans);
+    dfs(n, v * 10, ans);
+    dfs(n, v * 10 + 1, ans);
 }
-int main(){
+
+int main() {
     int n, ans = 0;
     cin >> n;
     dfs(n, 1, ans);

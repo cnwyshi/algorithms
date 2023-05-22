@@ -15,12 +15,12 @@ int main() {
     int n, m = 0, ans = 0, i, j;
     cin >> n;
     vector<vector<int>> tree(n, vector<int>(2));
-    for (i = 0; i < n; i ++) {
+    for (i = 0; i < n; i++) {
         cin >> tree[i][0] >> tree[i][1];
         m += tree[i][0] < 0;
     }
     sort(tree.begin(), tree.end());
-    for (i = m - 1, j = m; i >= 0 && j < n; i --, j ++) {
+    for (i = m - 1, j = m; i >= 0 && j < n; i--, j++) {
         ans += tree[i][1] + tree[j][1];
     }
     if (i >= 0) {

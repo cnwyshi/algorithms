@@ -18,7 +18,7 @@ int fib(int n) {
     if (n < 3) {
         return 1;
     }
-    return fib(n-1) + fib(n-2);
+    return fib(n - 1) + fib(n - 2);
 }
 
 // [a, b, c]  -> [b, c, x]
@@ -27,7 +27,7 @@ int fib2(int n) {
         return 1;
     }
     int a = 1, b = 1, c = 0;
-    for (int i = 0; i < n - 2; i ++) {
+    for (int i = 0; i < n - 2; i++) {
         c = a + b;
         a = b;
         b = c;
@@ -36,7 +36,7 @@ int fib2(int n) {
 }
 
 int main() {
-    for (int i = 1; i < 10; i ++) {
+    for (int i = 1; i < 10; i++) {
         cout << fib2(i) << endl;
     }
 }

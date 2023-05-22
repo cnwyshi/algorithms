@@ -13,6 +13,7 @@ using namespace std;
 //You can move up, down, top-left, bottom-right for each one step.
 int dx[4] = {1, -1, 1, -1};
 int dy[4] = {0, 0, 1, -1};
+
 int main() {
     int n, x, y, count = 0;
     cin >> n >> x >> y;
@@ -30,9 +31,9 @@ int main() {
         int cx = q.front().first, cy = q.front().second;
         q.pop();
         count++;
-        for(int i = 0; i < 4; i++){
+        for (int i = 0; i < 4; i++) {
             int nx = cx + dx[i], ny = cy + dy[i];
-            if(nx < n && ny < n && nx >= 0 && ny >= 0 && grid[nx][ny] != 1 && visited[nx][ny] != 1){
+            if (nx < n && ny < n && nx >= 0 && ny >= 0 && grid[nx][ny] != 1 && visited[nx][ny] != 1) {
                 q.push(make_pair(nx, ny));
                 visited[nx][ny] = 1;
             }

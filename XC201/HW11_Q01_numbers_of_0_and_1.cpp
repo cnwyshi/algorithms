@@ -6,14 +6,14 @@ using namespace std;
 int n, l, i;
 vector<string> vec;
 
-void dfs(string &st, int count){
-    if(st.size() > n || vec.size() > i || count > l){
+void dfs(string &st, int count) {
+    if (st.size() > n || vec.size() > i || count > l) {
         return;
     }
-    if(st.size()== n){
+    if (st.size() == n) {
         vec.push_back(st);
     }
-    if(vec.size() >= i){
+    if (vec.size() >= i) {
         return;
     }
     string s0 = st + "0";
@@ -21,6 +21,7 @@ void dfs(string &st, int count){
     string s1 = st + "1";
     dfs(s1, count + 1);
 }
+
 int main() {
     cin >> n >> l >> i;
     string st;

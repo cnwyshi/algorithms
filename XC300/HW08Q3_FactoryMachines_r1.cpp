@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 using ll = long long;
 
@@ -18,7 +19,7 @@ int main() {
     ll lo = 0, hi = 1e13;
     while (lo < hi) {
         ll mid = (lo + hi) / 2, sum = 0;
-        for (int v : m) {
+        for (int v: m) {
             sum += mid / v;
         }
         printf("lo = %lld, hi = %lld, mid = %lld, sum = %lld, t = %lld\n", lo, hi, mid, sum, t);

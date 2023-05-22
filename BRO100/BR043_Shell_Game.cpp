@@ -10,7 +10,7 @@ int main() {
     cin >> n;
     vector<int> shell_at_position(3);
     // Place the shells down arbitrarily
-    for (int i = 0; i < 3;i++) {
+    for (int i = 0; i < 3; i++) {
         shell_at_position[i] = i;
     }
 

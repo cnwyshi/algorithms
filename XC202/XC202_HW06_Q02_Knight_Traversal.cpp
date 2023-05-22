@@ -15,6 +15,7 @@ using namespace std;
 //You can move up, down, top-left, bottom-right for each one step.
 int dx[8] = {2, 2, -2, -2, 1, 1, -1, -1};
 int dy[8] = {1, -1, -1, 1, 2, -2, 2, -2};
+
 int main() {
     int n, m, sx, sy;
     cin >> n >> m >> sx >> sy;
@@ -28,18 +29,18 @@ int main() {
     q.push(make_pair(sx, sy));
     visited[sx][sy] = true;
     int steps = 1;
-    for(; !q.empty(); steps++){
-        for(int s = q.size(); s > 0; s--){
+    for (; !q.empty(); steps++) {
+        for (int s = q.size(); s > 0; s--) {
             int cx = q.front().first, cy = q.front().second;
             // cout << cx << " " << cy << endl;
             q.pop();
-            for(int i = 0; i < 8; i++){
+            for (int i = 0; i < 8; i++) {
                 int nx = cx + dx[i], ny = cy + dy[i];
                 // cout << nx << " " << ny << endl;
                 // cout << n << " " << m << endl;
                 // cout << sx << " " << sy << endl;
                 // cout << (nx >= 0 && ny >= 0 && nx < n && ny < m) << " " << (!visited[nx][ny]) << endl;
-                if(nx >= 0 && ny >= 0 && nx < n && ny < m && !visited[nx][ny]){
+                if (nx >= 0 && ny >= 0 && nx < n && ny < m && !visited[nx][ny]) {
                     q.push(make_pair(nx, ny));
                     // cout << nx << " " << ny << endl;
                     grid[nx][ny] = steps;
@@ -48,15 +49,15 @@ int main() {
             }
         }
     }
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < m; j++){
-            if(!visited[i][j]){
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (!visited[i][j]) {
                 grid[i][j] = -1;
             }
         }
     }
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < m; j++){
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
             cout << grid[i][j] << " ";
         }
         cout << endl;

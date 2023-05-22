@@ -11,17 +11,16 @@
 
 using namespace std;
 
-int main(void)
-{
+int main(void) {
     vector<int> cow(3);
-    ifstream fin ("herding.in");
+    ifstream fin("herding.in");
     fin >> cow[0] >> cow[1] >> cow[2];
     sort(cow.begin(), cow.end());
 
-    ofstream fout ("herding.out");
-    if (cow[0]+2==cow[2]) {
+    ofstream fout("herding.out");
+    if (cow[0] + 2 == cow[2]) {
         fout << "0\n";
-    }  else if (cow[0]+2==cow[1] || cow[1]+2==cow[2]) {
+    } else if (cow[0] + 2 == cow[1] || cow[1] + 2 == cow[2]) {
         fout << "1\n";
     } else {
         fout << "2\n";

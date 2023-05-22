@@ -14,39 +14,40 @@
 #include <fstream>
 
 using namespace std;
-int main(){
+
+int main() {
     int t;
     cin >> t;
-    while(t--){
+    while (t--) {
         int n = 0, ans = INT_MAX;
         cin >> n;
         vector<int> sleep(n);
         int mx = 0, sum = 0;
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             cin >> sleep[i];
             mx = max(mx, sleep[i]);
             sum += sleep[i];
         }
-        if(mx*n == sum){
+        if (mx * n == sum) {
             cout << 0 << endl;
             continue;
         }
-        for(int a = mx; a <= sum; a++){
-            if(sum % a != 0){
+        for (int a = mx; a <= sum; a++) {
+            if (sum % a != 0) {
                 continue;
             }
             int j = 0, tempsum = 0;
-            for(; j<n; j++){
+            for (; j < n; j++) {
                 tempsum += sleep[j];
-                if(tempsum == a){
+                if (tempsum == a) {
                     tempsum = 0;
                 }
-                if(tempsum > a){
+                if (tempsum > a) {
                     break;
                 }
             }
-            if(j == n && tempsum == 0){
-                cout << n-sum/a << endl;
+            if (j == n && tempsum == 0) {
+                cout << n - sum / a << endl;
                 break;
             }
         }

@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 int main() {
     int n;
     cin >> n;
@@ -23,7 +25,7 @@ int main() {
         cout << ans << endl;
     } else if (!change) {
         int f = INT_MIN;
-        for (int i : nums) {
+        for (int i: nums) {
             f = max(i, f);
         }
         cout << f << endl;

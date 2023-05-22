@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 int main() {
@@ -23,7 +24,7 @@ int main() {
                     bool doable = true;
                     for (int i = 0; i < K && doable; i++) {
                         for (int j = 0; j < K && doable; j++) {
-                            if (canvas[x+i][y+j] == '.' && stamp[i][j] == '*') {
+                            if (canvas[x + i][y + j] == '.' && stamp[i][j] == '*') {
                                 doable = false;
                             }
                         }
@@ -32,7 +33,7 @@ int main() {
                         for (int i = 0; i < K; i++) {
                             for (int j = 0; j < K; j++) {
                                 if (stamp[i][j] == '*') {
-                                    ans[x+i][y+j] = '*';
+                                    ans[x + i][y + j] = '*';
                                 }
                             }
                         }
@@ -42,13 +43,13 @@ int main() {
             vector<string> rotate(K, string(K, '.'));
             for (int i = 0; i < K; i++) {
                 for (int j = 0; j < K; j++) {
-                    rotate[i][j] = stamp[K-1-j][i];
+                    rotate[i][j] = stamp[K - 1 - j][i];
                 }
             }
             stamp = rotate;
         }
         int i = 0;
-        for ( ; i < N && canvas[i] == ans[i]; i++) {
+        for (; i < N && canvas[i] == ans[i]; i++) {
         }
         cout << (i == N ? "YES" : "NO") << endl;
     }

@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-void print(vector<int>& nums) {
-    for (int v : nums) {
+void print(vector<int> &nums) {
+    for (int v: nums) {
         cout << v << " ";
     }
     cout << endl;
@@ -13,13 +14,13 @@ int main() {
     int n, k, ans = 0;
     cin >> n >> k;
     vector<int> nums(n), left(n), right(n + 1);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> nums[i];
     }
     sort(nums.begin(), nums.end());
 
-    for (int i = 0, j = 0; i < n; i ++) {
-        for ( ; j < n && nums[j] - nums[i] <= k; j ++) {
+    for (int i = 0, j = 0; i < n; i++) {
+        for (; j < n && nums[j] - nums[i] <= k; j++) {
         }
         left[i] = j - i;
     }
@@ -28,7 +29,7 @@ int main() {
         right[i] = max(right[i + 1], left[i]);
     }
 
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         ans = max(ans, left[i] + right[i + left[i]]);
     }
     cout << ans << endl;

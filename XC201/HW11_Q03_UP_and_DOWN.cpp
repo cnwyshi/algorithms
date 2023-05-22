@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+
 using namespace std;
 
 int totalLevel, startLevel, endLevel;
@@ -21,6 +22,7 @@ void dfs(int currentLevel, int steps) {
         }
     }
 }
+
 int main() {
     cin >> totalLevel;
     cin >> startLevel;

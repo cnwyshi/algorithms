@@ -10,18 +10,20 @@
 #include <queue>
 #include <array>
 #include <algorithm>
+
 using namespace std;
-int main(){
+
+int main() {
     string start, target, word;
     cin >> start >> target;
     int n;
     cin >> n;
     set<string> dict;
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         cin >> word;
         dict.insert(word);
     }
-    if(dict.find(target) == dict.end()){
+    if (dict.find(target) == dict.end()) {
         cout << -1 << endl;
         return 0;
     }
@@ -31,68 +33,68 @@ int main(){
     map<string, int> front, back;
     front[start] = 0;
     back[target] = 0;
-    while(!q1.empty() && !q2.empty()){
+    while (!q1.empty() && !q2.empty()) {
         string s = q1.front();
         q1.pop();
-        if(back.find(s) != back.end()){
-            cout << front[s]+back[s] << endl;
+        if (back.find(s) != back.end()) {
+            cout << front[s] + back[s] << endl;
             return 0;
         }
-        for(int i = 0; i < s.size(); i++){
-            for(char c = 'a'; c < 'z'; c++){
+        for (int i = 0; i < s.size(); i++) {
+            for (char c = 'a'; c < 'z'; c++) {
                 string t = s;
                 t[i] = c;
-                if(front.find(t) == front.end() && dict.find(t) != dict.end()){
+                if (front.find(t) == front.end() && dict.find(t) != dict.end()) {
                     q1.push(t);
-                    front[t] = front[s]+1;
+                    front[t] = front[s] + 1;
                 }
             }
         }
-        for(int i = 0; i < s.size(); i++){
-            string t = s.substr(0, i)+s.substr(i+1, s.size()-i-1);
-            if(front.find(t) == front.end() && dict.find(t) != dict.end()){
+        for (int i = 0; i < s.size(); i++) {
+            string t = s.substr(0, i) + s.substr(i + 1, s.size() - i - 1);
+            if (front.find(t) == front.end() && dict.find(t) != dict.end()) {
                 q1.push(t);
-                front[t] = front[s]+1;
+                front[t] = front[s] + 1;
             }
         }
-        for(int i = 0; i < s.size(); i++){
-            for(char c = 'a'; c < 'z'; c++){
-                string t = s.substr(0, i) + c + s.substr(i+1, s.size() - i + 1);
-                if(front.find(t) == front.end() && dict.find(t) != dict.end()){
+        for (int i = 0; i < s.size(); i++) {
+            for (char c = 'a'; c < 'z'; c++) {
+                string t = s.substr(0, i) + c + s.substr(i + 1, s.size() - i + 1);
+                if (front.find(t) == front.end() && dict.find(t) != dict.end()) {
                     q1.push(t);
-                    front[t] = front[s]+1;
+                    front[t] = front[s] + 1;
                 }
             }
         }
         s = q2.front();
         q2.pop();
-        if(front.find(s) != front.end()){
-            cout << front[s]+back[s] << endl;
+        if (front.find(s) != front.end()) {
+            cout << front[s] + back[s] << endl;
             return 0;
         }
-        for(int i = 0; i < s.size(); i++){
-            for(char c = 'a'; c < 'z'; c++){
+        for (int i = 0; i < s.size(); i++) {
+            for (char c = 'a'; c < 'z'; c++) {
                 string t = s;
                 t[i] = c;
-                if(back.find(t) == back.end() && dict.find(t)!= dict.end()){
+                if (back.find(t) == back.end() && dict.find(t) != dict.end()) {
                     q2.push(t);
-                    back[t] = back[s]+1;
+                    back[t] = back[s] + 1;
                 }
             }
         }
-        for(int i = 0; i < s.size(); i++){
-            string t = s.substr(0, i)+s.substr(i+1, s.size()-i-1);
-            if(back.find(t) == back.end() && dict.find(t) != dict.end()){
+        for (int i = 0; i < s.size(); i++) {
+            string t = s.substr(0, i) + s.substr(i + 1, s.size() - i - 1);
+            if (back.find(t) == back.end() && dict.find(t) != dict.end()) {
                 q2.push(t);
-                back[t] = back[s]+1;
+                back[t] = back[s] + 1;
             }
         }
-        for(int i = 0; i < s.size(); i++){
-            for(char c = 'a'; c < 'z'; c++){
-                string t = s.substr(0, i) + c + s.substr(i+1, s.size() - i + 1);
-                if(back.find(t) == back.end() && dict.find(t) != dict.end()){
+        for (int i = 0; i < s.size(); i++) {
+            for (char c = 'a'; c < 'z'; c++) {
+                string t = s.substr(0, i) + c + s.substr(i + 1, s.size() - i + 1);
+                if (back.find(t) == back.end() && dict.find(t) != dict.end()) {
                     q2.push(t);
-                    back[t] = back[s]+1;
+                    back[t] = back[s] + 1;
                 }
             }
         }

@@ -23,10 +23,10 @@ int main() {
         }
         // for (int i = 0, j = 1000; i < )
 
-        for (int x = 1; x <= tc; x ++) {
-            for (int y = 1; y <= tm; y ++) {
+        for (int x = 1; x <= tc; x++) {
+            for (int y = 1; y <= tm; y++) {
                 bool success = true;
-                for (int i = 0; i < n; i ++) {
+                for (int i = 0; i < n; i++) {
                     if (x * a[i] + y * b[i] > c[i]) {
                         success = false;
                         break;

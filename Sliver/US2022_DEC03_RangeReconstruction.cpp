@@ -21,16 +21,16 @@ int main() {
     int n;
     cin >> n;
     vector<vector<int>> diff(n, vector<int>(n));
-    for (int i = 0; i < n; i ++) {
-        for (int j = i; j < n; j ++) {
+    for (int i = 0; i < n; i++) {
+        for (int j = i; j < n; j++) {
             cin >> diff[i][j];
         }
     }
     vector<int> ans(n);
-    for (int i = n - 2; i >= 0; i --) {
+    for (int i = n - 2; i >= 0; i--) {
         ans[i] = ans[i + 1] + diff[i][i + 1];
         int mx = INT_MIN, mn = INT_MAX, match = 1;
-        for (int j = i; j < n && match; j ++) {
+        for (int j = i; j < n && match; j++) {
             mx = max(mx, ans[j]);
             mn = min(mn, ans[j]);
             match &= mx - mn == diff[i][j];
@@ -39,7 +39,7 @@ int main() {
             ans[i] = ans[i + 1] - diff[i][i + 1];
         }
     }
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cout << ans[i] << (i < n - 1 ? " " : "");
     }
     return 0;

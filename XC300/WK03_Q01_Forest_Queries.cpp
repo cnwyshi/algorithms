@@ -1,5 +1,7 @@
- #include <bits/stdc++.h>
+#include <bits/stdc++.h>
+
 using namespace std;
+
 //void print(vector<vector<int>>& matrix){
 //    int m = matrix.size(), n = matrix[0].size();
 //    for(int i = 0; i < m; i++){
@@ -14,28 +16,28 @@ int main() {
     cin.tie(NULL);
     int n, q;
     cin >> n >> q;
-    vector<vector<int>> forest(n, vector<int> (n));
-    for(int i = 0; i < n; ++i){
+    vector<vector<int>> forest(n, vector<int>(n));
+    for (int i = 0; i < n; ++i) {
         string s;
         cin >> s;
-        for(int j = 0; j < n; ++j){
+        for (int j = 0; j < n; ++j) {
             forest[i][j] = s[j] == '*';
         }
     }
-    vector<vector<int>> ps(n+1, vector<int> (n+1));
+    vector<vector<int>> ps(n + 1, vector<int>(n + 1));
     for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j){
-            ps[i+1][j+1] = ps[i][j+1] + ps[i+1][j] - ps[i][j] + forest[i][j];
+        for (int j = 0; j < n; ++j) {
+            ps[i + 1][j + 1] = ps[i][j + 1] + ps[i + 1][j] - ps[i][j] + forest[i][j];
         }
     }
-    while(q--){
+    while (q--) {
         int x1, y1, x2, y2;
         cin >> x1 >> y1 >> x2 >> y2;
         x1--;
         y1--;
         x2--;
         y2--;
-        cout << ps[x2+1][y2+1] - ps[x2+1][y1] - ps[x1][y2+1] + ps[x1][y1] << '\n';
+        cout << ps[x2 + 1][y2 + 1] - ps[x2 + 1][y1] - ps[x1][y2 + 1] + ps[x1][y1] << '\n';
     }
     return 0;
 }

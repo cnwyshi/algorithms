@@ -21,16 +21,16 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> b[i];
     }
-    for (int i = n - 1, j = n - 1; i >= 0; ) {
+    for (int i = n - 1, j = n - 1; i >= 0;) {
         if (v[b[j]]) {
-            j --;
+            j--;
         } else if (a[i] != b[j]) {
             v[a[i]] = 1;
-            i --;
-            ans ++;
+            i--;
+            ans++;
         } else if (a[i] == b[j]) {
-            i --;
-            j --;
+            i--;
+            j--;
         }
     }
     cout << ans << endl;

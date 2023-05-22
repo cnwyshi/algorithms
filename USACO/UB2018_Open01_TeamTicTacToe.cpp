@@ -18,7 +18,7 @@ set<set<char>> winners[WIDTH + 1];
 
 void insert(vector<pair<int, int>> coordinates) {
     set<char> contained;
-    for (const pair<int, int>& p: coordinates) {
+    for (const pair<int, int> &p: coordinates) {
         contained.insert(board[p.first][p.second]);
     }
     // add the amount of cows who contributed to this to the winners count
@@ -32,15 +32,23 @@ int main() {
     }
     // insert rows
     for (int i = 0; i < WIDTH; i++) {
-        insert({{i, 0}, {i, 1}, {i, 2}});
+        insert({{i, 0},
+                {i, 1},
+                {i, 2}});
     }
     // insert columns
     for (int i = 0; i < WIDTH; i++) {
-        insert({{0, i}, {1, i}, {2, i}});
+        insert({{0, i},
+                {1, i},
+                {2, i}});
     }
     // insert the 2 diagonals
-    insert({{0, 0}, {1, 1}, {2, 2}});
-    insert({{2, 0}, {1, 1}, {0, 2}});
+    insert({{0, 0},
+            {1, 1},
+            {2, 2}});
+    insert({{2, 0},
+            {1, 1},
+            {0, 2}});
 
     ofstream written("tttt.out");
     written << winners[1].size() << endl;

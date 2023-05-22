@@ -12,12 +12,12 @@
 
 using namespace std;
 
-void dfs(vector<string>& matrix, int i, int j, int k, int d, int& ans) {
+void dfs(vector<string> &matrix, int i, int j, int k, int d, int &ans) {
     int n = matrix.size();
     if (i >= n || j >= n || k < 0 || matrix[i][j] == 'H') {
         return;
     } else if (i == n - 1 && j == n - 1) {
-        ans ++;
+        ans++;
         return;
     }
     if (d == 0) {

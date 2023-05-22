@@ -2,7 +2,9 @@
 #include <fstream>
 #include <vector>
 #include <string>
+
 using namespace std;
+
 int main() {
     int n, ans = 0;
     cin >> n;
@@ -10,7 +12,7 @@ int main() {
     string breed;
     cin >> breed;
     vector<int> e(n);
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         int x;
         cin >> x;
         x--;
@@ -20,21 +22,21 @@ int main() {
     fh = breed.find("H");
     lg = breed.rfind("G");
     lh = breed.rfind("H");
-    if(e[fg] >= lg){
-        for(int i = 0; i < fg; i++){
-            if(e[i] >= fg){
+    if (e[fg] >= lg) {
+        for (int i = 0; i < fg; i++) {
+            if (e[i] >= fg) {
                 ans++;
             }
         }
     }
-    if(e[fh] >= lh){
-        for(int i = 0; i < fh; i++){
-            if(e[i] >= fh){
+    if (e[fh] >= lh) {
+        for (int i = 0; i < fh; i++) {
+            if (e[i] >= fh) {
                 ans++;
             }
         }
     }
-    if((e[fg] >= lg && e[fh] >= lh) && (lg < fh || lh < lg)){
+    if ((e[fg] >= lg && e[fh] >= lh) && (lg < fh || lh < lg)) {
         ans++;
     }
     cout << ans << endl;

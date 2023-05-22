@@ -23,7 +23,7 @@ int main() {
     }
 
     sort(cow.begin(), cow.end());
-    for (vector<int>& c : cow) {
+    for (vector<int> &c: cow) {
         t = max(t, c[0]) + c[1];
     }
     cout << t << "\n";

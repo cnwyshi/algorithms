@@ -17,7 +17,15 @@ using namespace std;
 678
 */
 int main() {
-    vector<vector<int>> move = {{1, 3},{0, 2, 4},{1,5},{0,4,6},{1,3,5,7},{2,4,8},{3,7},{4,6,8},{5,7}};
+    vector<vector<int>> move = {{1, 3},
+                                {0, 2, 4},
+                                {1, 5},
+                                {0, 4, 6},
+                                {1, 3, 5, 7},
+                                {2, 4, 8},
+                                {3, 7},
+                                {4, 6, 8},
+                                {5, 7}};
     string board, target = "123804765";
     cin >> board;
     map<string, int> front, back;
@@ -33,7 +41,7 @@ int main() {
             return 0;
         }
         int i = s.find('0');
-        for (int j : move[i]) {
+        for (int j: move[i]) {
             string t = s;
             swap(t[i], t[j]);
             if (front.find(t) == front.end()) {
@@ -49,7 +57,7 @@ int main() {
             return 0;
         }
         i = s.find('0');
-        for (int j : move[i]) {
+        for (int j: move[i]) {
             string t = s;
             swap(t[i], t[j]);
             if (back.find(t) == back.end()) {

@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -10,10 +12,10 @@ int main() {
     cin.tie(nullptr);
     vector<int> desired(m);
     multiset<int> size;
-    for(int i = 0; i < n; ++i){
+    for (int i = 0; i < n; ++i) {
         cin >> desired[i];
     }
-    for(int i = 0; i < m; ++i){
+    for (int i = 0; i < m; ++i) {
         int p;
         cin >> p;
         size.insert(p);
@@ -25,10 +27,10 @@ int main() {
 //    cout << endl;
     sort(desired.begin(), desired.end());
     int ans = 0;
-    for(int i : desired){
-        multiset<int>::iterator it = size.lower_bound(i-k);
-        if(it != size.end()){
-            if(abs(*it - i) <= k){
+    for (int i: desired) {
+        multiset<int>::iterator it = size.lower_bound(i - k);
+        if (it != size.end()) {
+            if (abs(*it - i) <= k) {
                 ans++;
                 size.erase(*it);
             }

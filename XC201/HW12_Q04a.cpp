@@ -4,10 +4,10 @@
 
 using namespace std;
 
-void dfs(int n, int curr, int i, int s, vector<string>& ops) {
+void dfs(int n, int curr, int i, int s, vector<string> &ops) {
     if (i == n) {
         if (s == 0) {
-            for (int j = 0; j < n; j ++) {
+            for (int j = 0; j < n; j++) {
                 cout << (j + 1) << ops[j];
             }
             cout << endl;

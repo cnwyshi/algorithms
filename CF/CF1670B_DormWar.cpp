@@ -14,24 +14,25 @@ using namespace std;
 
 // https://codeforces.com/problemset/problem/1670/B
 int main() {
-    ios_base::sync_with_stdio(0); cin.tie(0);
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
     int t, n, k;
     cin >> t;
-    while (t --) {
+    while (t--) {
         cin >> n;
         string s;
         cin >> s;
         vector<bool> special(26);
         cin >> k;
-        for (int i = 0; i < k; i ++) {
+        for (int i = 0; i < k; i++) {
             char c;
             cin >> c;
             special[c - 'a'] = true;
         }
         int ans = 0, c = 0, found = 0;
-        for (int i = n - 1; i >= 0; i --) {
+        for (int i = n - 1; i >= 0; i--) {
             if (found) {
-                ++ c;
+                ++c;
             }
             ans = max(ans, c);
             int j = s[i] - 'a';

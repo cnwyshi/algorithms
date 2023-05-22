@@ -11,11 +11,11 @@
 
 using namespace std;
 
-int fit(vector<int>& cow, int mx) {
-    for (int th = mx; th >= 0; th --) {
+int fit(vector<int> &cow, int mx) {
+    for (int th = mx; th >= 0; th--) {
         vector<int> copy(cow);
         int n = cow.size(), cost = 0, i = 0;
-        for ( ; i + 1 < n; i ++) {
+        for (; i + 1 < n; i++) {
             if (copy[i] < th) {
                 break;
             }
@@ -34,11 +34,11 @@ int fit(vector<int>& cow, int mx) {
 int main() {
     int t, n;
     cin >> t;
-    while (t --) {
+    while (t--) {
         cin >> n;
         vector<int> cow(n);
         int mx = 0;
-        for (int i = 0; i < n; i ++) {
+        for (int i = 0; i < n; i++) {
             cin >> cow[i];
             mx = max(mx, cow[i]);
         }

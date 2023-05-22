@@ -5,21 +5,24 @@
 #include <set>
 #include <queue>
 #include <array>
+
 using namespace std;
-int dfs(int current, int& l, int& a, int& b, map<int, int>& mem){
-    if(current < l){
+
+int dfs(int current, int &l, int &a, int &b, map<int, int> &mem) {
+    if (current < l) {
         return 0;
     }
-    if(current == l){
+    if (current == l) {
         return 1;
     }
-    if(mem[current] != 0){
+    if (mem[current] != 0) {
         return mem[current];
     }
     mem[current] = dfs(current - a, l, a, b, mem) + dfs(current - b, l, a, b, mem);
     return mem[current];
 }
-int main(){
+
+int main() {
     int h, l;
     cin >> h >> l;
     int a, b;

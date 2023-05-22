@@ -6,7 +6,7 @@ using namespace std;
 int f[100000][21][3];
 
 // PSH
-int dfs(vector<int>& a, int i, int k, int c, int s, int& ret) {
+int dfs(vector<int> &a, int i, int k, int c, int s, int &ret) {
     if (i == a.size()) {
         printf("k = %d, c = %d, s = %d\n", k, c, s);
         ret = max(ret, s);
@@ -33,12 +33,12 @@ int main() {
     int n, k, ans = 0, ret = 0;
     cin >> n >> k;
     vector<int> a(n);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         char c;
         cin >> c;
         a[i] = c == 'P' ? 0 : (c == 'S' ? 1 : 2);
     }
-    for (int j = 0; j < 3; j ++) {
+    for (int j = 0; j < 3; j++) {
         ans = max(ans, dfs(a, 0, k, j, 0, ret));
     }
     cout << ans << endl;

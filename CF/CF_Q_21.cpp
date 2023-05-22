@@ -18,7 +18,7 @@ int main() {
     cin >> n;
     vector<int> digits;
     bool endinzero = true;
-    while(n>0) {
+    while (n > 0) {
         int y = n % 10;
         n = n / 10;
         if (y > 0) {
@@ -29,20 +29,19 @@ int main() {
         }
     }
     vector<int> version2(digits.size());
-    for(int i = 0; i < digits.size();i++){
+    for (int i = 0; i < digits.size(); i++) {
         version2[i] = digits[i];
     }
     bool palindrome = true;
     reverse(digits.begin(), digits.end());
-    for(int i = 0; i < digits.size(); i++){
-        if(version2[i] != digits[i]){
+    for (int i = 0; i < digits.size(); i++) {
+        if (version2[i] != digits[i]) {
             palindrome = false;
         }
     }
-    if(palindrome == true){
+    if (palindrome == true) {
         cout << "YES" << endl;
-    }
-    else{
+    } else {
         cout << "NO" << endl;
     }
 }

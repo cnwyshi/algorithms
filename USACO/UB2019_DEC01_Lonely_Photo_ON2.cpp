@@ -10,21 +10,21 @@
 #include <fstream>
 
 using namespace std;
-int main(){
+
+int main() {
     int n, count;
     cin >> n;
     string s;
     cin >> s;
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         int g = 0, h = 0;
-        for(int j = i; j < n; j++){
-            if(s[j] == 'G'){
+        for (int j = i; j < n; j++) {
+            if (s[j] == 'G') {
                 g++;
-            }
-            else{
+            } else {
                 h++;
             }
-            if(g+h>=3 && (h==1 || g == 1)){
+            if (g + h >= 3 && (h == 1 || g == 1)) {
                 count++;
             }
         }

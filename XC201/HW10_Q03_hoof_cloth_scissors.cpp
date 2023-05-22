@@ -4,6 +4,7 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+
 using namespace std;
 int dp[100000][21][3];
 
@@ -11,40 +12,40 @@ int dp[100000][21][3];
 HPS
 012
 */
-int dfs(vector<int>& signs, int i, int c, int k){
+int dfs(vector<int> &signs, int i, int c, int k) {
     int n = signs.size();
     int ans = 0;
-    if(i == n){
+    if (i == n) {
         return 0;
     }
-    if(dp[i][k][c]){
+    if (dp[i][k][c]) {
         return dp[i][k][c];
     }
-    if((c + 3 - signs[i])%3 == 1){
-        ans = max(ans, dfs(signs, i+1, c, k)+1);
-    }
-    else{
-        ans = max(ans, dfs(signs, i+1, c, k));
-        if(k > 0){
-            ans = max(ans, dfs(signs, i+1, (signs[i]+1)%3, k-1)+1);
+    if ((c + 3 - signs[i]) % 3 == 1) {
+        ans = max(ans, dfs(signs, i + 1, c, k) + 1);
+    } else {
+        ans = max(ans, dfs(signs, i + 1, c, k));
+        if (k > 0) {
+            ans = max(ans, dfs(signs, i + 1, (signs[i] + 1) % 3, k - 1) + 1);
         }
     }
     return dp[i][k][c] = ans;
 }
+
 int main() {
     int n, k, ans = 0;
     cin >> n >> k;
-    vector<int> signs (n);
-    for(int i = 0;i < n; i ++){
+    vector<int> signs(n);
+    for (int i = 0; i < n; i++) {
         char x;
         cin >> x;
-        if(x == 'H'){
+        if (x == 'H') {
             signs[i] = 0;
         }
-        if(x == 'P'){
+        if (x == 'P') {
             signs[i] = 1;
         }
-        if(x == 'S'){
+        if (x == 'S') {
             signs[i] = 2;
         }
     }

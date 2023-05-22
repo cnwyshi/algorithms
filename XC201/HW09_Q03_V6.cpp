@@ -6,7 +6,7 @@ using namespace std;
 int ret, visited[100000][21][3];
 
 // http://www.usaco.org/index.php?page=viewproblem2&cpid=694
-void dfs(vector<int>& a, int i, int k, int c, int s) {
+void dfs(vector<int> &a, int i, int k, int c, int s) {
     if (i == a.size()) {
         ret = max(ret, s);
         return;
@@ -29,12 +29,12 @@ int main() {
     int n, k;
     cin >> n >> k;
     vector<int> a(n);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         char c;
         cin >> c;
         a[i] = c == 'P' ? 0 : (c == 'S' ? 1 : 2);
     }
-    for (int j = 0; j < 3; j ++) {
+    for (int j = 0; j < 3; j++) {
         dfs(a, 0, k, j, 0);
     }
     cout << ret << endl;

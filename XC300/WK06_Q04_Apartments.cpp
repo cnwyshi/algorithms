@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 int main() {
     int n, m, k;
     cin >> n >> m >> k;
@@ -8,10 +10,10 @@ int main() {
     cin.tie(nullptr);
     vector<int> desired(m);
     multiset<int> size;
-    for(int i = 0; i < n; ++i){
+    for (int i = 0; i < n; ++i) {
         cin >> desired[i];
     }
-    for(int i = 0; i < m; ++i){
+    for (int i = 0; i < m; ++i) {
         int p;
         cin >> p;
         size.insert(p);
@@ -23,19 +25,19 @@ int main() {
 //    cout << endl;
     sort(desired.begin(), desired.end());
     int ans = 0;
-    for(int i : desired){
+    for (int i: desired) {
         multiset<int>::iterator it1 = size.lower_bound(i);
         multiset<int>::iterator it2 = size.lower_bound(i);
 //        cout << i << " " << *it1 << " " << *it2 << endl;
         bool found = false;
-        if(*it2 - i <= k){
+        if (*it2 - i <= k) {
             ans++;
             size.erase(it1);
             found = true;
         }
-        if(it2 != size.begin() && !found){
+        if (it2 != size.begin() && !found) {
             it2--;
-            if(abs(*it2 - i) <= k){
+            if (abs(*it2 - i) <= k) {
                 ans++;
                 size.erase(it2);
             }

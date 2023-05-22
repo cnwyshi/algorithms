@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 // https://duoblogger.github.io/assets/pdf/memonvyftw/guide-t-cp.pdf#page=156
@@ -15,11 +16,11 @@ using namespace std;
 vector<int> ExtGCD(int a, int b) {
     if (b == 0) {
         // a * 1 + 0 * y = a
-        return { 1, 0, a };
+        return {1, 0, a};
     } else {
         vector<int> r = ExtGCD(b, a % b);
         int x = r[0], y = r[1], g = r[2];
-        return { y, x - a / b * y, g };
+        return {y, x - a / b * y, g};
     }
 }
 

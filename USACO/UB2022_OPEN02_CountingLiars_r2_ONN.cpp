@@ -19,14 +19,14 @@ int main() {
     cin >> n;
     vector<char> op(n);
     vector<int> val(n);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> op[i] >> val[i];
     }
 
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         int liars = 0;
         // assume p = val[i], let's check op[j] and val[j]
-        for (int j = 0; j < n; j ++) {
+        for (int j = 0; j < n; j++) {
             liars += op[j] == 'G' ? val[i] < val[j] : val[i] > val[j];
         }
         ans = min(ans, liars);

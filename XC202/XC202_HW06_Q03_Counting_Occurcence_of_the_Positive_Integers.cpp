@@ -17,12 +17,12 @@ int main() {
     int n;
     cin >> n;
     map<int, int> nums;
-    while(n--){
+    while (n--) {
         int x;
         cin >> x;
         nums[x]++;
     }
-    for(auto i = nums.begin(); i != nums.end(); i++){
-        cout << i -> first << " " << i -> second << endl;
+    for (auto i = nums.begin(); i != nums.end(); i++) {
+        cout << i->first << " " << i->second << endl;
     }
 }

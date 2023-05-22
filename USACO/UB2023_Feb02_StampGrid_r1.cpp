@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 int main() {
@@ -23,7 +24,7 @@ int main() {
                     bool can_stamp = true;
                     for (int a = 0; a < K; a++) {
                         for (int b = 0; b < K; b++) {
-                            if (grid[i+a][j+b] == '.' && stamp[a][b] == '*') {
+                            if (grid[i + a][j + b] == '.' && stamp[a][b] == '*') {
                                 can_stamp = false;
                                 break;
                             }
@@ -36,7 +37,7 @@ int main() {
                         for (int a = 0; a < K; a++) {
                             for (int b = 0; b < K; b++) {
                                 if (stamp[a][b] == '*') {
-                                    ans[i+a][j+b] = '*';
+                                    ans[i + a][j + b] = '*';
                                 }
                             }
                         }
@@ -46,7 +47,7 @@ int main() {
             vector<string> new_stamp(K, string(K, '.'));
             for (int i = 0; i < K; i++) {
                 for (int j = 0; j < K; j++) {
-                    new_stamp[i][j] = stamp[K-1-j][i];
+                    new_stamp[i][j] = stamp[K - 1 - j][i];
                 }
             }
             stamp = new_stamp;

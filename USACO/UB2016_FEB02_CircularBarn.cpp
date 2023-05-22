@@ -17,12 +17,12 @@ int main() {
     int n, ans = INT_MAX;
     cin >> n;
     vector<int> barn(n);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> barn[i];
     }
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         int v = 0;
-        for (int j = 0; j < n; j ++) {
+        for (int j = 0; j < n; j++) {
             v += barn[(i + j) % n] * j;
         }
         ans = min(ans, v);

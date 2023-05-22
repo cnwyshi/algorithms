@@ -18,27 +18,27 @@ int main() {
     vector<char> c(n);
     vector<int> v(n);
     map<int, int> index;
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> c[i] >> v[i];
         index[v[i]] = -1;
     }
 
     // index = { 1: 1, 1K: 2, 1M: 3, 1B: 4 }
     int ans = n, i = 1;
-    for (auto& kv : index) {
-        kv.second = i ++;
+    for (auto &kv: index) {
+        kv.second = i++;
     }
 
-    for (i = 0; i < n; i ++) {
+    for (i = 0; i < n; i++) {
         v[i] = index[v[i]];
     }
 
-    for (int p = 1; p <= index.size(); p ++) {
+    for (int p = 1; p <= index.size(); p++) {
         int lies = 0;
-        for (i = 0; i < n; i ++) {
+        for (i = 0; i < n; i++) {
             if (c[i] == 'G' && p < v[i]
-             || c[i] == 'L' && p > v[i]) {
-                lies ++;
+                || c[i] == 'L' && p > v[i]) {
+                lies++;
             }
         }
         ans = min(ans, lies);

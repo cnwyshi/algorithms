@@ -1,24 +1,26 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-int main(){
+
+int main() {
     int n, k;
     cin >> n >> k;
     vector<int> nums(n);
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         cin >> nums[i];
     }
     map<int, int> count;
     long long ans = 0;
-    for(int i = 0, j = 0; j < n; j++){
+    for (int i = 0, j = 0; j < n; j++) {
         count[nums[j]]++;
-        while(count.size() > k){
+        while (count.size() > k) {
             count[nums[i]]--;
-            if(count[nums[i]] == 0){
+            if (count[nums[i]] == 0) {
                 count.erase(nums[i]);
             }
             i++;
         }
-        ans+=j-i+1;
+        ans += j - i + 1;
 //        cout << i << ","  << j << endl;
 //        for (std::map<int,int>::iterator it=count.begin(); it!=count.end(); ++it){
 //            cout << it->first << ":" << it->second << ", ";

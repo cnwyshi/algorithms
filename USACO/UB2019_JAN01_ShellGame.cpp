@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 int main() {
@@ -8,12 +9,12 @@ int main() {
     int n, ans = 0;
     cin >> n;
     vector<vector<int>> change(n, vector<int>(3));
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> change[i][0] >> change[i][1] >> change[i][2];
     }
-    for (int i = 1; i < 4; i ++) {
+    for (int i = 1; i < 4; i++) {
         int correct = 0;
-        for (int j = 0, c = i; j < n; j ++) {
+        for (int j = 0, c = i; j < n; j++) {
             int a = change[j][0], b = change[j][1];
             if (c == a) {
                 c = b;
@@ -21,7 +22,7 @@ int main() {
                 c = a;
             }
             if (c == change[j][2]) {
-                correct ++;
+                correct++;
             }
         }
         ans = max(ans, correct);

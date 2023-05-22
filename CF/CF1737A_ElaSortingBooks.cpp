@@ -8,21 +8,21 @@ using namespace std;
 int main() {
     int t, n, k;
     cin >> t;
-    while (t --) {
+    while (t--) {
         cin >> n >> k;
         string s;
         cin >> s;
         vector<int> count(26);
-        for (char c : s) {
-            count[c - 'a'] ++;
+        for (char c: s) {
+            count[c - 'a']++;
         }
-        for (int i = 0; i < k; i ++) {
+        for (int i = 0; i < k; i++) {
             int c = n / k, j = 0;
-            for ( ; c > 0 && count[j] > 0; j ++) {
-                count[j] --;
-                c --;
+            for (; c > 0 && count[j] > 0; j++) {
+                count[j]--;
+                c--;
             }
-            cout << (char)('a' + j);
+            cout << (char) ('a' + j);
         }
         cout << endl;
     }

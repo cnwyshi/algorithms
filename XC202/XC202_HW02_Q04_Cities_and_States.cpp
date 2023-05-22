@@ -5,20 +5,22 @@
 #include <set>
 #include <queue>
 #include <array>
+
 using namespace std;
-int main(){
+
+int main() {
 //    freopen("sample.in", "r", stdin);
     int n;
     cin >> n;
-    map <string, int> m;
+    map<string, int> m;
     long long pairs = 0;
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         string city, state;
         cin >> city >> state;
         string c = city.substr(0, 2);
-        if(c != state){
+        if (c != state) {
             pairs += m[state + city.substr(0, 2)];
-            m[city.substr(0,2) + state]++;
+            m[city.substr(0, 2) + state]++;
         }
     }
 //    for(auto i: m){

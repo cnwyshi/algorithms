@@ -3,8 +3,10 @@
 //
 #include <iostream>
 #include <fstream>
+
 using namespace std;
-int main(){
+
+int main() {
     int bronzeBefore;
     int bronzeAfter;
     int silverBefore;
@@ -15,7 +17,7 @@ int main(){
     int platinumAfter;
     cin >> bronzeBefore;
     cin >> bronzeAfter;
-    cin >>  silverBefore;
+    cin >> silverBefore;
     cin >> silverAfter;
     cin >> goldBefore;
     cin >> goldAfter;

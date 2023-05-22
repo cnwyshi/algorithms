@@ -4,8 +4,8 @@
 
 using namespace std;
 
-template <typename T>
-int index(const vector<T>& vec, const T& n) {
+template<typename T>
+int index(const vector<T> &vec, const T &n) {
     for (int i = 0; i < vec.size(); i++) {
         if (vec[i] == n) {
             return i;
@@ -34,7 +34,7 @@ int main() {
             }
 
             bool better = true;
-            for (const vector<int>& s : sessions) {
+            for (const vector<int> &s: sessions) {
                 if (index(s, c1) < index(s, c2)) {
                     better = false;
                     break;

@@ -1,32 +1,33 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 int main() {
     int n, k;
     cin >> n >> k;
     vector<int> diamonds(n);
-    for(int i = 0;  i < n; ++i){
+    for (int i = 0; i < n; ++i) {
         cin >> diamonds[i];
     }
     vector<int> right(n), m(n);
     sort(diamonds.begin(), diamonds.end());
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         int crt = diamonds[i];
-        for(int j = i; j < n; j++){
-            if(diamonds[j] - crt <= k){
+        for (int j = i; j < n; j++) {
+            if (diamonds[j] - crt <= k) {
                 right[i]++;
-            }
-            else{
+            } else {
                 break;
             }
         }
     }
-    m[n-1] = right[n-1];
-    for(int i = n-2; i >= 0; i--){
-        m[i] = max(m[i+1], right[i]);
+    m[n - 1] = right[n - 1];
+    for (int i = n - 2; i >= 0; i--) {
+        m[i] = max(m[i + 1], right[i]);
     }
     int ans = 0;
-    for(int i = 0; i < n; i++){
-        ans = max(ans, right[i] + m[i+right[i]]);
+    for (int i = 0; i < n; i++) {
+        ans = max(ans, right[i] + m[i + right[i]]);
     }
     cout << ans << endl;
     return 0;

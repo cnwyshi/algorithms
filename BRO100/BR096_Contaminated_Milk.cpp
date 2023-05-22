@@ -13,9 +13,11 @@
 #include <bitset>
 
 using namespace std;
-bool less_than(vector<int> a, vector<int> b){
-    return a [2] < b[2];
+
+bool less_than(vector<int> a, vector<int> b) {
+    return a[2] < b[2];
 }
+
 int main() {
     size_t n, m, d, s;
     cin >> n >> m >> d >> s;
@@ -40,7 +42,7 @@ int main() {
         int sick_person = sicks[i][0];
         int sick_time = sicks[i][1];
         bitset<51> current_bad_milks;
-        for (int j = 0; j < d && drinks [j][2] < sick_time; j++) {
+        for (int j = 0; j < d && drinks[j][2] < sick_time; j++) {
             int drink_person = drinks[j][0];
             int drink_milk = drinks[j][1];
             int drink_time = drinks[j][2];

@@ -5,23 +5,23 @@ using namespace std;
 
 int main() {
     int n, m, a, b;
-    ifstream  ifs("revegetate.in");
+    ifstream ifs("revegetate.in");
     ifs >> n >> m;
 
     vector<vector<int>> graph(n);
-    for (int i = 0; i < m; i ++) {
+    for (int i = 0; i < m; i++) {
         ifs >> a >> b;
         graph[max(a, b) - 1].push_back(min(a, b) - 1);
     }
 
     vector<int> color(n);
-    ofstream  ofs("revegetate.out");
+    ofstream ofs("revegetate.out");
     ofs << (color[0] = 1);
-    for (int j = 1; j < n; j ++) {
+    for (int j = 1; j < n; j++) {
         int c = 0;
-        for (c = 1; c <= 4; c ++) {
+        for (c = 1; c <= 4; c++) {
             bool match = true;
-            for (int i : graph[j]) {
+            for (int i: graph[j]) {
                 if (color[i] == c) {
                     match = false;
                     break;

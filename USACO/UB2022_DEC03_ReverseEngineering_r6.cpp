@@ -11,28 +11,28 @@ using namespace std;
 int main() {
     int t;
     cin >> t;
-    while (t -- > 0) {
+    while (t-- > 0) {
         string s;
         int n, m;
         cin >> n >> m;
         vector<string> b(m);
         vector<int> v(m);
-        for (int i = 0; i < m; i ++) {
+        for (int i = 0; i < m; i++) {
             cin >> b[i] >> v[i];
         }
 
         set<int> rows;
         while (true) {
             bool change = false;
-            for (int j = 0; j < n; j ++) {
+            for (int j = 0; j < n; j++) {
                 vector<set<int>> count(2);
-                for (int i = 0; i < m; i ++) {
+                for (int i = 0; i < m; i++) {
                     if (rows.find(i) == rows.end()) {
                         count[b[i][j] - '0'].insert(v[i]);
                     }
                 }
-                for (int i = 0; i < m; i ++) {
-                    if (count[b[i][j]-'0'].size() == 1) {
+                for (int i = 0; i < m; i++) {
+                    if (count[b[i][j] - '0'].size() == 1) {
                         rows.insert(i);
                         change = true;
                     }

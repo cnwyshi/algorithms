@@ -20,12 +20,12 @@ using namespace std;
 int main() {
     int t, n, k;
     cin >> t;
-    while (t -- > 0) {
+    while (t-- > 0) {
         cin >> n >> k;
         string cows;
         cin >> cows;
         vector<int> g, h;
-        for (int i = 0; i < n; i ++) {
+        for (int i = 0; i < n; i++) {
             if (cows[i] == 'G') {
                 g.push_back(i);
             } else {
@@ -35,21 +35,21 @@ int main() {
 
         int count = 0, j = INT_MIN / 2;
         string ans(n, '.');
-        for (int i = 0; i < g.size(); i ++) {
+        for (int i = 0; i < g.size(); i++) {
             if (abs(j - g[i]) > k) {
                 j = min(g[i] + k, n - 1);
                 ans[j] = 'G';
-                count ++;
+                count++;
             }
         }
         j = INT_MAX / 2;
-        for (int i = h.size() - 1; i >= 0; i --) {
+        for (int i = h.size() - 1; i >= 0; i--) {
             if (abs(j - h[i]) > k) {
                 j = max(h[i] - k, 0);
-                for ( ; j < n && ans[j] == 'G'; j ++) {
+                for (; j < n && ans[j] == 'G'; j++) {
                 }
                 ans[j] = 'H';
-                count ++;
+                count++;
             }
         }
         cout << count << endl << ans << endl;

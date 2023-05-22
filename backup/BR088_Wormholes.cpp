@@ -1,19 +1,19 @@
 #include <iostream>
 #include <fstream>
 #include <fstream>
+
 using namespace std;
 #define MAX_N 12
 
-int N, X[MAX_N+1], Y[MAX_N+1];
-int partner[MAX_N+1];
-int next_on_right[MAX_N+1];
+int N, X[MAX_N + 1], Y[MAX_N + 1];
+int partner[MAX_N + 1];
+int next_on_right[MAX_N + 1];
 
-bool cycle_exists(void)
-{
-    for (int start=1; start<=N; start++) {
+bool cycle_exists(void) {
+    for (int start = 1; start <= N; start++) {
         // does there exist a cylce starting from start
         int pos = start;
-        for (int count=0; count<N; count++)
+        for (int count = 0; count < N; count++)
             pos = next_on_right[partner[pos]];
         if (pos != 0) return true;
     }
@@ -21,11 +21,10 @@ bool cycle_exists(void)
 }
 
 // count all solutions
-int solve(void)
-{
+int solve(void) {
     // find first unpaired wormhole
-    int i, total=0;
-    for (i=1; i<=N; i++)
+    int i, total = 0;
+    for (i = 1; i <= N; i++)
         if (partner[i] == 0) break;
 
     // everyone paired?
@@ -35,7 +34,7 @@ int solve(void)
     }
 
     // try pairing i with all possible other wormholes j
-    for (int j=i+1; j<=N; j++)
+    for (int j = i + 1; j <= N; j++)
         if (partner[j] == 0) {
             // try pairing i & j, let recursion continue to
             // generate the rest of the solution
@@ -47,16 +46,15 @@ int solve(void)
     return total;
 }
 
-int main(void)
-{
+int main(void) {
     cin >> N;
-    for (int i=1; i<=N; i++) cin >> X[i] >> Y[i];
+    for (int i = 1; i <= N; i++) cin >> X[i] >> Y[i];
 
-    for (int i=1; i<=N; i++) // set next_on_right[i]...
-        for (int j=1; j<=N; j++)
+    for (int i = 1; i <= N; i++) // set next_on_right[i]...
+        for (int j = 1; j <= N; j++)
             if (X[j] > X[i] && Y[i] == Y[j]) // j right of i...
                 if (next_on_right[i] == 0 ||
-                    X[j]-X[i] < X[next_on_right[i]]-X[i])
+                    X[j] - X[i] < X[next_on_right[i]] - X[i])
                     next_on_right[i] = j;
 
     cout << solve() << "\n";

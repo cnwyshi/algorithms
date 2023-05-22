@@ -16,10 +16,11 @@ void dfs(int index, vector<int> data, int sum) {
     }
     for (int i = index; i <= min(n - 1, n - sum); i++) {
         data.push_back(i);
-        dfs(i, data, sum+i);
+        dfs(i, data, sum + i);
         data.pop_back();
     }
 }
+
 int main() {
     cin >> n;
     vector<int> data;

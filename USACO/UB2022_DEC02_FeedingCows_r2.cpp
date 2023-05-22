@@ -20,19 +20,19 @@ using namespace std;
 int main() {
     int t, n, k;
     cin >> t;
-    while (t -- > 0) {
+    while (t-- > 0) {
         cin >> n >> k;
         string s, ans(n, '.');
         cin >> s;
         int count = 0;
-        for (char c : { 'G', 'H'}) {
-            for (int i = 0, last = -k - 1; i < n; i ++) {
+        for (char c: {'G', 'H'}) {
+            for (int i = 0, last = -k - 1; i < n; i++) {
                 if (s[i] == c && abs(i - last) > k) {
                     last = min(i + k, n - 1);
-                    for ( ; ans[last] != '.'; last --) {
+                    for (; ans[last] != '.'; last--) {
                     }
                     ans[last] = c;
-                    count ++;
+                    count++;
                 }
             }
         }

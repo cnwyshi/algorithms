@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+
 using namespace std;
 vector<pair<int, int>> st;
 vector<int> comfort;
@@ -9,7 +10,8 @@ vector<pair<int, int>> conditioners;
 vector<int> money;
 vector<int> power;
 int ans = 1e9;
-int check(string s){
+
+int check(string s) {
     vector<int> cold(101);
     for (int i = 1; i <= 100; i++) { // iterate through all stalls
         for (int j = 0; j < conditioners.size(); j++) { // use the air conditioners
@@ -22,30 +24,32 @@ int check(string s){
     bool works = true; // does it work?
     for (int i = 0; i < st.size(); i++) {  // see if the stall temp meets requirements
         for (int j = st[i].first; j <= st[i].second; j++) { // iterate through the stall ranges
-            if (cold[j] < comfort[i]){ // if temp is warmer than comfort
+            if (cold[j] < comfort[i]) { // if temp is warmer than comfort
                 works = false; // doesnt work
             }
         }
     }
     int price = 0; // add the prices
     for (int i = 0; i < s.size(); i++) {
-        if (s[i] == '1'){ // if you use AC
+        if (s[i] == '1') { // if you use AC
             price += money[i];// add the money to the price
         }
     }
-    if (works){ // if it works
+    if (works) { // if it works
         return price; // return the price
     }
     return 1e9; // it doesn't work, so you want to not make answer change
 }
-void sub(string s, int m){
-    if(s.size() == m){
+
+void sub(string s, int m) {
+    if (s.size() == m) {
         ans = min(ans, check(s));
         return;
     }
-    sub(s+"1", m);
-    sub(s+"0", m);
+    sub(s + "1", m);
+    sub(s + "0", m);
 }
+
 int main() {
     int n, m;
     cin >> n >> m;

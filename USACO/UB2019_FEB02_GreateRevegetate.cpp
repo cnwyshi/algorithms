@@ -5,23 +5,23 @@ using namespace std;
 
 int main() {
     int n, m;
-    ifstream  ifs("revegetate.in");
+    ifstream ifs("revegetate.in");
     ifs >> n >> m;
 
     int a[m], b[m], ans[n + 1];
-    for (int i = 0; i < m; i ++) {
+    for (int i = 0; i < m; i++) {
         ifs >> a[i] >> b[i];
         if (a[i] > b[i]) {
             swap(a[i], b[i]);
         }
     }
 
-    ofstream  ofs("revegetate.out");
-    for (int y = 1; y <= n; y ++) {
+    ofstream ofs("revegetate.out");
+    for (int y = 1; y <= n; y++) {
         int c = 0;
-        for (c = 1; c <= 4; c ++) {
+        for (c = 1; c <= 4; c++) {
             bool match = true;
-            for (int i = 0; i < m; i ++) {
+            for (int i = 0; i < m; i++) {
                 if (b[i] == y) {
                     int x = a[i];
                     if (ans[x] == c) {
