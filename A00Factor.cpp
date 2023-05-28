@@ -45,7 +45,7 @@ int countFactors2(int x) {
 
     // Time: O(N*LogLogN)
     // v:   2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
-    // gpf: 2 3 2 5 3 7 2 3  5 11  2 13  2  3  2 17  3 19  5
+    // gpf: 2 3 2 5 3 7 2 3  5 11  3 13  7  5  2 17  3 19  5
     vector<int> gpf(x + 1);
     for (int f = 2; f <= x; f++) {
         if (gpf[f] == 0) {
