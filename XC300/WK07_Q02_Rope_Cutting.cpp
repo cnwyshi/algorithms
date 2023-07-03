@@ -9,19 +9,6 @@ int main() {
     int n, k;
     cin >> n >> k;
     vector<int> l(n);
-<<<<<<< HEAD
-    for (int i = 0; i < n; ++i) {
-        double f;
-        cin >> f;
-        int length = f * 100;
-        l[i] = length;
-    }
-    sort(l.begin(), l.end());
-    //find biggest enough = find smallest unenough - 1
-    int lo = 0, hi = 1000000000;
-    while (lo < hi) {
-        int mid = (lo + hi) / 2;
-=======
     for(int i = 0; i < n; ++i){
         float f;
         cin >> f;
@@ -32,7 +19,6 @@ int main() {
     int lo = 0, hi = 10000000;
     while(lo < hi){
         int mid = (lo+hi)/2;
->>>>>>> add XC302
         int num = 0;
         for (int v: l) {
             num += v / mid;

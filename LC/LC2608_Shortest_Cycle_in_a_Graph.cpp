@@ -40,6 +40,7 @@ int findShortestCycle(int n, vector<vector<int>> edges) {
         // }
         // cout << ans << endl;
     }
+    return -1;
 }
 
 int main() {

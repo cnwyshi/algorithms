@@ -3,12 +3,13 @@ project(algorithms)
 
 set(CMAKE_CXX_STANDARD 14)
 
-<<<<<<< HEAD
-file(GLOB files *.cpp BRO100/*.cpp
+file(GLOB files *.cpp
+        BRO100/*.cpp
         CF/*.cpp
         HPI/*.cpp
         LC/*.cpp
         Sliver/*.cpp
+        TC23/*.cpp
         USACO/*.cpp
         XC200/*.cpp
         XC201/*.cpp
@@ -16,9 +17,6 @@ file(GLOB files *.cpp BRO100/*.cpp
         XC300/*.cpp
         XC301/*.cpp
         XC302/*.cpp)
-=======
-file(GLOB files *.cpp BRO100/*.cpp XC200/*.cpp XC201/*.cpp XC202/*.cpp CF/*.cpp USACO/*.cpp Sliver/*.cpp HPI/*.cpp XC300/*.cpp XC302/*.cpp)
->>>>>>> add XC302
 foreach (file ${files})
     string(REGEX REPLACE ".+/(.+)\\..*" "\\1" exe ${file})
     add_executable(${exe} ${file})
