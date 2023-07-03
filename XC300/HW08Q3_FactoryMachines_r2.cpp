@@ -4,7 +4,6 @@ using namespace std;
 using ll = long long;
 
 int main() {
-    // freopen("C:\\Users\\flame\\Downloads\\sample.in", "r", stdin);
 
     int n;
     ll t;

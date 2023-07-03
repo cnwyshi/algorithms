@@ -10,6 +10,7 @@ static const auto fastio = []() {
 }();
 
 int main() {
+    freopen("/Users/genius/Downloads/sample-51.in", "r", stdin);
     int n, k;
     cin >> n >> k;
     vector<int> nums(n);

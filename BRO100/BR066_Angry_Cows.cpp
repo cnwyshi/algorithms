@@ -15,26 +15,20 @@ int exploded_num(int start, int direction) {
     int prev = start;
     while (true) {
         int next = prev;
-        // Get the furthest explosion index without exceeding the current radius
         while (
                 next + direction >= 0
                 && next + direction < N
                 && abs(bales[next + direction] - bales[prev]) <= radius) {
             next += direction;
         }
-
-        // We didn't find a new haybale, so the chain explosion is over
         if (next == prev) {
             break;
         }
-
-        // Update our previous explosion and increment radius
         prev = next;
         radius++;
     }
     return abs(prev - start);
 }
-
 int main() {
     int n;
     cin >> N;

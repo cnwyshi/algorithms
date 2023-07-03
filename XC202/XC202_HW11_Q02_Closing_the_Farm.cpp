@@ -1,8 +1,14 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+<<<<<<< HEAD
 
 int main() {
+=======
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+>>>>>>> add XC302
     int n, m;
     cin >> n >> m;
     vector<set<int>> graph(n + 1);

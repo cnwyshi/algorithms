@@ -5,9 +5,11 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
+    freopen("/Users/genius/Downloads/sample-51.in", "r", stdin);
     int n, k;
     cin >> n >> k;
     vector<int> l(n);
+<<<<<<< HEAD
     for (int i = 0; i < n; ++i) {
         double f;
         cin >> f;
@@ -19,6 +21,18 @@ int main() {
     int lo = 0, hi = 1000000000;
     while (lo < hi) {
         int mid = (lo + hi) / 2;
+=======
+    for(int i = 0; i < n; ++i){
+        float f;
+        cin >> f;
+        l[i] = f*100;
+    }
+    sort(l.begin(), l.end());
+    //find biggest enough = find smallest unenough - 1
+    int lo = 0, hi = 10000000;
+    while(lo < hi){
+        int mid = (lo+hi)/2;
+>>>>>>> add XC302
         int num = 0;
         for (int v: l) {
             num += v / mid;
