@@ -48,7 +48,6 @@ int solve() {
     return 0;
 }
 
-#ifndef MY_UNIT_TEST
 
 int main() {
     ios::sync_with_stdio(false);
@@ -56,4 +55,14 @@ int main() {
     solve();
 }
 
-#endif
+/*
+样例输入：
+9 3 6
+1 3 4 2
+3 8 5
+4 9 6 7
+
+
+样例输出：
+1
+*/

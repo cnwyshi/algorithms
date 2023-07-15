@@ -68,12 +68,8 @@ int solve() {
     return 0;
 }
 
-#ifndef MY_UNIT_TEST
-
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     solve();
 }
-
-#endif
