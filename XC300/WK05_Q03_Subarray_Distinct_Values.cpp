@@ -22,7 +22,7 @@ int main() {
         }
         ans += j - i + 1;
 //        cout << i << ","  << j << endl;
-//        for (std::map<int,int>::iterator it=count.begin(); it!=count.end(); ++it){
+//        for (std::map<int,int>::iterator it=n.begin(); it!=n.end(); ++it){
 //            cout << it->first << ":" << it->second << ", ";
 //        }
 //        cout << endl;
@@ -53,11 +53,11 @@ CD
 DE
 CDE
 i = 0
-j = 0 count = {1:1}, ans += 1
-j = 1 count = {1:1, 2:1} ans += 2(j-i+1)
-j = 2 count = {1:1, 2:1, 3:1}, count.size() = 3, i = 1, count = {2:1,3:1} ans += 2
-j = 3 count = {1:1, 2:1, 3:1} count.size() = 3, i = 2, count = {1:1, 3:1} ans += 2
-j = 4 count = {1:2, 3:1} ans += 3
+j = 0 n = {1:1}, ans += 1
+j = 1 n = {1:1, 2:1} ans += 2(j-i+1)
+j = 2 n = {1:1, 2:1, 3:1}, n.size() = 3, i = 1, n = {2:1,3:1} ans += 2
+j = 3 n = {1:1, 2:1, 3:1} n.size() = 3, i = 2, n = {1:1, 3:1} ans += 2
+j = 4 n = {1:2, 3:1} ans += 3
 
  ans = 10
 Output:

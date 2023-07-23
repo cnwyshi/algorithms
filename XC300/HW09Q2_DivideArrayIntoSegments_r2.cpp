@@ -32,7 +32,7 @@ int main() {
             }
             sum += v;
         }
-        // cout << lo << " " << hi << " " << count << endl;
+        // cout << lo << " " << hi << " " << n << endl;
         if (count > m) {
             lo = mid + 1;
         } else {

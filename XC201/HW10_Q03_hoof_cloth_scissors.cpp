@@ -57,7 +57,7 @@ int main() {
 You've probably heard of the "rock, paper, scissors" game. FJ's cows like to
 play a similar game they call "hoof, cloth, scissors" ("hoof" is "rock", "cloth" is "paper").
 
-The rules of the game are simple: both sides of the game count to 3 at the same time, and then make a handsign
+The rules of the game are simple: both sides of the game n to 3 at the same time, and then make a handsign
  at the same time, representing "hoof", "scissors" or "cloth". "Hoof" beats "scissors", "scissors" beats "cloth",
   and "cloth" beats "hoof". For example, if the first cow gives a "hoof" and the second cow gives a "cloth",
    the second cow wins. Of course, a "draw" is also possible (if the two cows have the same handsigns).

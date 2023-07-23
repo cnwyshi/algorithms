@@ -5,7 +5,7 @@ static const auto fast = []() { std::ios_base::sync_with_stdio(0); cin.tie(0); c
 class BST {
     class Node {
         friend class BST;
-        int val = -1, n = 1;
+        int val = -1, n = 1, c = 1;
         Node* left = nullptr, *right = nullptr;
         Node(int v):val(v) {}
     };
@@ -17,10 +17,12 @@ class BST {
             node = new Node(v);
         } else if (v < node->val) {
             node->left = insert(node->left, v);
-        } else {
+        } else if (node->val < v) {
             node->right = insert(node->right, v);
+        } else {
+            node->c ++;
         }
-        node->n = count(node->left) + count(node->right) + 1;
+        node->n = count(node->left) + count(node->right) + node->c;
         return node;
     }
 
@@ -86,6 +88,8 @@ class BST {
             node->left = del(node->left, v);
         } else if (node->val < v) {
             node->right = del(node->right, v);
+        } else if (node->c > 1) {
+            node->c --;
         } else {
             if (node->left == nullptr) {
                 return node->right;
@@ -94,11 +98,11 @@ class BST {
             }
             Node* t = node;
             node = min(node->right);
-            node->right = del(node->right, node->val);
+            node->right = del(t->right, node->val);
             node->left = t->left;
             delete t;
         }
-        node->n = count(node->left) + count(node->right) + 1;
+        node->n = count(node->left) + count(node->right) + node->c;
         return node;
     }
 
@@ -109,8 +113,8 @@ class BST {
         int m = count(node->left);
         if (k <= m) {
             return findKth(node->left, k);
-        } else if (m + 1 < k) {
-            return findKth(node->right, k - m - 1);
+        } else if (m + node->c < k) {
+            return findKth(node->right, k - m - node->c);
         }
         return node;
     }
@@ -121,18 +125,12 @@ class BST {
         } else if (v < node->val) {
             return rank(node->left, v);
         } else if (node->val < v) {
-            return count(node->left) + 1 + rank(node->right, v);
+            return count(node->left) + node->c + rank(node->right, v);
         }
         return count(node->left) + 1;
     }
 
-    void inorder(Node* node) {
-        if (node != nullptr) {
-            inorder(node->left);
-            cout << node->val << ' ';
-            inorder(node->right);
-        }
-    }
+
 
 public:
     void insert(int v) { root = insert(root, v); }
@@ -149,6 +147,13 @@ public:
         return s == nullptr ? INT_MAX : s->val;
     }
     void print() { inorder(root); cout << '\n'; }
+    void inorder(Node* node) {
+        if (node != nullptr) {
+            inorder(node->left);
+            cout << node->val << '(' << node->c << ") ";
+            inorder(node->right);
+        }
+    }
 };
 
 int main() {
@@ -158,12 +163,15 @@ int main() {
     for (int i = 0; i < n; i ++) {
         cin >> op >> v;
         cout << op << ' ' << v << endl;
+        if (op == 2 && v == 71) {
+            cout << 'a' << endl;
+        }
         if (op == 1) {
             bst.insert(v);
-            bst.print();
+//            bst.print();
         } else if (op == 2) {
             bst.del(v);
-            bst.print();
+//            bst.print();
         } else if (op == 3) {
             cout << bst.rank(v) << '\n';
         } else if (op == 4) {

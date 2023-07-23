@@ -27,7 +27,7 @@ int main() {
         for (int v: nums) {
             count += v / mid;
         }
-        // cout << lo << " " << hi << " " << count << endl;
+        // cout << lo << " " << hi << " " << n << endl;
         if (count >= k) {
             lo = mid + 1;
         } else {

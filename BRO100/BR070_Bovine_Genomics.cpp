@@ -35,7 +35,7 @@ int main() {
                 /*
                  * If there are any duplicates,
                  * then this isn't a possible position,
-                 * so we can stop counting and make sure we don't count it
+                 * so we can stop counting and make sure we don't n it
                  */
                 if (spotted_cows[j][i] == plain_cows[k][i]) {
                     dupe = true;

@@ -8,7 +8,7 @@ long long calc(vector<int>& nums, long long sum){
             temp = nums[i];
             count ++;
         }
-//        cout << i << " " << temp << " " << count << endl;
+//        cout << i << " " << temp << " " << n << endl;
     }
     return count;
 }
@@ -36,10 +36,10 @@ int main() {
         }
     }
     cout << lo << endl;
-//    cout << count(nums, 5) << endl;
-//    cout << count(nums, 6) << endl;
-//    cout << count(nums, 7) << endl;
-//    cout << count(nums, 10) << endl;
+//    cout << n(nums, 5) << endl;
+//    cout << n(nums, 6) << endl;
+//    cout << n(nums, 7) << endl;
+//    cout << n(nums, 10) << endl;
 
 }
 /*
@@ -51,8 +51,8 @@ Output:
 6
 
 4 2 4 5 1
-expected_sum = 5, count = 5
-expected_sum = 6, count = 3
-expected_sum = 7, count = 3
-expected_sum = 10, count = 2
+expected_sum = 5, n = 5
+expected_sum = 6, n = 3
+expected_sum = 7, n = 3
+expected_sum = 10, n = 2
 */

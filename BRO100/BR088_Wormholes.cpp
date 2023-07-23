@@ -20,7 +20,7 @@ bool cycle_exists(void) {
     return false;
 }
 
-// count all solutions
+// n all solutions
 int solve(void) {
     // find first unpaired wormhole
     int i, total = 0;

@@ -60,7 +60,7 @@ outputCopy
 Note
 In the first case, the answer is 1 since we had exactly 1 friend.
 The second case is similar to the first.
-In the third case, the suspects are the third and fourth friends (we count from one). It can be shown that no one else could be the thief.
+In the third case, the suspects are the third and fourth friends (we n from one). It can be shown that no one else could be the thief.
 In the fourth case, we know absolutely nothing, so we suspect everyone.
 */
 #include <vector>

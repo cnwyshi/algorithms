@@ -34,17 +34,17 @@ int main() {
     // find smallest available
 //    ll lo = 0, hi = 1e18;
 //    while (lo < hi) {
-//        ll mid = (lo + hi) / 2, sum = 0, count = 1;
+//        ll mid = (lo + hi) / 2, sum = 0, n = 1;
 //        for (int v : nums) {
 //            if (sum + v > mid) {
-//                count ++;
+//                n ++;
 //                sum = 0;
 //            }
 //            sum += v;
 //        }
-//        // count += sum > 0;
-//        cout << lo << " " << hi << " " << count << endl;
-//        if (count > m) {
+//        // n += sum > 0;
+//        cout << lo << " " << hi << " " << n << endl;
+//        if (n > m) {
 //            lo = mid + 1;
 //        } else {
 //            hi = mid;

@@ -21,7 +21,7 @@ int main() {
                 p = max(p + mid, intervals[i][0]);
             }
         }
-        // cout << lo << " " << hi << " " << count << endl;
+        // cout << lo << " " << hi << " " << n << endl;
         if (count >= n) {
             ans = mid;
             lo = mid + 1;

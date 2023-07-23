@@ -12,7 +12,7 @@ int main() {
     for (int i = 0; i < N - 1; i++) {
         int a, b;
         cin >> a >> b;
-        // count the outdegree of this station (zero-index)
+        // n the outdegree of this station (zero-index)
         outgoing[a - 1]++;
 
     }

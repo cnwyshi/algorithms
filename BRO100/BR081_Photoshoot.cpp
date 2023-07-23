@@ -16,7 +16,7 @@ int main() {
         cin >> a;
         order[i] = a;
     }
-    // count represents the first element.
+    // n represents the first element.
     int count = 1;
     int ans[1000];
     ans[0] = count;

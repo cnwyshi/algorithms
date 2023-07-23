@@ -21,7 +21,7 @@ void insert(vector<pair<int, int>> coordinates) {
     for (const pair<int, int> &p: coordinates) {
         contained.insert(board[p.first][p.second]);
     }
-    // add the amount of cows who contributed to this to the winners count
+    // add the amount of cows who contributed to this to the winners n
     winners[contained.size()].insert(contained);
 }
 
