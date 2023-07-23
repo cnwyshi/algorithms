@@ -1,32 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
-int main(){
-    int n, m;
-    cin >> n >> m;
-    vector<int> cnt(n);
-    for(int i = 0; i < n; i++){
-        cin >> cnt[i];
-    }
-    for(int i = 0; i < m; i++){
-        int a, b;
-        cin >> a >> b;
-        
-        int x = cnt[a], y = cnt[b];
-        int l = x, m = y;
-        if(y == a){
-            cnt[b] = x;
-            cnt[a] = m;
+int maximumBeauty(vector<int> nums, int k) {
+    sort(nums.begin(),nums.end());
+    int start = 0, ans = 0;
+    for(int i=0; i<nums.size(); i++){
+        while(nums[i]-nums[start] > 2*k){
+            start++;
         }
-        if(x == b){
-            cnt[b] = x;
-            cnt[a] = m;
-        }
+        ans = max(ans,i-start+1);
     }
-    int count = 0;
-    for(int i = 0; i < n; i++){
-        if(cnt[i] == i){
-            count ++;
-        }
-    }
-    cout << count << endl;
+    return ans;
 }
+int main(){
+  cout << maximumBeauty({4,6,1,2}, 2) << endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
