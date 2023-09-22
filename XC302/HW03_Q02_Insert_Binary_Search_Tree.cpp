@@ -11,7 +11,7 @@ int main(){
         nodes[i+1].push_back(x);
         nodes[i+1].push_back(y);
     }
-    dfs(1, nodes);
+    // dfs(1, nodes);
     return 0;
 }
 /*
