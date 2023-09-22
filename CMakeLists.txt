@@ -5,11 +5,13 @@ set(CMAKE_CXX_STANDARD 14)
 
 file(GLOB files *.cpp
         BRO100/*.cpp
+        BinarySearch/*.cpp
         CF/*.cpp
-        HPI/*.cpp
+        Contest/*.cpp
+        DFS/*.cpp
         LC/*.cpp
+        NumberTheory/*.cpp
         Sliver/*.cpp
-        TC23/*.cpp
         USACO/*.cpp
         XC200/*.cpp
         XC201/*.cpp
