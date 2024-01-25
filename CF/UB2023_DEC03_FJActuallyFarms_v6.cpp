@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 using ll = long long;
 
@@ -19,6 +20,7 @@ int main() {
             int i = sorted[x], j = sorted[x + 1];
             ll dh = height[i] - height[j], da = add[j] - add[i];;
             if (dh > 0 && da > 0) {
+            // if (da != 0) {
                 day = max(day, dh / da + 1);
             }
         }
@@ -31,6 +33,7 @@ int main() {
         }
         cout << day << "\n";
     }
+
 }
 
 /*
