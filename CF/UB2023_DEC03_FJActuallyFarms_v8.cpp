@@ -9,13 +9,13 @@ int main() {
     while (t--) {
         cin >> n;
         vector<vector<ll>> plant(n, vector<ll>(3));
-        for (int i = 0; i < n; i ++) {
+        for (int i = 0; i < n; i++) {
             cin >> plant[i][1];
         }
-        for (int i = 0; i < n; i ++) {
+        for (int i = 0; i < n; i++) {
             cin >> plant[i][2];
         }
-        for (int i = 0; i < n; i ++) {
+        for (int i = 0; i < n; i++) {
             cin >> plant[i][0];
             plant[i][0] = n - plant[i][0];
         }
@@ -28,7 +28,7 @@ int main() {
             }
         }
         for (int i = 0; i + 1 < n; i++) {
-            if (plant[i][1] + plant[i][2] * day >= plant[i+1][1] + plant[i+1][2] * day) {
+            if (plant[i][1] + plant[i][2] * day >= plant[i + 1][1] + plant[i + 1][2] * day) {
                 day = -1;
                 break;
             }
