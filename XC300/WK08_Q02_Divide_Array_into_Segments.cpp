@@ -1,17 +1,20 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-long long calc(vector<int>& nums, long long sum){
+
+long long calc(vector<int> &nums, long long sum) {
     long long temp = 0, count = 1;
-    for(int i = 0; i < nums.size(); i++){
-        temp+=nums[i];
-        if(temp > sum){
+    for (int i = 0; i < nums.size(); i++) {
+        temp += nums[i];
+        if (temp > sum) {
             temp = nums[i];
-            count ++;
+            count++;
         }
 //        cout << i << " " << temp << " " << n << endl;
     }
     return count;
 }
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -19,19 +22,18 @@ int main() {
     long long sum = 0;
     cin >> n >> k;
     vector<int> nums(n);
-    for(int i = 0; i < n; ++i){
+    for (int i = 0; i < n; ++i) {
         cin >> nums[i];
         sum += nums[i];
         mx = max(mx, nums[i]);
     }
     long long lo = mx, hi = sum;
-    while(lo < hi){
-        long long mid = (lo + hi)/2, count = 0, temp = 0;
+    while (lo < hi) {
+        long long mid = (lo + hi) / 2, count = 0, temp = 0;
 //        cout << lo << " " << hi << " " << mid << " " << calc(nums, mid) << endl;
-        if(calc(nums, mid) > k){
-            lo = mid+1;
-        }
-        else{
+        if (calc(nums, mid) > k) {
+            lo = mid + 1;
+        } else {
             hi = mid;
         }
     }

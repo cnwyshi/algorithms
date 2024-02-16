@@ -4,7 +4,7 @@
 using namespace std;
 
 // check if the cow ch won in any row or column or diagonal
-bool check_single_cow_winner(char ch, const vector <string> &board) {
+bool check_single_cow_winner(char ch, const vector<string> &board) {
     for (int i = 0; i < 3; i++) {
         // check rows
         if (board[i][0] == ch && board[i][1] == ch && board[i][2] == ch) {
@@ -26,7 +26,7 @@ bool check_single_cow_winner(char ch, const vector <string> &board) {
 }
 
 // determine the number of individual cow wins
-int individual_wins(const vector <string> &board) {
+int individual_wins(const vector<string> &board) {
     int single_cow_wins = 0;
     for (char ch = 'A'; ch <= 'Z'; ch++) {
         single_cow_wins += check_single_cow_winner(ch, board);
@@ -62,7 +62,7 @@ bool check_if_winners(char ch1, char ch2, char x, char y, char z) {
 }
 
 // check if the cows ch1 and ch2 can win in any of the rows or columns or diagonals
-bool check_double_cow_winners(char ch1, char ch2, const vector <string> &board) {
+bool check_double_cow_winners(char ch1, char ch2, const vector<string> &board) {
     for (int i = 0; i < 3; i++) {
         // check rows
         if (check_if_winners(ch1, ch2, board[i][0], board[i][1], board[i][2])) {
@@ -84,7 +84,7 @@ bool check_double_cow_winners(char ch1, char ch2, const vector <string> &board) 
 }
 
 // determine the number of team wins
-int team_wins(const vector <string> &board) {
+int team_wins(const vector<string> &board) {
     int double_cow_wins = 0;
     for (char ch1 = 'A'; ch1 <= 'Z'; ch1++) {
         for (char ch2 = ch1 + 1; ch2 <= 'Z'; ch2++) {
@@ -96,7 +96,7 @@ int team_wins(const vector <string> &board) {
 
 int main() {
 
-    vector <string> board(3);
+    vector<string> board(3);
     for (int i = 0; i < 3; i++) {
         cin >> board[i];
     }

@@ -1,22 +1,23 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-void dfs(vector<vector<int>>& adj, int u, vector<int>& depth) {
+void dfs(vector<vector<int>> &adj, int u, vector<int> &depth) {
     for (auto v: adj[u]) {
         depth[v] = depth[u] + 1;
         dfs(adj, v, depth);
     }
 }
 
-int lca(vector<int>& depth, vector<int>& parent, int a, int b){
-    if (depth[a] > depth[b]){
+int lca(vector<int> &depth, vector<int> &parent, int a, int b) {
+    if (depth[a] > depth[b]) {
         swap(a, b);
     }
-    while (depth[a] < depth[b]){
+    while (depth[a] < depth[b]) {
         b = parent[b];
     }
 
-    while (a != b){
+    while (a != b) {
         a = parent[a];
         b = parent[b];
     }
@@ -31,9 +32,9 @@ int solve() {
     vector<vector<int>> adj(n + 1);
     vector<int> parent(n + 1), depth(n + 1);
     while (getline(cin, line)) {
-        istringstream iss(line );
+        istringstream iss(line);
         iss >> p;
-        while (iss >> c){
+        while (iss >> c) {
             adj[p].push_back(stoi(c));
             parent[stoi(c)] = p;
         }

@@ -1,44 +1,46 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-int find(vector<int>& leader, int i){
-    if(leader[i] == i){
+
+int find(vector<int> &leader, int i) {
+    if (leader[i] == i) {
         return i;
-    }
-    else{
+    } else {
         int j = leader[i];
         leader[i] = find(leader, j);
         return leader[i];
     }
 }
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     int n, m, a, b, ans = 0;
     cin >> n >> m;
-    vector<vector<int>> pos(n+1, vector<int> (2));
-    for(int i = 1; i <= n; i++){
+    vector<vector<int>> pos(n + 1, vector<int>(2));
+    for (int i = 1; i <= n; i++) {
         cin >> pos[i][0] >> pos[i][1];
     }
-    vector<int> leader(n+1);
-    for(int i = 0; i <= n; i++){
+    vector<int> leader(n + 1);
+    for (int i = 0; i <= n; i++) {
         leader[i] = i;
     }
-    for(int i = 0; i < m; i++){
+    for (int i = 0; i < m; i++) {
         cin >> a >> b;
         int ra = find(leader, a), rb = find(leader, b);
-        if(ra != rb){
+        if (ra != rb) {
             leader[ra] = rb;
         }
     }
-    vector<vector<int>> group(n+1);
-    for(int i = 1; i <= n; i++){
+    vector<vector<int>> group(n + 1);
+    for (int i = 1; i <= n; i++) {
         int l = find(leader, i);
         group[l].push_back(i);
     }
-    for(int i = 1; i <= n; i++){
-        if(!group[i].empty()){
+    for (int i = 1; i <= n; i++) {
+        if (!group[i].empty()) {
             int top, bottom, left, right;
-            for(int j : group[i]){
+            for (int j: group[i]) {
 
             }
         }

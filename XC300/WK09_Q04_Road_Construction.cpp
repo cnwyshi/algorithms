@@ -17,7 +17,7 @@ int main() {
     cin.tie(nullptr);
     int n, m, a, b;
     cin >> n >> m;
-    vector<int> leader(n + 1), size(n+1, 1);
+    vector<int> leader(n + 1), size(n + 1, 1);
     for (int i = 0; i < n; ++i) {
         leader[i] = i;
     }
@@ -27,7 +27,7 @@ int main() {
         if (rx != ry) {
             //x->rx, rx -> ry
             leader[rx] = ry;
-            size[ry]+=size[rx];
+            size[ry] += size[rx];
             l = max(l, size[ry]);
             g--;
         }

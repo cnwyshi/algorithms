@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 typedef long long ll;
 
-void dfs(vector<vector<int>>& adj, vector<int>& parent, ll node, vector<vector<int>>& binary) {
+void dfs(vector<vector<int>> &adj, vector<int> &parent, ll node, vector<vector<int>> &binary) {
     binary[node][0] = parent[node];
     for (ll l = 1; (1 << l) <= parent.size() - 1; ++l) {
         binary[node][l] = binary[binary[node][l - 1]][l - 1];

@@ -1,23 +1,30 @@
 #include <bits/stdc++.h>
-using namespace std;
-static const auto fast = []() { std::ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0); return 0;}();
 
-int bellman_ford(int n, vector<vector<int>>& edge, int s, int t) {
+using namespace std;
+static const auto fast = []() {
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    return 0;
+}();
+
+int bellman_ford(int n, vector<vector<int>> &edge, int s, int t) {
     vector<int> dist(n + 1, INT_MAX / 2);
     dist[s] = 0;
-    for (int i = 0; i < n - 1; i ++) {
-        for (vector<int>& e : edge) {
+    for (int i = 0; i < n - 1; i++) {
+        for (vector<int> &e: edge) {
             int a = e[0], b = e[1];
             dist[b] = min(dist[b], dist[a] + 1);
         }
     }
     return dist[t] == INT_MAX / 2 ? -1 : dist[t];
 }
+
 int main() {
     int n, m, a, b, s, t;
     cin >> n >> m;
     vector<vector<int>> edge;
-    for (int i = 0; i < m; i ++) {
+    for (int i = 0; i < m; i++) {
         cin >> a >> b;
         edge.push_back({a, b});
         edge.push_back({b, a});

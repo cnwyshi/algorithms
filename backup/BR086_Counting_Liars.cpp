@@ -7,7 +7,7 @@ int main() {
     int n;
     cin >> n;
 
-    vector <pair<int, char>> cows(n);
+    vector<pair<int, char>> cows(n);
     for (int i = 0; i < n; i++) {
         // The position is read into .first for sorting.
         cin >> cows[i].second >> cows[i].first;

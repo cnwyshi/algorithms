@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
@@ -18,7 +20,7 @@ int main() {
             lo = mid + 1;
         }
     }
-    cout << (nums[lo] == t ? lo+1 : 0)  << '\n';
+    cout << (nums[lo] == t ? lo + 1 : 0) << '\n';
 }
 
 /*

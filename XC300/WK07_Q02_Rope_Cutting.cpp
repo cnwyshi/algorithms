@@ -9,16 +9,16 @@ int main() {
     int n, k;
     cin >> n >> k;
     vector<int> l(n);
-    for(int i = 0; i < n; ++i){
+    for (int i = 0; i < n; ++i) {
         float f;
         cin >> f;
-        l[i] = f*100;
+        l[i] = f * 100;
     }
     sort(l.begin(), l.end());
     //find biggest enough = find smallest unenough - 1
     int lo = 0, hi = 10000000;
-    while(lo < hi){
-        int mid = (lo+hi)/2;
+    while (lo < hi) {
+        int mid = (lo + hi) / 2;
         int num = 0;
         for (int v: l) {
             num += v / mid;

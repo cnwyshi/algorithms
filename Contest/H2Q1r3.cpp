@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 using ll = long long;
 
-void dfs(vector<vector<int>>& adj, ll u, ll p, vector<int>& parent, vector<vector<int>>& ancestor) {
+void dfs(vector<vector<int>> &adj, ll u, ll p, vector<int> &parent, vector<vector<int>> &ancestor) {
     ancestor[u][0] = p;
     for (ll l = 1; (1 << l) <= parent.size() - 1; ++l) {
         ancestor[u][l] = ancestor[ancestor[u][l - 1]][l - 1];

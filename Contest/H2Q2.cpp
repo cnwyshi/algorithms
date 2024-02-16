@@ -12,15 +12,15 @@ void get_depth(int node) {
     }
 }
 
-int lca(int a, int b){
-    if (depth[a] > depth[b]){
+int lca(int a, int b) {
+    if (depth[a] > depth[b]) {
         swap(a, b);
     }
-    while (depth[a] < depth[b]){
+    while (depth[a] < depth[b]) {
         b = parent[b];
     }
 
-    while (a != b){
+    while (a != b) {
         a = parent[a];
         b = parent[b];
     }
@@ -33,11 +33,11 @@ int solve() {
     cin >> n >> a >> b;
     string line;
     while (getline(cin, line)) {
-        istringstream iss(line );
+        istringstream iss(line);
         int parent_node;
         iss >> parent_node;
         string child;
-        while (iss >> child){
+        while (iss >> child) {
             adj[parent_node].push_back(stoi(child));
             parent[stoi(child)] = parent_node;
         }

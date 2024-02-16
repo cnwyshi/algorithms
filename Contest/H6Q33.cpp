@@ -3,7 +3,11 @@
 using namespace std;
 using ll = long long;
 const ll inf = 1e18, MOD = 1e9 + 7;
-static const auto fast = []() { std::ios_base::sync_with_stdio(0); cin.tie(0); return 0;}();
+static const auto fast = []() {
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    return 0;
+}();
 
 int main() {
     int n, m, a, b, c;

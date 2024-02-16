@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-vector<int> bfs(vector<vector<int>>& nodes, int root) {
+
+vector<int> bfs(vector<vector<int>> &nodes, int root) {
     int n = nodes.size();
     vector<int> dist(n);
     queue<int> q;
@@ -24,25 +26,26 @@ vector<int> bfs(vector<vector<int>>& nodes, int root) {
     }
     return dist;
 }
-int main(){
+
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int n;
     cin >> n;
     vector<vector<int>> nodes(n);
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
             char x;
             cin >> x;
-            if(x == '1'){
+            if (x == '1') {
                 nodes[i].push_back(j);
                 nodes[j].push_back(i);
             }
         }
     }
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         vector<int> dist = bfs(nodes, i);
-        for(int d : dist){
+        for (int d: dist) {
             cout << d << " ";
         }
         cout << endl;

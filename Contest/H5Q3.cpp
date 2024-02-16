@@ -1,11 +1,17 @@
 #include <bits/stdc++.h>
-using namespace std;
-static const auto fast = []() { std::ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0); return 0;}();
 
-int negative_cycle(int n, vector<vector<int>>& edge, vector<int>& prev) {
+using namespace std;
+static const auto fast = []() {
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    return 0;
+}();
+
+int negative_cycle(int n, vector<vector<int>> &edge, vector<int> &prev) {
     vector<int> dist(n + 1);
-    for (int i = 0; i < n - 1; i ++) {
-        for (vector<int>& e : edge) {
+    for (int i = 0; i < n - 1; i++) {
+        for (vector<int> &e: edge) {
             int a = e[0], b = e[1], w = e[2];
             if (dist[a] + w < dist[b]) {
                 dist[b] = dist[a] + w;
@@ -13,7 +19,7 @@ int negative_cycle(int n, vector<vector<int>>& edge, vector<int>& prev) {
             }
         }
     }
-    for (vector<int>& e : edge) {
+    for (vector<int> &e: edge) {
         int a = e[0], b = e[1], w = e[2];
         if (dist[a] + w < dist[b]) {
             return b;
@@ -22,7 +28,7 @@ int negative_cycle(int n, vector<vector<int>>& edge, vector<int>& prev) {
     return -1;
 }
 
-vector<int> path(int n, vector<int>& prev, int t) {
+vector<int> path(int n, vector<int> &prev, int t) {
     vector<int> visited(n + 1), path;
     for (int i = t; !visited[i]; i = prev[i]) {
         path.push_back(i);
@@ -37,14 +43,14 @@ int main() {
     int n, m;
     cin >> n >> m;
     vector<vector<int>> edge(m, vector<int>(3));
-    for (int i = 0; i < m; i ++) {
-        cin >> edge[i][0] >> edge[i][1] >>edge[i][2];
+    for (int i = 0; i < m; i++) {
+        cin >> edge[i][0] >> edge[i][1] >> edge[i][2];
     }
     vector<int> prev(n + 1, -1);
     int t = negative_cycle(n, edge, prev);
     if (t > 0) {
         cout << "YES ";
-        for (int i : path(n, prev, t)) {
+        for (int i: path(n, prev, t)) {
             cout << i << " ";
         }
     } else {

@@ -29,6 +29,7 @@ int exploded_num(int start, int direction) {
     }
     return abs(prev - start);
 }
+
 int main() {
     int n;
     cin >> N;

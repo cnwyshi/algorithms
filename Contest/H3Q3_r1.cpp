@@ -1,18 +1,26 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-static const auto fast = []() { std::ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0); return 0;}();
+static const auto fast = []() {
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    return 0;
+}();
 
 class BST {
     class Node {
         friend class BST;
+
         int val = -1, n = 1, c = 1;
-        Node* left = nullptr, *right = nullptr;
-        Node(int v):val(v) {}
+        Node *left = nullptr, *right = nullptr;
+
+        Node(int v) : val(v) {}
     };
 
-    Node* root = nullptr;
+    Node *root = nullptr;
 
-    Node* insert(Node* node, int v) {
+    Node *insert(Node *node, int v) {
         if (node == nullptr) {
             node = new Node(v);
         } else if (v < node->val) {
@@ -20,13 +28,13 @@ class BST {
         } else if (node->val < v) {
             node->right = insert(node->right, v);
         } else {
-            node->c ++;
+            node->c++;
         }
         node->n = count(node->left) + count(node->right) + node->c;
         return node;
     }
 
-    Node* find(Node* node, int v) {
+    Node *find(Node *node, int v) {
         if (v < node->val) {
             return find(node->left, v);
         } else if (node->val < v) {
@@ -35,11 +43,11 @@ class BST {
         return node;
     }
 
-    Node* predecessor(Node* node, int v) {
+    Node *predecessor(Node *node, int v) {
         if (node == nullptr) {
             return nullptr;
         }
-        Node* ans = nullptr;
+        Node *ans = nullptr;
         while (node != nullptr) {
             if (node->val < v) {
                 ans = node;
@@ -52,11 +60,11 @@ class BST {
     }
 
     // https://leetcode.cn/submissions/detail/164727701/
-    Node* successor(Node* node, int v) {
+    Node *successor(Node *node, int v) {
         if (node == nullptr) {
             return nullptr;
         }
-        Node* ans = nullptr;
+        Node *ans = nullptr;
         while (node != nullptr) {
             if (v < node->val) {
                 ans = node;
@@ -68,19 +76,19 @@ class BST {
         return ans;
     }
 
-    Node* min(Node* node) {
+    Node *min(Node *node) {
         return node->left == nullptr ? node : min(node->left);
     }
 
-    Node* max(Node* node) {
+    Node *max(Node *node) {
         return node->right == nullptr ? node : max(node->right);
     }
 
-    int count(Node* node) {
+    int count(Node *node) {
         return node == nullptr ? 0 : node->n;
     }
 
-    Node* del(Node* node, int v) {
+    Node *del(Node *node, int v) {
         if (node == nullptr) {
             return nullptr;
         }
@@ -89,14 +97,14 @@ class BST {
         } else if (node->val < v) {
             node->right = del(node->right, v);
         } else if (node->c > 1) {
-            node->c --;
+            node->c--;
         } else {
             if (node->left == nullptr) {
                 return node->right;
             } else if (node->right == nullptr) {
                 return node->left;
             }
-            Node* t = node;
+            Node *t = node;
             node = min(node->right);
             node->right = del(t->right, node->val);
             node->left = t->left;
@@ -106,7 +114,7 @@ class BST {
         return node;
     }
 
-    Node* findKth(Node* node, int k) {
+    Node *findKth(Node *node, int k) {
         if (node == nullptr) {
             return nullptr;
         }
@@ -119,7 +127,7 @@ class BST {
         return node;
     }
 
-    int rank(Node* node, int v) {
+    int rank(Node *node, int v) {
         if (node == nullptr) {
             return 0;
         } else if (v < node->val) {
@@ -131,23 +139,33 @@ class BST {
     }
 
 
-
 public:
     void insert(int v) { root = insert(root, v); }
+
     void del(int v) { del(root, v); }
+
     int count() { return count(root); }
+
     int findKth(int k) { return findKth(root, k)->val; }
+
     int rank(int v) { return rank(root, v); }
+
     int predecessor(int v) {
-        Node* p = predecessor(root, v);
+        Node *p = predecessor(root, v);
         return p == nullptr ? INT_MIN : p->val;
     }
+
     int successor(int v) {
-        Node* s = successor(root, v);
+        Node *s = successor(root, v);
         return s == nullptr ? INT_MAX : s->val;
     }
-    void print() { inorder(root); cout << '\n'; }
-    void inorder(Node* node) {
+
+    void print() {
+        inorder(root);
+        cout << '\n';
+    }
+
+    void inorder(Node *node) {
         if (node != nullptr) {
             inorder(node->left);
             cout << node->val << '(' << node->c << ") ";
@@ -160,7 +178,7 @@ int main() {
     int n, op, v;
     cin >> n;
     BST bst;
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> op >> v;
         cout << op << ' ' << v << endl;
         if (op == 2 && v == 71) {

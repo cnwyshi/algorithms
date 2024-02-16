@@ -1,8 +1,10 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-vector<int> bfs(vector<vector<int>>& nodes, int root) {
+
+vector<int> bfs(vector<vector<int>> &nodes, int root) {
     int n = nodes.size();
-    vector<int> dist(n+1);
+    vector<int> dist(n + 1);
     queue<int> q;
     vector<int> visited(n);
     q.push(root);
@@ -17,7 +19,7 @@ vector<int> bfs(vector<vector<int>>& nodes, int root) {
                 if (visited[adj] == 0) {
                     visited[adj] = 1;
                     q.push(adj);
-                    dist[n] =adj;
+                    dist[n] = adj;
                     dist[adj] = depth;
                 }
             }
@@ -25,7 +27,8 @@ vector<int> bfs(vector<vector<int>>& nodes, int root) {
     }
     return dist;
 }
-int main(){
+
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int n;
@@ -42,7 +45,7 @@ int main(){
     vector<int> dist1 = bfs(nodes, 0);
     vector<int> dist2 = bfs(nodes, dist1[n]);
     vector<int> dist3 = bfs(nodes, dist2[n]);
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         cout << max(dist2[i], dist3[i]) << " ";
     }
     cout << endl;

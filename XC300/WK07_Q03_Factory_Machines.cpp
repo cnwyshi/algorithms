@@ -8,21 +8,20 @@ int main() {
     int n, t;
     cin >> n >> t;
     vector<int> k(n);
-    for(int i = 0; i < n; ++i){
+    for (int i = 0; i < n; ++i) {
         cin >> k[i];
     }
     long long lo = 0;
     long long hi = 1e18;
-    while(lo < hi){
-        long long mid = (lo + hi)/2;
+    while (lo < hi) {
+        long long mid = (lo + hi) / 2;
         long long products = 0;
-        for(int i = 0; i < n && products < t; ++i){
-            products+=mid/k[i];
+        for (int i = 0; i < n && products < t; ++i) {
+            products += mid / k[i];
         }
-        if(products < t){
-            lo = mid+1;
-        }
-        else{
+        if (products < t) {
+            lo = mid + 1;
+        } else {
             hi = mid;
         }
     }

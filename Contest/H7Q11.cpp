@@ -3,38 +3,42 @@
 using namespace std;
 using ll = long long;
 const ll inf = 1e18;
-static const auto fast = []() { std::ios_base::sync_with_stdio(0); cin.tie(0); return 0;}();
+static const auto fast = []() {
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    return 0;
+}();
 
 int solve() {
-	int n, m, q, a, b, c;
-	cin >> n >> m >> q;
-	vector<vector<ll>> dist(n + 1, vector<ll>(n + 1, inf));
-	for (int i = 1; i <= n; ++i) {
-		dist[i][i] = 0;
-	}
-	for (int i = 0; i < m; ++i) {
-		cin >> a >> b >> c;
-		dist[a][b] = dist[b][a] = min(dist[a][b], c + 0LL);
-	}
+    int n, m, q, a, b, c;
+    cin >> n >> m >> q;
+    vector<vector<ll>> dist(n + 1, vector<ll>(n + 1, inf));
+    for (int i = 1; i <= n; ++i) {
+        dist[i][i] = 0;
+    }
+    for (int i = 0; i < m; ++i) {
+        cin >> a >> b >> c;
+        dist[a][b] = dist[b][a] = min(dist[a][b], c + 0LL);
+    }
 
-	// Floyd-Warshall
-	for (ll k = 1; k <= n; ++k) {
-		for (ll i = 1; i <= n; ++i) {
-			for (ll j = 1; j <= n; ++j) {
-				dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
-			}
-		}
-	}
+    // Floyd-Warshall
+    for (ll k = 1; k <= n; ++k) {
+        for (ll i = 1; i <= n; ++i) {
+            for (ll j = 1; j <= n; ++j) {
+                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+            }
+        }
+    }
 
-	for (int i = 0; i < q; ++i) {
-		cin >> a >> b;
-		cout << (dist[a][b] == inf ? -1 : dist[a][b]) << '\n';
-	}
-	return 0;
+    for (int i = 0; i < q; ++i) {
+        cin >> a >> b;
+        cout << (dist[a][b] == inf ? -1 : dist[a][b]) << '\n';
+    }
+    return 0;
 }
 
 int main() {
-	solve();
+    solve();
 }
 
 /*

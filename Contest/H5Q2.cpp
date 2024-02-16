@@ -1,16 +1,22 @@
 #include <bits/stdc++.h>
-using namespace std;
-static const auto fast = []() { std::ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0); return 0;}();
 
-bool negative_cycle(int n, vector<vector<int>>& edge) {
+using namespace std;
+static const auto fast = []() {
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    return 0;
+}();
+
+bool negative_cycle(int n, vector<vector<int>> &edge) {
     vector<int> dist(n + 1);
-    for (int i = 0; i < n - 1; i ++) {
-        for (vector<int>& e : edge) {
+    for (int i = 0; i < n - 1; i++) {
+        for (vector<int> &e: edge) {
             int a = e[0], b = e[1], w = e[2];
             dist[b] = min(dist[b], dist[a] + w);
         }
     }
-    for (vector<int>& e : edge) {
+    for (vector<int> &e: edge) {
         int a = e[0], b = e[1], w = e[2];
         if (dist[b] > dist[a] + w) {
             return true;
@@ -22,13 +28,13 @@ bool negative_cycle(int n, vector<vector<int>>& edge) {
 int main() {
     int t, n, m;
     cin >> t;
-    while (t -- > 0) {
+    while (t-- > 0) {
         cin >> n >> m;
         vector<vector<int>> edge(m, vector<int>(3));
-        for (int i = 0; i < m; i ++) {
-            cin >> edge[i][0] >> edge[i][1] >>edge[i][2];
+        for (int i = 0; i < m; i++) {
+            cin >> edge[i][0] >> edge[i][1] >> edge[i][2];
         }
-        cout << (negative_cycle(n, edge) ? "YES" : "NO") <<endl;
+        cout << (negative_cycle(n, edge) ? "YES" : "NO") << endl;
     }
     return 0;
 }

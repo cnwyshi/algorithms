@@ -3,9 +3,13 @@
 using namespace std;
 using ll = long long;
 const ll inf = 1e18;
-static const auto fast = []() { std::ios_base::sync_with_stdio(0); cin.tie(0); return 0;}();
+static const auto fast = []() {
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    return 0;
+}();
 
-void path(vector<vector<ll>>& dist, vector<vector<ll>>& parent, ll s, ll t) {
+void path(vector<vector<ll>> &dist, vector<vector<ll>> &parent, ll s, ll t) {
     cout << dist[s][t] << "\n";
     vector<ll> path{t};
     while (s != t) {

@@ -1,41 +1,42 @@
 #include <vector>
 #include <iostream>
+
 using namespace std;
 
-int f01knapsack(vector<int>& w, vector<int>& v, int m) {
+int f01knapsack(vector<int> &w, vector<int> &v, int m) {
     int n = w.size();
     vector<vector<int>> dp(n + 1, vector<int>(m + 1));
-    for (int i = 1; i <= n; i ++) {
+    for (int i = 1; i <= n; i++) {
         dp[i] = dp[i - 1];
-        for (int j = 0; j <= m; j ++) {
+        for (int j = 0; j <= m; j++) {
             // dp[i][j] = dp[i - 1][j];
             if (w[i - 1] <= j) {
-                dp[i][j] = max(dp[i][j], dp[i-1][j-w[i - 1]] + v[i - 1]);
+                dp[i][j] = max(dp[i][j], dp[i - 1][j - w[i - 1]] + v[i - 1]);
             }
         }
     }
     return dp[n][m];
 }
 
-int f01knapsack_2(vector<int>& w, vector<int>& v, int m) {
+int f01knapsack_2(vector<int> &w, vector<int> &v, int m) {
     int n = w.size();
     vector<int> dp(m + 1), prev;
-    for (int i = 1; i <= n; i ++) {
+    for (int i = 1; i <= n; i++) {
         prev = dp;
-        for (int j = 0; j <= m; j ++) {
+        for (int j = 0; j <= m; j++) {
             if (w[i - 1] <= j) {
-                dp[j] = max(dp[j], prev[j-w[i - 1]] + v[i - 1]);
+                dp[j] = max(dp[j], prev[j - w[i - 1]] + v[i - 1]);
             }
         }
     }
     return dp[m];
 }
 
-int f01knapsack_3(vector<int>& w, vector<int>& v, int m) {
+int f01knapsack_3(vector<int> &w, vector<int> &v, int m) {
     int n = w.size();
     vector<int> dp(m + 1);
-    for (int i = 1; i <= n; i ++) {
-        for (int j = m; j >= w[i - 1]; j --) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = m; j >= w[i - 1]; j--) {
             dp[j] = max(dp[j], dp[j - w[i - 1]] + v[i - 1]);
         }
     }
@@ -46,7 +47,7 @@ int main() {
     int n, m;
     cin >> n >> m;
     vector<int> w(n), v(n);
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         cin >> w[i] >> v[i];
     }
     // cout << f01knapsack(w, v, m) << endl;

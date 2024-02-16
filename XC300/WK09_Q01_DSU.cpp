@@ -17,7 +17,7 @@ int main() {
     cin.tie(nullptr);
     int n, m, z, x, y;
     cin >> n >> m;
-    vector<int> leader(n+1);
+    vector<int> leader(n + 1);
     for (int i = 0; i < n; ++i) {
         leader[i] = i;
     }
@@ -28,8 +28,7 @@ int main() {
             if (rx != ry) {
                 leader[rx] = ry;
             }
-        }
-        else{
+        } else {
             cout << (rx == ry ? 'Y' : 'N') << '\n';
         }
     }

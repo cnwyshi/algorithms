@@ -1,16 +1,18 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-int main(){
+
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     int n;
     cin >> n;
     vector<vector<int>> nodes(n);
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
             char x;
             cin >> x;
-            if(x == '1'){
+            if (x == '1') {
                 nodes[i].push_back(j);
                 nodes[j].push_back(i);
             }
@@ -26,8 +28,8 @@ int main(){
             int crt = q.front();
 //            cout << crt << endl;
             q.pop();
-            for(int adj:nodes[crt]){
-                if(visited[adj] == 0){
+            for (int adj: nodes[crt]) {
+                if (visited[adj] == 0) {
                     visited[adj] = 1;
                     q.push(adj);
                 }

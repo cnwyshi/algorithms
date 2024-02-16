@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 //  return the farthest node
 //  return [depth, farthest node]
-vector<int> bfs(vector<vector<int>>& nodes, int root) {
+vector<int> bfs(vector<vector<int>> &nodes, int root) {
     int n = nodes.size();
     queue<int> q;
     vector<int> visited(n);
@@ -24,7 +25,7 @@ vector<int> bfs(vector<vector<int>>& nodes, int root) {
             }
         }
     }
-    return {depth-1, ans};
+    return {depth - 1, ans};
 }
 
 int main() {

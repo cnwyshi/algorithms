@@ -1,48 +1,51 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-int find(vector<int> & root, int i){
+
+int find(vector<int> &root, int i) {
     return root[i] == i ? i : (root[i] = find(root, root[i]));
 }
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     int n, m, a, b;
     cin >> n >> m;
-    vector<vector<int>> graph(n+1);
-    for(int i = 0; i < m; i++){
+    vector<vector<int>> graph(n + 1);
+    for (int i = 0; i < m; i++) {
         cin >> a >> b;
         graph[a].push_back(b);
         graph[b].push_back(a);
     }
     vector<int> close(n);
-    for(int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         cin >> close[i];
     }
-    vector<int> root(n+1);
-    for(int i = 0; i <= n; i++){
+    vector<int> root(n + 1);
+    for (int i = 0; i <= n; i++) {
         root[i] = i;
     }
     vector<string> ans(n);
-    ans[n-1] = "YES";
+    ans[n - 1] = "YES";
     vector<bool> connected(n);
-    connected[close[n-1]] = true;
+    connected[close[n - 1]] = true;
     int group = 1;
-    for(int i = n-2; i >= 0; i--){
+    for (int i = n - 2; i >= 0; i--) {
         int x = close[i];
         connected[x] = true;
         group++;
-        for(int y : graph[x]){
-            if(connected[y]){
+        for (int y: graph[x]) {
+            if (connected[y]) {
                 int rx = find(root, x), ry = find(root, y);
-                if(rx != ry){
+                if (rx != ry) {
                     root[rx] = ry;
-                    group --;
+                    group--;
                 }
             }
         }
         ans[i] = group == 1 ? "YES" : "NO";
     }
-    for(string s: ans){
+    for (string s: ans) {
         cout << s << endl;
     }
 }

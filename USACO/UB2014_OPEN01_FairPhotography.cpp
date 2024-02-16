@@ -14,9 +14,10 @@ int main() {
     freopen("fairphoto.in", "r", stdin);
     freopen("fairphoto.out", "w", stdout);
 
-    int N; cin >> N;
+    int N;
+    cin >> N;
     vector<pair<int, char> > A(N);
-    for(int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) {
         cin >> A[i].first >> A[i].second;
     }
     sort(A.begin(), A.end());
@@ -24,7 +25,7 @@ int main() {
     int ps = 0; /* Tracks the prefix sum of the array. */
     int result = 0;
     vector<pair<int, int> > V[2];
-    for(int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++) {
         /* Record the current (prefix, position) if
         if (V[ps & 1].empty() || V[ps & 1].back().first < ps) {
           V[ps & 1].push_back(make_pair(ps, A[i].first));

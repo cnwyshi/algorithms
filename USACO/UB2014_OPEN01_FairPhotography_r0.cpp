@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 // http://www.usaco.org/index.php?page=viewproblem2&cpid=431
@@ -8,7 +9,7 @@ int main() {
     int n, ans = 0;
     cin >> n;
     vector<vector<int>> cow(n, vector<int>(2));
-    for (int i = 0; i < n; i ++) {
+    for (int i = 0; i < n; i++) {
         char c;
         cin >> cow[i][0] >> c;
         cow[i][1] = c == 'G' ? 1 : -1;
@@ -16,7 +17,7 @@ int main() {
     sort(cow.begin(), cow.end());
     map<int, int> last;
     last[0] = cow[0][0];
-    for (int i = 0, prefix = 0; i < n; i ++) {
+    for (int i = 0, prefix = 0; i < n; i++) {
         prefix += cow[i][1];
         if (last.count(prefix)) {
             ans = max(ans, cow[i][0] - cow[last[prefix] + 1][0]);

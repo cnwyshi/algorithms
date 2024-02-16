@@ -10,17 +10,17 @@ using namespace std;
  */
 int solve(vector<int> sides) {
     map<int, int> dict;
-    for(int i : sides){
+    for (int i: sides) {
         dict[i]++;
     }
     int ans = 0;
     int ans2 = 0;
-    for(auto i : dict){
+    for (auto i: dict) {
         int copy = ans;
-        ans = max(ans, i.first*i.second);
-        if(ans > copy){
-            for(int j = 0; j < sides.size(); j++){
-                if(sides[j] == i.first){
+        ans = max(ans, i.first * i.second);
+        if (ans > copy) {
+            for (int j = 0; j < sides.size(); j++) {
+                if (sides[j] == i.first) {
                     ans2 = j;
                 }
             }
@@ -36,7 +36,7 @@ int main() {
         int n;
         cin >> n;
         vector<int> sides(n);
-        for(int j = 0; j < n; j++){
+        for (int j = 0; j < n; j++) {
             cin >> sides[j];
         }
         cout << solve(sides) << '\n';

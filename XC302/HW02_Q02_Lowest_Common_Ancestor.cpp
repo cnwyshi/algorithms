@@ -1,39 +1,42 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-void dfs(vector<vector<int>>& adj, int u, int p, vector<int>& parent, vector<int>& depth){
-    for(int v : adj[u]){
-        if(v != p){
+
+void dfs(vector<vector<int>> &adj, int u, int p, vector<int> &parent, vector<int> &depth) {
+    for (int v: adj[u]) {
+        if (v != p) {
             parent[v] = u;
             depth[v] = depth[u] + 1;
             dfs(adj, v, u, parent, depth);
         }
     }
 }
+
 int main() {
     int n, a, b, p, m = 1;
     cin >> n >> a >> b;
-    vector<vector<int>> adj(n+1);
+    vector<vector<int>> adj(n + 1);
     string s, c;
-    while(getline(cin, s) && m < n){
-        istringstream iss (s);
+    while (getline(cin, s) && m < n) {
+        istringstream iss(s);
         iss >> p;
-        while(iss){
+        while (iss) {
             iss >> c;
             adj[p].push_back(stoi(c));
             adj[stoi(c)].push_back(p);
         }
         m++;
     }
-    vector<int> parent(n+1), depth(n+1);
+    vector<int> parent(n + 1), depth(n + 1);
     dfs(adj, 1, 0, parent, depth);
-    if(depth[a] < depth[b]){
+    if (depth[a] < depth[b]) {
         swap(a, b);
     }
     int diff = depth[a] - depth[b];
-    for(int i = 0; i < diff; i++){
+    for (int i = 0; i < diff; i++) {
         a = parent[a];
     }
-    while(a != b){
+    while (a != b) {
         a = parent[a];
         b = parent[b];
     }

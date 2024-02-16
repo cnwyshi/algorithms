@@ -1,31 +1,34 @@
 #include <bits/stdc++.h>
+
 using namespace std;
-void dfs(vector<vector<int>>& adj, int u, int p, vector<vector<int>>& ancestor){
+
+void dfs(vector<vector<int>> &adj, int u, int p, vector<vector<int>> &ancestor) {
     ancestor[u][0] = p;
-    for(int i = 1; (1 << i) < adj.size(); i++){
-        ancestor[u][i] = ancestor[ancestor[u][i-1]][i-1];
+    for (int i = 1; (1 << i) < adj.size(); i++) {
+        ancestor[u][i] = ancestor[ancestor[u][i - 1]][i - 1];
     }
-    for(int v : adj[u]){
-        if(v != p){
+    for (int v: adj[u]) {
+        if (v != p) {
             dfs(adj, v, u, ancestor);
         }
     }
 }
-int main(){
+
+int main() {
     int n, q;
     cin >> n >> q;
-    int h = log(n+1)/log(2), x, y, k;
-    vector<vector<int>> graph(n+1), ancestor(n+1, vector<int> (h));
-    for(int i = 0; i < n-1; i++){
+    int h = log(n + 1) / log(2), x, y, k;
+    vector<vector<int>> graph(n + 1), ancestor(n + 1, vector<int>(h));
+    for (int i = 0; i < n - 1; i++) {
         cin >> x >> y;
         graph[x].push_back(y);
         graph[y].push_back(x);
     }
     dfs(graph, 1, 0, ancestor);
-    for(int i = 0; i < q; i++){
+    for (int i = 0; i < q; i++) {
         cin >> x >> k;
-        for(int j = h; j>=0; j--){
-            if(k & (1 << j)){
+        for (int j = h; j >= 0; j--) {
+            if (k & (1 << j)) {
                 x = ancestor[x][j];
             }
         }

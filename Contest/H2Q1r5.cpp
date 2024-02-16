@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 using ll = long long;
 
-void dfs(vector<vector<int>>& adj, ll u, ll p, vector<vector<int>>& ancestor) {
+void dfs(vector<vector<int>> &adj, ll u, ll p, vector<vector<int>> &ancestor) {
     ancestor[u][0] = p;
-    for (ll i = 1; (1 << i) <= adj.size() - 1; i ++) {
+    for (ll i = 1; (1 << i) <= adj.size() - 1; i++) {
         ancestor[u][i] = ancestor[ancestor[u][i - 1]][i - 1];
     }
     for (auto v: adj[u]) {
@@ -20,7 +21,7 @@ int solve() {
     cin >> n >> q;
     ll m = log(n) / log(2);
     vector<vector<int>> adj(n + 1), ancestor(n + 1, vector<int>(m));
-    for (ll i = 0; i < n - 1; i ++) {
+    for (ll i = 0; i < n - 1; i++) {
         ll a, b;
         cin >> a >> b;
         adj[a].push_back(b);
@@ -31,7 +32,7 @@ int solve() {
     for (ll i = 0; i < q; ++i) {
         ll x, k;
         cin >> x >> k;
-        for (ll j = m; j >= 0; j --) {
+        for (ll j = m; j >= 0; j--) {
             if (k & (1 << j)) {
                 x = ancestor[x][j];
             }

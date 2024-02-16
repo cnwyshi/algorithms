@@ -3,7 +3,11 @@
 using namespace std;
 typedef long long ll;
 const ll inf = 1e18, MOD = 1e9 + 7;
-static const auto fast = []() { std::ios_base::sync_with_stdio(0); cin.tie(0); return 0;}();
+static const auto fast = []() {
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    return 0;
+}();
 
 int solve() {
     int n, m, a, b, c;
@@ -30,7 +34,7 @@ int solve() {
         if (dist[node] < distance) {
             continue;
         }
-        for (vector<int> next : adj[node]) {
+        for (vector<int> next: adj[node]) {
             int neighbor = next[0], weight = next[1];
             if (distance + weight < dist[neighbor]) {
                 dist[neighbor] = distance + weight;
@@ -39,7 +43,7 @@ int solve() {
                 min_flights[neighbor] = min_flights[node] + 1;
                 max_flights[neighbor] = max_flights[node] + 1;
             } else if (distance + weight == dist[neighbor]) {
-                routes[neighbor] = (routes[neighbor] + routes[node])%MOD;
+                routes[neighbor] = (routes[neighbor] + routes[node]) % MOD;
                 if (min_flights.count(neighbor) == 0) {
                     min_flights[neighbor] = inf;
                 }
