@@ -32,11 +32,7 @@ int main() {
         }
         vector<vector<ll>> step;
         for (++c; c > 1; c = (c + 1) / 2) {
-            if (c & 1) {
-                step.push_back({ 1, (c + 1) / 2 });
-            } else {
-                step.push_back({0, c / 2});
-            }
+            step.push_back({ c&1, (c + 1) / 2 });
         }
         reverse(step.begin(), step.end());
         cout << step.size() << endl;
