@@ -10,12 +10,22 @@ int main() {
     int n, i = 0;
     cin >> n;
     vector<int> ans(n);
-    for (int d = n - 1; abs(d) > 0; ) {
+    for (int d = n - 1; abs(d) > 1; ) {
         ans[i] = d;
         i += d;     // 5 -> -4,  -4 -> 3
         d = d > 0 ? 1 - d : -1 - d;
     }
-    ans[i] = n;
+    // Pay attention: you must keep doing the process
+    // until you move outside the board
+    // or onto an already visited index.
+    // You cannot choose when to stop.
+    if (n % 2 == 0) {
+        ans[i] = -1;
+        ans[i + 1] = n;
+    } else {
+        ans[i] = 1;
+        ans[i - 1] = n;
+    }
     cout << n - 1 << endl << 1 << endl;
     for (int v : ans) {
         cout << v << " ";
