@@ -20,7 +20,7 @@ int calc(vector<vector<long long>> &grass, long long d) {
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
-//    freopen("/Users/genius/Downloads/090301.in", "r", stdin);
+//    freopen("/Users/genius/Downloads/123456.in", "r", stdin);
     int n, m;
     cin >> n >> m;
     vector<vector<long long>> grass(m, vector<long long>(2));

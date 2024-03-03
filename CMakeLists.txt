@@ -9,6 +9,8 @@ file(GLOB files *.cpp
         CF/*.cpp
         Contest/*.cpp
         DFS/*.cpp
+        DP/*.cpp
+        HPI/*.cpp
         LC/*.cpp
         NumberTheory/*.cpp
         Sliver/*.cpp
@@ -18,7 +20,8 @@ file(GLOB files *.cpp
         XC202/*.cpp
         XC300/*.cpp
         XC301/*.cpp
-        XC302/*.cpp)
+        XC302/*.cpp
+        Fibonacci/*.cpp)
 foreach (file ${files})
     string(REGEX REPLACE ".+/(.+)\\..*" "\\1" exe ${file})
     add_executable(${exe} ${file})
