@@ -14,14 +14,14 @@ int main() {
         vector<int> tree(n);
         while (q--) {
             cin >> v;
-            tree[--v] ^= 1;
+            tree[--v] ++;
         }
         int ans = 0;
         for (int i = 0; i < n; i ++) {
-            ans += tree[i];
+            ans += tree[i] % 2;
             for (int j = i * 2 + 1; j <= i * 2 + 2; j ++) {
                 if (j < n) {
-                    tree[j] ^= tree[i];
+                    tree[j] = (tree[j] + tree[i]) % 2;
                 }
             }
         }

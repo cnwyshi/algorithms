@@ -12,6 +12,7 @@ file(GLOB files *.cpp
         LC/*.cpp
         NumberTheory/*.cpp
         Sliver/*.cpp
+        TODO/*.cpp
         USACO/*.cpp
         XC200/*.cpp
         XC201/*.cpp
