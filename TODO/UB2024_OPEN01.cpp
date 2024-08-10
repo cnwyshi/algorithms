@@ -4,11 +4,15 @@ using namespace std;
 using ll = long long;
 
 int main() {
-    map<vector<int>, int> m;
-    vector<int> v = {1, 2}, u = {1, 2};
-    m[v] = 2;
-    cout << m[u] << endl;
+    int n, q;
+    cin >> n >> q;
 
+    int t, n;
+    cin >> t;
+    while (t --) {
+        cin >> n;
+        vector<int> p(n);
+    }
     return 0;
 }
 
