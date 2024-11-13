@@ -4,10 +4,8 @@ using namespace std;
 using ll = long long;
 
 int main() {
-    int n, q;
+    int n, q, t;
     cin >> n >> q;
-
-    int t, n;
     cin >> t;
     while (t --) {
         cin >> n;

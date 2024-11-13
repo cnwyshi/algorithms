@@ -30,11 +30,8 @@
 
 // C
 #ifndef _GLIBCXX_NO_ASSERT
-
 #include <cassert>
-
 #endif
-
 #include <cctype>
 #include <cerrno>
 #include <cfloat>
@@ -54,14 +51,12 @@
 #include <cwctype>
 
 #if __cplusplus >= 201103L
-
 #include <ccomplex>
 #include <cfenv>
 #include <cinttypes>
 #include <cstdbool>
 #include <cstdint>
 #include <ctgmath>
-
 #endif
 
 // C++
@@ -99,7 +94,6 @@
 #include <vector>
 
 #if __cplusplus >= 201103L
-
 #include <array>
 #include <atomic>
 #include <chrono>
@@ -120,13 +114,10 @@
 #include <type_traits>
 #include <unordered_map>
 #include <unordered_set>
-
 #endif
 
 #if __cplusplus >= 201402L
-
 #include <shared_mutex>
-
 #endif
 
 #if __cplusplus >= 201703L
