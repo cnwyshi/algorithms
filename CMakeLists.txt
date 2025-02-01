@@ -1,10 +1,11 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.30)
 project(algorithms)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
+
+include_directories(/usr/local/include)
 
 file(GLOB files *.cpp
-        BRO100/*.cpp
         BinarySearch/*.cpp
         CF/*.cpp
         Contest/*.cpp
